@@ -1,0 +1,24 @@
+@use './reset';
+@use './hamburger';
+@use './toaster';
+@use './loader';
+@use './notFound';
+@use './common' as *;
+
+html {
+	scroll-behavior: smooth;
+}
+
+body {
+	font-size: 1.4rem;
+	min-width: 320px; 
+	color: $dark;
+
+	@media (min-width: 400px) {
+		font-size: 1.6rem;
+	}
+
+	@media (min-width: 400px) {
+		font-size: 1.6rem;
+	}
+}

@@ -1,0 +1,78 @@
+@use '../../sass/common' as *;
+
+.linkbar {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+	top: 55%;
+	left: 50%;
+	list-style: none;
+
+	.menuItem {
+		position: relative;
+	}
+
+	.link {
+		position: relative;
+		width: fit-content;
+		transition: color 0.2s;
+		color: $semi-dark;
+
+		&::before {
+			position: absolute;
+			content: '';
+			bottom: -2px;
+			left: 50%;
+			transform: translateX(-50%);
+			height: 2px;
+			width: 0;
+			background-color: $accent;
+			transition: width 0.2s;
+		}
+
+		&:hover {
+			color: $footer-dark;
+
+			&::before {
+				width: 100%;
+			}
+		}
+
+		&Active {
+			color: $footer-dark;
+
+			&::before {
+				position: absolute;
+				content: '';
+				bottom: -2px;
+				left: 50%;
+				transform: translateX(-50%);
+				height: 2px;
+				width: 100%;
+				background-color: $accent;
+			}
+		}
+
+		&.button {
+			padding: 0.4em 0.7em;
+			border-radius: 7px;
+			font-weight: bold;
+			background-color: $accent;
+			color: $dark;
+			scale: 1;
+			transition: 0.2s;
+
+			&:hover {
+				background-color: $dark;
+				color: $white;
+				scale: 0.97;
+			}
+
+
+			&::before {
+				display: none;
+			}
+		}
+	}
+}

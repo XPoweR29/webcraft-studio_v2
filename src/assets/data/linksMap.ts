@@ -1,6 +1,6 @@
-import sites_icon from '../../assets/sites_icon.svg';
-import seo_icon from '../../assets/seo_icon.svg';
-import gmb_icon from '../../assets/gmb_icon.svg';
+import sites_icon from '../../assets/icons/sites_icon.svg';
+import seo_icon from '../../assets/icons/seo_icon.svg';
+import gmb_icon from '../../assets/icons/gmb_icon.svg';
 
 export const linksMap = [
 	{

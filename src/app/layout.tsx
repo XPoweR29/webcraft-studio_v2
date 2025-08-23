@@ -1,4 +1,4 @@
-import { Lato } from 'next/font/google';
+import { Montserrat } from 'next/font/google';
 import '../sass/globals.scss';
 import { Header } from '@/components/Header/Header';
 import { Toaster } from 'react-hot-toast';
@@ -8,9 +8,9 @@ import { CookieConsentBanner } from '@/components/CookieConsentBanner/CookieCons
 import { GAScriptLoader } from '@/system/GAScriptLoader';
 import { ContextsProvider } from '@/contexts/contextsProviders';
 
-const lato = Lato({
+const mainFont = Montserrat({
 	subsets: ['latin'],
-	weight: ['400', '700'],
+	weight: ['100', '200', '300', '400', '500', '700', '800', '900'],
 });
 
 export const metadata = createMetadata({
@@ -26,7 +26,7 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='pl'>
-			<body className={lato.className}>
+			<body className={mainFont.className}>
 				<ContextsProvider>
 					<Header />
 					{children}

@@ -1,4 +1,4 @@
-import { HomeStart } from '@/sections/HomeStart/HomeStart';
+import { HomeStart } from '@/sections/HomeStart/Home_Start';
 import { HomeAbout } from '@/sections/HomeAbout/HomeAbout';
 import { siteConfig } from '@/config/site.config';
 

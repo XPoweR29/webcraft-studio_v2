@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
-import img from '../assets/images/not-found-image.png';
 
 const NotFound = () => {
 	return (
@@ -14,7 +13,9 @@ const NotFound = () => {
 			<div className='notFoundPage'>
 				<Wrapper className='wrapper'>
 					<Image
-						src={img}
+						src={'/img/not-found-image.png'}
+						width={400}
+						height={200}
 						className='image'
 						alt=''
 						aria-hidden={true}

@@ -1,0 +1,308 @@
+@use '../../sass/common' as *;
+
+.section {
+	padding: 8em 0;
+	overflow: clip;
+
+	.upperBox {
+		position: relative;
+		border: 1px solid lightgray;
+		border-radius: 15px 15px 0px 0px;
+	}
+
+	.auroraBg {
+		height: fit-content;
+		padding: 1em;
+		padding-bottom: 11em;
+		background: linear-gradient(
+			to left bottom,
+			white 60%,
+			rgba(142, 246, 215, 0.4)
+		);
+		border-radius: 15px 15px 0px 0px;
+		overflow: clip;
+		z-index: 0;
+		color: inherit;
+	}
+
+	.heroHeading {
+		@include mainHeading;
+		display: flex;
+		flex-direction: column;
+		font-weight: bold;
+		text-align: center;
+		z-index: 1;
+
+		.line2 {
+			color: $semi-dark;
+			text-align: center;
+		}
+	}
+
+	.text {
+		align-self: center;
+		margin-top: 2em;
+		font-weight: 500;
+		text-align: center;
+		z-index: 1;
+	}
+
+	.features {
+		display: flex;
+		flex-direction: column;
+		align-self: center;
+		margin-top: 3em;
+		width: fit-content;
+		gap: 0.5em;
+	}
+
+	.featureItem {
+		display: flex;
+		gap: 0.5em;
+		font-weight: 600;
+		z-index: 1;
+
+		.icon {
+			width: 1.2em;
+		}
+	}
+
+	.buttonContainer {
+		display: flex;
+		justify-content: center;
+		margin-top: 4em;
+		gap: 2em;
+		z-index: 1;
+	}
+
+	.button {
+		@include button;
+
+		&--portfolio {
+			color: $dark;
+			background: none;
+			text-transform: none;
+			box-shadow: none;
+
+			.icon {
+				font-size: 1.5em;
+			}
+		}
+	}
+
+	///////////////////////////////////////////////LowerBOX///////////////////////////////////////////////
+
+	.lowerBox {
+		position: relative;
+		padding: 17em 1em;
+		padding-top: 20em;
+		background: $dark-gradient;
+		border-radius: 0px 0px 15px 15px;
+	}
+
+	.rocketImg {
+		position: absolute;
+		top: 9em;
+		left: 1em;
+		width: 100px;
+	}
+
+	.mainImg {
+		position: absolute;
+		top: -8em;
+		right: -1em;
+	}
+
+	.heading {
+		@include sectionHeading;
+		display: flex;
+		flex-direction: column;
+		font-weight: 700;
+
+		.line1 {
+			color: white;
+		}
+		.line2 {
+			color: $accent;
+		}
+	}
+
+	.lowerText {
+		margin-top: 2em;
+		color: $white;
+	}
+
+	.offerContainer {
+		position: absolute;
+		bottom: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		justify-self: center;
+		gap: 2em;
+		transform: translateY(75%);
+		z-index: 2;
+	}
+}
+
+@media (width>=430px) {
+	.section {
+		.lowerBox {
+			padding-top: 22em;
+
+			.rocketImg {
+				width: 120px;
+				top: 10em;
+			}
+
+			.mainImg {
+				width: 400px;
+			}
+		}
+	}
+}
+
+@media (width>=576px) {
+	.section {
+		.upperBox {
+			.text {
+				width: 90%;
+			}
+		}
+
+		.lowerBox {
+			.mainImg {
+				width: 450px;
+			}
+		}
+	}
+}
+
+@media (width>=768px) {
+	.section {
+		.lowerBox {
+			padding-bottom: 12em;
+
+			.mainImg {
+				width: 500px;
+			}
+
+			.rocketImg {
+				width: 150px;
+				top: 8em;
+				left: 3em;
+			}
+		}
+
+		.offerContainer {
+			flex-direction: row;
+			align-content: start;
+			justify-content: start;
+			width: 105%;
+			transform: translateY(50%);
+		}
+	}
+}
+
+@media (width>=992px) {
+	.section {
+		padding-top: 7em;
+		padding-bottom: 10em;
+
+		.upperBox {
+			.auroraBg {
+				padding-bottom: 5em;
+			}
+
+			.heroHeading {
+				text-align: start;
+
+				.line2 {
+					text-align: start;
+				}
+			}
+
+			.text {
+				align-self: flex-start;
+				width: 45.5%;
+				text-align: start;
+			}
+
+			.features {
+				align-self: flex-start;
+				padding-left: 1em;
+				gap: 1em;
+			}
+
+			.buttonContainer {
+				justify-content: start;
+				gap: 3em;
+			}
+		}
+
+		.lowerBox {
+			padding-top: 5em;
+			padding-left: 3em;
+			padding-right: 3em;
+
+			.mainImg {
+				top: -29em;
+				right: -4em;
+				width: 650px;
+			}
+
+			.rocketImg {
+				left: auto;
+				top: 7em;
+				right: 12em;
+				width: 210px;
+			}
+
+			.lowerText {
+				width: 55%;
+			}
+		}
+	}
+}
+
+@media (width>=1200px) {
+	.section {
+		.lowerBox {
+			.mainImg {
+				top: -32em;
+				width: 700px;
+			}
+
+			.rocketImg {
+				top: 8em;
+				right: 17em;
+			}
+
+			.offerContainer {
+				width: 90%;
+			}
+		}
+	}
+}
+
+@media (width>=1400px) {
+	.section {
+		.lowerBox {
+			.mainImg {
+				top: -35em;
+				right: -2em;
+				width: 750px;
+			}
+
+			.rocketImg {
+				top: 7em;
+				right: 20em;
+			}
+
+			.offerContainer {
+				gap: 3em;
+			}
+		}
+	}
+}

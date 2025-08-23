@@ -9,8 +9,7 @@ import { Icon } from '@iconify/react/dist/iconify.js';
 import { siteConfig } from '@/config/site.config';
 import { useHomeScrollTop } from '@/hooks/useHomeScrollTop';
 
-import dev_logo from '../../assets/images/dev_logo.svg';
-import logo from '../../assets/images/logo_bright.svg';
+
 import { linkHref } from '@/utils/linkHref.helper';
 import { useCookieContext } from '@/hooks/useCookieContext';
 
@@ -28,8 +27,8 @@ export const Footer = () => {
 						className={styles.logo}
 						rel='preload'
 						onClick={handleScrollTop}
-						aria-label='Strona główna'>
-						<Image src={logo} alt='' priority={true} />
+						aria-label='Strona głowna'>
+						<Image src={'/img/logo_bright.svg'} width={150} height={40} alt='' priority={true} />
 					</Link>
 					<p>Professional Frontend Starter for Developers</p>
 				</div>
@@ -84,7 +83,8 @@ export const Footer = () => {
 					title='Zamów własną stronę internetową!'
 					rel='noopener noreferrer'>
 					<Image
-						src={dev_logo}
+						src={'/img/dev_logo.svg'}
+						width={100} height={30}
 						alt='Logo Webcraft Studio – profesjonalne projektowanie stron'
 					/>
 				</a>

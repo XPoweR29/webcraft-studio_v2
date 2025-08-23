@@ -5,13 +5,15 @@
 @use './notFound';
 @use './common' as *;
 
+@import 'tailwindcss';
+
 html {
 	scroll-behavior: smooth;
 }
 
 body {
 	font-size: 1.4rem;
-	min-width: 320px; 
+	min-width: 370px;
 	color: $dark;
 
 	@media (min-width: 400px) {
@@ -21,4 +23,28 @@ body {
 	@media (min-width: 400px) {
 		font-size: 1.6rem;
 	}
+}
+
+@theme inline {
+	--animate-aurora: aurora 30s linear infinite;
+	@keyframes aurora {
+		from {
+			background-position: 50% 50%, 50% 50%;
+		}
+		to {
+			background-position: 350% 50%, 350% 50%;
+		}
+	}
+}
+
+.sr-only {
+	position: absolute;
+	width: 1px;
+	height: 1px;
+	padding: 0;
+	margin: -1px;
+	overflow: hidden;
+	clip: rect(0, 0, 0, 0);
+	white-space: nowrap;
+	border: 0;
 }

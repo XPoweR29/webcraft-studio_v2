@@ -13,9 +13,7 @@ import { Nav } from '../Nav/Nav';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
 import { Wrapper } from '../Wrapper/Wrapper';
 
-import logo from '../../assets/images/logo_dark.svg';
 import { useHomeScrollTop } from '@/hooks/useHomeScrollTop';
-import { MegaMenu } from '../MegaMenu/MegaMenu';
 
 export const Header = () => {
 	const { breakpoint } = useBreakpoints();
@@ -35,9 +33,9 @@ export const Header = () => {
 							href={'/'}
 							className={styles.logo}
 							onClick={handleScrollTop}
-							aria-label='Strona startowa'
+							aria-label='WebCraft STUDIO'
 							rel='preload'>
-							<Image src={logo} width={250} height={52} alt='' priority />
+							<Image src={'/img/logo_dark.svg'} width={250} height={52} alt='' priority />
 						</Link>
 
 						{breakpoint.lg ? (

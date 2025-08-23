@@ -1,8 +1,7 @@
 'use client';
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect } from 'react';
 import styles from './CookieConsentBanner.module.scss';
-import logo from '../../assets/images/logo_dark.svg';
 import { CookieAccordion } from '../CookieAccordion/CookieAccordion';
 import { TabsGroup } from '../TabsGroup/TabsGroup';
 import Image from 'next/image';
@@ -73,7 +72,10 @@ export const CookieConsentBanner = () => {
 			<div className={styles.container}>
 
 				<div className={styles.imgContainer}>
-					<Image className={styles.logo} src={logo} alt='' aria-hidden draggable={false} />
+					<Image className={styles.logo} src={'/img/logo_dark.svg'}
+					width={150}
+					height={50}
+					alt='' aria-hidden draggable={false} />
 				</div>
 
 				<TabsGroup

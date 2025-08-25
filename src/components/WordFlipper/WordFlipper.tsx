@@ -6,7 +6,7 @@ import { cn } from '@/utils/cn';
 
 export const WordFlipper = ({
 	words,
-	duration = 3000,
+	duration = 5000,
 	className,
 }: {
 	words: string[];
@@ -34,6 +34,7 @@ export const WordFlipper = ({
 
 	return (
 		<AnimatePresence
+		mode='popLayout'
 			onExitComplete={() => {
 				setIsAnimating(false);
 			}}>
@@ -54,10 +55,13 @@ export const WordFlipper = ({
 				exit={{
 					opacity: 0,
 					y: -40,
-					x: 40,
+					x: 0,
 					filter: 'blur(8px)',
 					scale: 2,
 					position: 'absolute',
+					transition: {
+						duration: 0.5
+					}
 				}}
 				className={cn(
 					'z-10 inline-block relative text-left text-neutral-900 dark:text-neutral-100 px-2',

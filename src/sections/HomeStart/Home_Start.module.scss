@@ -123,6 +123,10 @@
 		flex-direction: column;
 		font-weight: 700;
 
+		&::before {
+			display: none;
+		}
+
 		.line1 {
 			color: white;
 		}
@@ -152,6 +156,8 @@
 
 @media (width>=430px) {
 	.section {
+		padding-bottom: 20em;
+
 		.lowerBox {
 			padding-top: 22em;
 
@@ -185,6 +191,8 @@
 
 @media (width>=768px) {
 	.section {
+		padding-bottom: 10em;
+
 		.lowerBox {
 			padding-bottom: 12em;
 
@@ -212,7 +220,6 @@
 @media (width>=992px) {
 	.section {
 		padding-top: 7em;
-		padding-bottom: 10em;
 
 		.upperBox {
 			.auroraBg {

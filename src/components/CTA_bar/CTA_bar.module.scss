@@ -1,0 +1,73 @@
+@use '../../sass/common' as *;
+
+.cta {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 3em;
+	width: 100%;
+	padding: 2em;
+	background: url('/img/cta_bg.jpg');
+	background-position: center;
+	background-size: cover;
+	border-radius: 15px;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+
+	&::before {
+		content: '';
+		position: absolute;
+		height: 100%;
+		width: 100%;
+		top: 0;
+		left: 0;
+		background-color: rgba(0, 0, 0, 0.7);
+	}
+
+	.heading {
+		@include sectionHeading;
+        color: $accent;
+
+		span {
+			color: $white;
+		}
+
+		&::before {
+			display: none;
+		}
+	}
+
+	.button {
+		@include button;
+		@include accent-gradient;
+		width: fit-content;
+	}
+}
+
+@media (width>=576px) {
+	.cta {
+		padding: 3.5em 2em;
+		gap: 4em;
+	}
+}
+
+@media (width>=992px) {
+	.cta {
+		flex-direction: row;
+		justify-content: space-between;
+		padding: 5em 4em;
+
+		.heading {
+			display: flex;
+			flex-direction: column;
+		}
+	}
+}
+
+@media (width>=1400px) {
+	.cta {
+		padding: 6em 8em;
+	}
+}

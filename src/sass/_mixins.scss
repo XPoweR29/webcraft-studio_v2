@@ -11,7 +11,23 @@
 }
 
 @mixin sectionHeading {
+	position: relative;
 	font-size: 1.65em;
+	font-weight: 700;
+
+	span {
+		color: $semi-dark;
+	}
+
+	&::before {
+		content: '';
+		position: absolute;
+		bottom: -0.1em;
+		left: 0;
+		height: 2px;
+		width: 20%;
+		background-color: $accent;
+	}
 
 	@media (width>=768px) {
 		font-size: 1.8em;
@@ -41,6 +57,12 @@
 	&:hover {
 		scale: 0.97;
 	}
+}
+
+@mixin accent-gradient {
+	background: $accent-gradient;
+	background-color: $accent;
+	color: $dark;
 }
 
 @mixin wrapper {

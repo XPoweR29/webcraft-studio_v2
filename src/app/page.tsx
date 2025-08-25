@@ -1,4 +1,4 @@
-import { HomeStart } from '@/sections/HomeStart/Home_Start';
+import { Home_Start } from '@/sections/HomeStart/Home_Start';
 import { HomeAbout } from '@/sections/HomeAbout/HomeAbout';
 import { siteConfig } from '@/config/site.config';
 
@@ -49,7 +49,7 @@ export default function Home() {
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
 			/>
 
-			<HomeStart />
+			<Home_Start />
 			<HomeAbout />
 		</>
 	);

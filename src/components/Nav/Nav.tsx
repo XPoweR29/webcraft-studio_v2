@@ -19,14 +19,16 @@ export const Nav = () => {
 						<li key={link.id} className={styles.menuItem}>
 							<Link
 								href={link.href}
-								className={`${styles.link} ${link.id === 'contact' ? styles.button : ''}`}
+								className={`${styles.link} ${
+									link.id === 'contact' ? styles.button : ''
+								}`}
 								onClick={link.id === 'home' ? handleScrollTop : undefined}
-								onMouseEnter={link.id==='offer'? openMenu : undefined}
-								onMouseLeave={link.id==='offer'?closeMenu:undefined}>
-								{link.label}
+								onMouseEnter={link.id === 'offer' ? openMenu : undefined}
+								onMouseLeave={link.id === 'offer' ? closeMenu : undefined}>
+								<span>{link.label}</span>
 							</Link>
 
-							{link.label==="Oferta"&&<MegaMenu/>}
+							{link.label === 'Oferta' && <MegaMenu />}
 						</li>
 					))}
 			</ul>

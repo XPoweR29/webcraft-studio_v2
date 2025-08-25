@@ -1,9 +1,12 @@
+'use client';
+
 import React from 'react';
 import styles from './Home_Start.module.scss';
 import { Wrapper } from '@/components/Wrapper/Wrapper';
 import { WordFlipper } from '@/components/WordFlipper/WordFlipper';
 import { AuroraBackground } from '@/components/AuroraBg/AuroraBg';
 import { Icon } from '@iconify/react';
+import { motion, Variants } from 'framer-motion';
 import Image from 'next/image';
 
 import check_icon from '../../assets/icons/citcle_check_icon.svg';
@@ -12,7 +15,37 @@ import { linkHref } from '@/utils/linkHref.helper';
 import { OfferCard } from '@/components/OfferCard/OfferCard';
 import { offerCards } from '@/assets/data/offerCards';
 
-export const HomeStart = async () => {
+export const listVariants: Variants = {
+	hidden: {},
+	visible: {
+		transition: {
+			staggerChildren: 0.5,
+		},
+	},
+};
+
+export const itemVariants: Variants = {
+	hidden: {
+		x: -500,
+		scaleX: 2.5,
+		scaleY: 0.2,
+		opacity: 0,
+		filter: 'blur(20px)' as any,
+	},
+	visible: {
+		x: 0,
+		scaleX: 1,
+		scaleY: 1,
+		opacity: 1,
+		filter: 'blur(0)' as any,
+		transition: {
+			duration: 2,
+			ease: [0.25, 0.1, 0.25, 1],
+		},
+	},
+};
+
+export const Home_Start = () => {
 	return (
 		<section className={styles.section}>
 			<Wrapper className={styles.wrapper}>
@@ -40,8 +73,15 @@ export const HomeStart = async () => {
 								efektywnością oraz są widoczne tam, gdzie szukają Twoi klienci.
 							</p>
 
-							<ul className={styles.features}>
-								<li className={styles.featureItem}>
+							<motion.ul
+								className={styles.features}
+								variants={listVariants}
+								initial='hidden'
+								whileInView={'visible'}
+								viewport={{ once: true, amount: 0.3 }}>
+								<motion.li
+									className={styles.featureItem}
+									variants={itemVariants}>
 									<Image
 										src={check_icon}
 										className={styles.icon}
@@ -50,8 +90,10 @@ export const HomeStart = async () => {
 										aria-hidden
 									/>
 									<span>Indywidualny projekt</span>
-								</li>
-								<li className={styles.featureItem}>
+								</motion.li>
+								<motion.li
+									className={styles.featureItem}
+									variants={itemVariants}>
 									<Image
 										src={check_icon}
 										className={styles.icon}
@@ -60,8 +102,10 @@ export const HomeStart = async () => {
 										aria-hidden
 									/>
 									<span>Widoczność w Google</span>
-								</li>
-								<li className={styles.featureItem}>
+								</motion.li>
+								<motion.li
+									className={styles.featureItem}
+									variants={itemVariants}>
 									<Image
 										src={check_icon}
 										className={styles.icon}
@@ -70,8 +114,8 @@ export const HomeStart = async () => {
 										aria-hidden
 									/>
 									<span>Konkurencyjna oferta</span>
-								</li>
-							</ul>
+								</motion.li>
+							</motion.ul>
 
 							<div className={styles.buttonContainer}>
 								<Link
@@ -103,22 +147,31 @@ export const HomeStart = async () => {
 							priority
 							draggable={false}
 						/>
-						<Image
-							className={styles.mainImg}
-							src={'/img/websites.webp'}
-							alt='Projektowanie stron internetowych'
-							width={750}
-							height={650}
-							sizes='
+
+						<motion.div
+							className={styles.mainImgWrapper}
+							initial={{opacity: 0, x:100}}
+							whileInView={{opacity:1, x:0}}
+							transition={{duration: 1, ease: 'easeOut', delay: 0.5}}
+							viewport={{once: true, amount: 0.3}}
+						>
+							<Image
+								className={styles.mainImg}
+								src={'/img/websites.webp'}
+								alt='Projektowanie stron internetowych'
+								width={750}
+								height={650}
+								sizes='
 								(min-width: 576px) 540px, 
 								(min-width: 430px) 400px,
 								(min-width: 768px) 500px,
 								(min-width: 992px) 650px,
 								(min-width: 1200px) 700px,
 								300px'
-							priority
-							draggable={false}
-						/>
+								priority
+								draggable={false}
+							/>
+						</motion.div>
 						<h2 className={styles.heading}>
 							<span className={styles.line1}>Przenieś swoją markę</span>
 							<span className={styles.line2}>Na wyższy poziom</span>
@@ -128,12 +181,12 @@ export const HomeStart = async () => {
 							<h2 id='services' className='sr-only'>
 								Moje usługi
 							</h2>
-
 							<p className={styles.lowerText}>
 								W WebCraftSTUDIO tworzę rozwiązania dopasowane do Twojej branży
 								i celów – od prostych stron firmowych po kompleksowe wdrożenia z
 								SEO i wizytówką Google. Zobacz, co mogę dla Ciebie zrobić.
 							</p>
+
 							<ul className={styles.offerContainer}>
 								{offerCards.map((card, i) => (
 									<OfferCard

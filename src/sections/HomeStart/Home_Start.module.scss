@@ -2,6 +2,7 @@
 
 .section {
 	padding: 8em 0;
+	padding-bottom: 42em;
 	overflow: clip;
 
 	.upperBox {
@@ -60,6 +61,7 @@
 		display: flex;
 		gap: 0.5em;
 		font-weight: 600;
+		will-change: opacity, transform, filter;
 		z-index: 1;
 
 		.icon {
@@ -105,12 +107,14 @@
 		top: 9em;
 		left: 1em;
 		width: 100px;
+		animation: rocket-fly 0.5s ease-in-out infinite;
 	}
 
-	.mainImg {
+	.mainImgWrapper {
 		position: absolute;
 		top: -8em;
 		right: -1em;
+		will-change: opacity, transform;
 	}
 
 	.heading {
@@ -246,9 +250,12 @@
 			padding-left: 3em;
 			padding-right: 3em;
 
-			.mainImg {
+			.mainImgWrapper {
 				top: -29em;
 				right: -4em;
+			}
+
+			.mainImg {
 				width: 650px;
 			}
 
@@ -269,8 +276,11 @@
 @media (width>=1200px) {
 	.section {
 		.lowerBox {
-			.mainImg {
+			.mainImgWrapper {
 				top: -32em;
+			}
+
+			.mainImg {
 				width: 700px;
 			}
 
@@ -289,9 +299,12 @@
 @media (width>=1400px) {
 	.section {
 		.lowerBox {
-			.mainImg {
+			.mainImgWrapper {
 				top: -35em;
 				right: -2em;
+			}
+
+			.mainImg {
 				width: 750px;
 			}
 

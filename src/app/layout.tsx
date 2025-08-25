@@ -39,7 +39,3 @@ export default function RootLayout({
 		</html>
 	);
 }
-
-//IMPROVE: zrób jeden, zgrupowany provider pod nazwą appProvider - wtefdy layou będzie czytelniejszy i nie będzie niepotrzebnych zagnieżdzeń,
-
-// FIXME: sporządzić checklistę dla komplentego stowrzenia nowej strony z tego startera. Tak żeby nie zpomnieć o niczym i wszystko poprawnie skonfigurować

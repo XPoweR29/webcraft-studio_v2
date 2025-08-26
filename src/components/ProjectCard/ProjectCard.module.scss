@@ -1,0 +1,57 @@
+@use '../../sass/common' as *;
+
+.projectCard {
+	display: flex;
+	flex-direction: column;
+	height: 450px;
+	border-radius: 10px;
+	border: 1px solid rgba(10, 195, 212, 0.5);
+	box-shadow: 0px 0px 10px 5px rgba(0, 0, 0, 0.3);
+	overflow: hidden;
+
+	.thumb {
+		flex-basis: 40%;
+		overflow: hidden;
+
+		img {
+			height: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.body {
+		display: flex;
+		flex-direction: column;
+		flex-grow: 1;
+		padding: 2em 1em;
+		overflow: hidden;
+	}
+
+	.title {
+		font-size: 1.1em;
+		font-weight: 600;
+	}
+
+	.excerpt {
+		margin-top: 1em;
+		font-size: 0.9em;
+	}
+
+	.button {
+		@include button;
+		margin-top: auto;
+		width: fit-content;
+		font-size: 0.9em;
+		font-weight: 500;
+
+		.icon {
+			font-size: 1.6em;
+		}
+	}
+}
+
+@media(width>=400px) {
+	.projectCard {
+		height: 500px;
+	}
+}

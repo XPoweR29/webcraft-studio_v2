@@ -1,0 +1,51 @@
+@use '../../sass/common' as *;
+
+.section {
+	padding: 3em 0;
+
+	.heading {
+		@include sectionHeading;
+	}
+
+	.text {
+		margin-top: 2em;
+	}
+
+	.recentProjects {
+		width: 95%;
+		margin-top: 3em;
+	}
+}
+
+@media (width>=400px) {
+	.section {
+		.recentProjects {
+			width: 350px;
+		}
+	}
+}
+
+@media (width>=768px) {
+	.section {
+		.recentProjects {
+			width: auto;
+		}
+	}
+}
+
+@media (width>=992px) {
+	.section {
+		.recentProjects {
+			margin-top: 4em;
+			width: 800px;
+		}
+	}
+}
+
+@media (width>=1200px) {
+	.section {
+		.recentProjects {
+			width: auto;
+		}
+	}
+}

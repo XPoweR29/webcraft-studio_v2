@@ -1,6 +1,7 @@
 import { Home_Start } from '@/sections/HomeStart/Home_Start';
 import { Home_About } from '@/sections/Home_About/Home_About';
 import { siteConfig } from '@/config/site.config';
+import { Home_Projects } from '@/sections/Home_Projects/Home_Projects';
 
 const schema = {
 	'@context': 'https://schema.org',
@@ -51,6 +52,7 @@ export default function Home() {
 
 			<Home_Start />
 			<Home_About />
+			<Home_Projects/>
 		</>
 	);
 }

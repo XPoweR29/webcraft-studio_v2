@@ -2,6 +2,8 @@ import { Home_Start } from '@/sections/HomeStart/Home_Start';
 import { Home_About } from '@/sections/Home_About/Home_About';
 import { siteConfig } from '@/config/site.config';
 import { Home_Projects } from '@/sections/Home_Projects/Home_Projects';
+import { Process_Section } from '@/components/Process_Section/Process_Section';
+import { linkHref } from '@/utils/linkHref.helper';
 
 const schema = {
 	'@context': 'https://schema.org',
@@ -41,7 +43,6 @@ const schema = {
 	sameAs: Object.values(siteConfig.externalLinks).filter(Boolean),
 };
 
-
 export default function Home() {
 	return (
 		<>
@@ -52,7 +53,34 @@ export default function Home() {
 
 			<Home_Start />
 			<Home_About />
-			<Home_Projects/>
+			<Home_Projects />
+			<Process_Section
+				heading='Jak wygląda współpraca?'
+				bgImage='/img/handshake_sketch.svg'
+				btnLabel='skontaktuj się'
+				redirectTo={linkHref('contact')}
+				steps={[
+					{
+						title: 'Rozmowa i analiza',
+						text: 'Zaczynamy od konkretnej rozmowy – poznaję Twój biznes, cele i potrzeby, by zaproponować najlepsze rozwiązanie.',
+					},
+					{
+						title: 'Oferta i plan działania',
+						text: 'Na tej podstawie przygotowuję dopasowaną ofertę i przedstawiam Ci harmonogram prac.',
+					},
+					{
+						title: 'Realizacja krok po kroku',
+						text: 'Na bieżąco informuję Cię o postępach i przekazuję podglądy – masz pełen wgląd i wpływ na rozwój projektu.',
+					},
+					{
+						title: 'Finalizacja i wspacie',
+						text: 'Po zakończeniu wdrożenia możesz liczyć na moja pomoc techniczną i spokojną głowę.',
+					},
+				]}>
+				Prosto, sprawnie, bez niedomówień i korporacyjnego nadęcia. Od
+				pierwszego kontaktu wiesz, na czym stoisz, a każdy etap jest przejrzysty
+				i dopasowany do Twoich potrzeb.
+			</Process_Section>
 		</>
 	);
 }

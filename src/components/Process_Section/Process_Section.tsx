@@ -82,7 +82,7 @@ export const Process_Section = ({
 							variants={stepVariants}
 							initial='hidden'
 							whileInView={'visible'}
-							viewport={{ once: false, amount: 0.35 }}>
+							viewport={{ once: true, amount: 0.35 }}>
 							<h3>
 								{' '}
 								<span>{`0${i + 1}.`}</span>

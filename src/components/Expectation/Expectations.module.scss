@@ -1,0 +1,118 @@
+@use '../../sass/common' as *;
+
+.section {
+	padding: 5em 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: $white;
+
+	.wrapper {
+		position: relative;
+		margin-left: 15px;
+		margin-right: 15px;
+		padding: 3em 1em;
+		background-image: url('/img/laptop_desk.webp');
+		background-size: cover;
+		background-position: center;
+		background-attachment: fixed;
+		border-radius: 25px;
+		overflow: hidden;
+		z-index: 1;
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(0, 0, 0, 0.7);
+			z-index: -1;
+		}
+	}
+
+	.heading {
+		@include sectionHeading;
+		text-align: center;
+		width: auto;
+
+		&::before {
+			left: 50%;
+			transform: translateX(-50%);
+		}
+	}
+
+	.text {
+		margin-top: 2em;
+		font-weight: 300;
+		text-align: center;
+	}
+
+	.list {
+		margin-top: 3em;
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: center;
+		align-items: center;
+		gap: 4em;
+	}
+
+	li {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		max-width: 100px;
+		gap: 0.5em;
+		text-align: center;
+
+		.icon {
+			width: 70px;
+		}
+	}
+}
+
+@media (width>=500px) {
+	.section {
+		.list {
+			margin-top: 4em;
+		}
+	}
+}
+
+@media (width>=768px) {
+	.section {
+		.wrapper {
+			padding: 3em;
+		}
+
+		.list {
+			display: grid;
+			grid-template-columns: 1fr 1fr 1fr;
+			justify-items: center;
+			align-items: center;
+			max-width: 630px;
+            justify-self: center;
+            gap: 5em 7em;
+		}
+	}
+}
+
+@media(width>=992px) {
+    .section {
+        .list {
+            margin-top: 5em;
+            gap: 5em 10em;
+        }
+    }
+}
+
+@media(width>=1200px) {
+    .section {
+        .text  {
+            max-width: 800px;
+            justify-self: center;
+        }
+    }
+}

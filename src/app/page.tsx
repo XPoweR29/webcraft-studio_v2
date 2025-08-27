@@ -4,6 +4,7 @@ import { siteConfig } from '@/config/site.config';
 import { Home_Projects } from '@/sections/Home_Projects/Home_Projects';
 import { Process_Section } from '@/components/Process_Section/Process_Section';
 import { linkHref } from '@/utils/linkHref.helper';
+import { Expectation } from '@/components/Expectation/Expectation';
 
 const schema = {
 	'@context': 'https://schema.org',
@@ -81,6 +82,7 @@ export default function Home() {
 				pierwszego kontaktu wiesz, na czym stoisz, a każdy etap jest przejrzysty
 				i dopasowany do Twoich potrzeb.
 			</Process_Section>
+			<Expectation/>
 		</>
 	);
 }

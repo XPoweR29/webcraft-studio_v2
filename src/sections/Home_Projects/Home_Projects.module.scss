@@ -2,6 +2,7 @@
 
 .section {
 	padding: 3em 0;
+	padding-bottom: 5em;
 
 	.heading {
 		@include sectionHeading;
@@ -27,6 +28,7 @@
 
 @media (width>=768px) {
 	.section {
+		padding-bottom: 7em;
 		.recentProjects {
 			width: auto;
 		}

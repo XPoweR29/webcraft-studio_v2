@@ -1,10 +1,11 @@
-import { Home_Start } from '@/sections/HomeStart/Home_Start';
+import { Home_Start } from '@/sections/Home_Start/Home_Start';
 import { Home_About } from '@/sections/Home_About/Home_About';
 import { siteConfig } from '@/config/site.config';
 import { Home_Projects } from '@/sections/Home_Projects/Home_Projects';
 import { Process_Section } from '@/components/Process_Section/Process_Section';
 import { linkHref } from '@/utils/linkHref.helper';
 import { Expectation } from '@/components/Expectation/Expectation';
+import { Review_Section } from '@/sections/Review_Sectoin/Review_Section';
 
 const schema = {
 	'@context': 'https://schema.org',
@@ -82,7 +83,14 @@ export default function Home() {
 				pierwszego kontaktu wiesz, na czym stoisz, a każdy etap jest przejrzysty
 				i dopasowany do Twoich potrzeb.
 			</Process_Section>
-			<Expectation/>
+			<Expectation />
+			<Review_Section heading='Opinie klientów'>
+				Opinie, które otrzymuję, to nie tylko podsumowanie współpracy. To
+				konkretna wskazówka, co mogę robić jeszcze lepiej, by skuteczniej
+				wspierać rozwój Twojego biznesu. Dzięki temu każda kolejna realizacja
+				staje się bardziej przemyślana i dopasowana do realnych potrzeb
+				klientów.
+			</Review_Section>
 		</>
 	);
 }

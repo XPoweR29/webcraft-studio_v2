@@ -57,7 +57,7 @@ export const Expectation = () => {
 					variants={listVariants}
 					initial={'hidden'}
 					whileInView={'visible'}
-					viewport={{ once: false, amount: 0.3 }}>
+					viewport={{ once: true, amount: 0.3 }}>
 					{ITEMS.map(({ icon, title }) => (
 						<motion.li key={title} variants={itemVariants}>
 							<Image src={icon} alt='' aria-hidden={true} draggable={false} />

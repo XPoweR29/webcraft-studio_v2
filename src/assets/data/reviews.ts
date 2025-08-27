@@ -3,34 +3,35 @@ type Review = {
 	comment: string;
 };
 
-export const reviews: Review[] = [
+export const REVIEWS: Review[] = [
 	{
-		author: 'John D.',
+		author: 'Daniel Chrobak',
 		comment:
-			'This starter is awesome! Clean design and very easy to customize.',
+			'Gorąco polecam WebCraft STUDIO. Pełen profesjonalizm, świetne pomysły, doskonałe strony, wsparcie i pomoc na każdym etapie. Widać zaangażowanie i pasję.',
 	},
 	{
-		author: 'Emily R.',
+		author: 'Katarzyna Nowak',
 		comment:
-			'Everything worked out of the box. Perfect for my portfolio project!',
+			'Współpraca z WebCraft STUDIO to czysta przyjemność. Wszystko terminowo, a efekt końcowy przerósł moje oczekiwania. Strona działa szybko i wygląda świetnie na każdym urządzeniu.',
 	},
 	{
-		author: 'Liam S.',
-		comment: 'I love how minimal and developer-friendly this setup is.',
+		author: 'Michał Wójcik',
+		comment:
+			'Świetny kontakt i indywidualne podejście. Paweł doradził mi najlepsze rozwiązania i zadbał o SEO, dzięki czemu moja firma jest lepiej widoczna w sieci. Polecam z całego serca!',
 	},
 	{
-		author: 'Sophia K.',
+		author: 'Agnieszka Zielińska',
 		comment:
-			'Simple, lightweight, and just what I needed to kick off my new website.',
+			'Profesjonalizm w każdym calu. Projekt strony został przygotowany od podstaw i dopracowany w najdrobniejszych szczegółach. Dodatkowy plus za cierpliwość i wsparcie.',
 	},
 	{
-		author: 'Michael B.',
+		author: 'Tomasz Kowalczyk',
 		comment:
-			'The structure is clear and the code is easy to follow. Great job!',
+			'WebCraft STUDIO wykonało dla mnie stronę, która nie tylko świetnie wygląda, ale też sprzedaje. Jestem bardzo zadowolony z efektu i na pewno wrócę z kolejnymi projektami.',
 	},
 	{
-		author: 'Ava L.',
+		author: 'Joanna Mazur',
 		comment:
-			'A solid foundation for any landing page. I’ll definitely reuse it!',
+			'Bardzo rzetelne podejście do klienta. Szybki czas realizacji, dopasowanie do moich potrzeb i doskonała opieka po oddaniu strony. Takiej współpracy można tylko życzyć każdemu przedsiębiorcy.',
 	},
 ];

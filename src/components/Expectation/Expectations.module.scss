@@ -83,6 +83,8 @@
 
 @media (width>=768px) {
 	.section {
+		padding-top: 7em;
+		
 		.wrapper {
 			padding: 3em;
 		}
@@ -93,26 +95,26 @@
 			justify-items: center;
 			align-items: center;
 			max-width: 630px;
-            justify-self: center;
-            gap: 5em 7em;
+			justify-self: center;
+			gap: 5em 7em;
 		}
 	}
 }
 
-@media(width>=992px) {
-    .section {
-        .list {
-            margin-top: 5em;
-            gap: 5em 10em;
-        }
-    }
+@media (width>=992px) {
+	.section {
+		.list {
+			margin-top: 5em;
+			gap: 5em 10em;
+		}
+	}
 }
 
-@media(width>=1200px) {
-    .section {
-        .text  {
-            max-width: 800px;
-            justify-self: center;
-        }
-    }
+@media (width>=1200px) {
+	.section {
+		.text {
+			max-width: 800px;
+			justify-self: center;
+		}
+	}
 }

@@ -1,33 +1,62 @@
 @use '../../sass/common' as *;
 
 .reviewCard {
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	align-items: center;
+	align-items: flex-start;
 	margin: 2em 0;
-	padding: 1em;
-	height: 200px;
-	border: 1px solid lightgray;
-	border-radius: 10px;
+	padding: 2em;
+	height: 300px;
+	border: 1px solid $semi-dark;
+	border-radius: 20px;
 
-	.comment {
-		margin: auto 0;
-		border-left: 3px solid $black;
-		padding-left: 1em;
-		font-weight: 200;
-		color: $gray;
+	.nick {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
 	}
 
 	.author {
-		align-self: end;
-		margin-top: auto;
 		font-weight: bold;
 		letter-spacing: 1.5px;
+		width: 100%;
 	}
-}
 
-@media (width >= 992px) {
-	.reviewCard {
-		height: 250px;
+	.starsImg {
+		align-self: flex-start;
 	}
-}
+
+	.comment {
+		margin: auto 0;
+		margin-top: 2em;
+		border-left: 3px solid $dark;
+		padding-left: 1em;
+		font-weight: 300;
+		color: $dark;
+	}
+
+	.quoteIcon {
+		position: absolute;
+		top: 1em;
+		right: 1em;
+
+		&--bottom {
+			top: auto;
+			right: auto;
+			left: 1em;
+			bottom: 1em;
+		}
+	}
+
+	&--odd {
+		color: $white;
+		background: $dark-gradient;
+
+		.comment {
+			color: $white;
+			border-color: $accent;
+		}
+	}
+};

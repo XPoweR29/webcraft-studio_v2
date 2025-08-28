@@ -71,11 +71,12 @@
 				height: 100%;
 				top: 0;
 				left: 0;
-				background: $accent-gradient;
+				// background: $accent-gradient;
+				@include accent-gradient;
 				border-radius: 7px;
 				pointer-events: none;
 				opacity: 1;
-				transition: 0.2s;
+				transition: 0.3s;
 			}
 
 			span {
@@ -89,7 +90,7 @@
 				scale: 0.97;
 
 				&::after {
-					opacity: 0;
+					@include dark-gradient;
 				}
 			}
 

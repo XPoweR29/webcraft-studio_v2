@@ -10,7 +10,32 @@
 	}
 }
 
-@mixin sectionHeading {
+// @mixin sectionHeading {
+// 	position: relative;
+// 	width: fit-content;
+// 	font-size: 1.65em;
+// 	font-weight: 700;
+
+// 	span {
+// 		color: $semi-dark;
+// 	}
+
+// 	&::before {
+// 		content: '';
+// 		position: absolute;
+// 		bottom: -0.1em;
+// 		left: 0;
+// 		height: 2px;
+// 		width: 20%;
+// 		background-color: $accent;
+// 	}
+
+// 	@media (width>=768px) {
+// 		font-size: 1.8em;
+// 	}
+// }
+
+@mixin sectionHeading($underline-pos: left, $underline-width: 20%) {
 	position: relative;
 	width: fit-content;
 	font-size: 1.65em;
@@ -24,13 +49,29 @@
 		content: '';
 		position: absolute;
 		bottom: -0.1em;
-		left: 0;
 		height: 2px;
-		width: 20%;
+		width: $underline-width;
 		background-color: $accent;
+
+		@if $underline-pos == left {
+			left: 0;
+			right: auto;
+			transform: none;
+		} @else if $underline-pos == center {
+			left: 50%;
+			right: auto;
+			transform: translateX(-50%);
+		} @else if $underline-pos == right {
+			right: 0;
+			left: auto;
+			transform: none;
+		} @else {
+			@warn 'sectionHeading: unknown $underline-pos "#{$underline-pos}". Using left.';
+			left: 0;
+		}
 	}
 
-	@media (width>=768px) {
+	@media (width >= 768px) {
 		font-size: 1.8em;
 	}
 }
@@ -64,6 +105,12 @@
 	background: $accent-gradient;
 	background-color: $accent;
 	color: $dark;
+}
+
+@mixin dark-gradient {
+	background: $dark-gradient;
+	background-color: $dark;
+	color: $white;
 }
 
 @mixin wrapper {

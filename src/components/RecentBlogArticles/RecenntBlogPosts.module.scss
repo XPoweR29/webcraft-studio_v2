@@ -1,0 +1,12 @@
+@use '../../sass/common' as *;
+
+.swiper {
+	padding: 1em;
+	max-width: 430px;
+}
+
+@media (width>=992px) {
+	.swiper {
+		max-width: fit-content;
+	}
+}

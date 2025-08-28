@@ -6,6 +6,7 @@ import { Process_Section } from '@/components/Process_Section/Process_Section';
 import { linkHref } from '@/utils/linkHref.helper';
 import { Expectation } from '@/components/Expectation/Expectation';
 import { Review_Section } from '@/sections/Review_Sectoin/Review_Section';
+import { FAQ_Section } from '@/sections/FAQ_Section/FAQ_Section';
 
 const schema = {
 	'@context': 'https://schema.org',
@@ -91,6 +92,50 @@ export default function Home() {
 				staje się bardziej przemyślana i dopasowana do realnych potrzeb
 				klientów.
 			</Review_Section>
+			<FAQ_Section
+				items={[
+					{
+						id: '1',
+						title:
+							'Ile kosztuje profesjonalna strona internetowa dla małej firmy?',
+						content:
+							'Koszt stworzenia profesjonalnej strony internetowej dla małej firmy zależy od zakresu projektu. W WebCraftSTUDIO oferuję gotowe pakiety z przejrzystą wyceną. Każda strona jest tworzona od zera, bez szablonów, z naciskiem na wygląd, szybkość i lokalne SEO.',
+					},
+					{
+						id: '2',
+						title:
+							'Czy zajmujesz się pozycjonowaniem strony internetowej w Google?',
+						content:
+							'Tak, pozycjonowanie strony internetowej w Google to jeden z kluczowych elementów mojej oferty. Optymalizuję strukturę strony, nagłówki, treści i linkowanie wewnętrzne, aby zwiększyć widoczność w organicznych wynikach wyszukiwania – szczególnie lokalnie.',
+					},
+					{
+						id: '3',
+						title:
+							'Czy wykonujesz responsywne strony internetowe z optymalizacją SEO?',
+						content:
+							'Każda strona, którą projektuję, jest w pełni responsywna i przygotowana pod optymalizację SEO. Dzięki temu dobrze działa na telefonie i jednocześnie jest gotowa do pozycjonowania – zarówno lokalnego, jak i ogólnego.',
+					},
+					{
+						id: '4',
+						title: 'Jak działa pozycjonowanie wizytówki Google Moja Firma?',
+						content:
+							'Pozycjonowanie wizytówki Google Moja Firma polega na jej optymalizacji pod kątem lokalnych wyników – map, opinii i zapytań „w pobliżu”. Pomagam zarówno w założeniu wizytówki, jak i jej regularnej aktualizacji, co zwiększa widoczność Twojej firmy w Google.',
+					},
+					{
+						id: '5',
+						title: 'Czy mogę zlecić audyt SEO istniejącej strony internetowej?',
+						content:
+							'Tak – wykonuję audyty SEO dla istniejących stron internetowych. Sprawdzam strukturę, nagłówki, szybkość i obecność fraz kluczowych. Na tej podstawie proponuję konkretne działania, które poprawią widoczność strony w Google.',
+					},
+					{
+						id: '6',
+						title:
+							'Czy tworzysz strony internetowe z indywidualnym projektem graficznym?',
+						content:
+							'W WebCraftSTUDIO każda strona internetowa powstaje na podstawie indywidualnego projektu graficznego. Nie korzystam z gotowych motywów – dzięki temu Twoja strona wyróżnia się i jest lepiej dopasowana do potrzeb biznesu i pozycjonowania.',
+					},
+				]}
+			/>
 		</>
 	);
 }

@@ -1,6 +1,8 @@
+'use client';
+
 import React, { useState } from 'react';
 import styles from './Accordion.module.scss';
-import { Icon } from '@iconify/react/dist/iconify.js';
+import { Icon } from '@iconify/react';
 
 export type AccordionItem = {
 	id: string;
@@ -11,9 +13,14 @@ export type AccordionItem = {
 interface Props {
 	items: AccordionItem[];
 	allowMultiopen?: boolean;
+	className?: string;
 }
 
-export const Accordion = ({ items, allowMultiopen }: Props) => {
+export const Accordion = ({
+	items,
+	allowMultiopen = false,
+	className,
+}: Props) => {
 	const [openItems, setOpenItems] = useState<string[]>([]);
 
 	const toggleItem = (id: string) => {
@@ -27,19 +34,36 @@ export const Accordion = ({ items, allowMultiopen }: Props) => {
 	};
 
 	return (
-		<div className={styles.accordion}>
-			{items.map(({ id, title, content }) => (
-				<div key={id} className={styles.item}>
-					<button
-						className={`${styles.header} ${openItems.includes(id) ? styles.active : ''}`}
-						onClick={() => toggleItem(id)}>
-						{title}
-						<Icon className={styles.icon} icon='ri:arrow-down-s-line' />
-					</button>
+		<div className={`${styles.accordion} ${className || ''}`}>
+			{items.map(({ id, title, content }) => {
+				const isOpen = openItems.includes(id);
+				return (
+					<div key={id} className={styles.item}>
+						<button
+							className={`${styles.question} ${
+								isOpen ? styles['question--active'] : ''
+							}`}
+							onClick={() => toggleItem(id)}
+							aria-expanded={isOpen}
+							aria-controls={`faq-${id}`}>
+							<span>{title}</span>
+							<Icon
+								className={`${styles.icon} ${
+									isOpen ? styles['icon--isOpen'] : ''
+								}`}
+								icon='bxs:down-arrow'
+							/>
+						</button>
 
-                    {openItems.includes(id) && <div className={styles.content}>{content}</div>}
-				</div>
-			))}
+						<div
+							className={`${styles.content} ${
+								isOpen ? styles['content--open'] : ''
+							}`}>
+							<p>{content}</p>
+						</div>
+					</div>
+				);
+			})}
 		</div>
 	);
 };

@@ -1,0 +1,143 @@
+@use '../../sass/common' as *;
+
+.section {
+	padding: 5em 0;
+	background: $dark-gradient;
+	color: $white;
+	overflow: hidden;
+
+	.wrapper {
+		position: relative;
+	}
+
+	.sketchImg {
+		position: absolute;
+		top: -3em;
+		right: 0;
+		width: 250px;
+		opacity: 0.2;
+	}
+
+	.heading {
+		@include sectionHeading;
+		font-size: 4em;
+		font-weight: 900;
+		letter-spacing: -0.16em;
+
+		&::before {
+			min-width: 70px;
+		}
+	}
+
+	.subheading {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		margin-top: 1em;
+		gap: 0.1em;
+		font-weight: 600;
+		font-size: 1.7em;
+		letter-spacing: 0.15em;
+	}
+
+	.accordion {
+		margin-top: 3em;
+	}
+
+	.cta_container {
+		margin-top: 4em;
+		padding: 2em;
+		border-radius: 0px 40px 0px 40px;
+		@include accent-gradient;
+	}
+
+	.cta_title {
+		@include sectionHeading;
+		width: 100%;
+		text-align: center;
+
+		&::before {
+			display: none;
+		}
+	}
+
+	.cta_text {
+		margin-top: 2em;
+		text-align: center;
+		font-weight: 500;
+	}
+
+	.cta_btn {
+		@include button;
+		width: fit-content;
+		margin-top: 3em;
+		justify-self: center;
+	}
+}
+
+@media (width>=450px) {
+	.section {
+		.sketchImg {
+			width: 300px;
+		}
+	}
+}
+
+@media (width>=768px) {
+	.section {
+		.sketchImg {
+			width: 300px;
+		}
+
+		.heading {
+			font-size: 4em;
+		}
+
+		.cta_container {
+			padding: 4em;
+		}
+	}
+}
+
+@media (width>=992px) {
+	.section {
+		.wrapper {
+			display: flex;
+			gap: 5em;
+		}
+
+		.flexContainer {
+			z-index: 1;
+		}
+
+		.sketchImg {
+			top: auto;
+			right: auto;
+			bottom: 90px;
+			left: -150px;
+			width: 500px;
+			z-index: 0;
+		}
+	}
+}
+
+@media(width>=1200px) {
+	.section {
+		.wrapper {
+			gap: 10em;
+		}
+	}
+}
+
+@media(width>=1400px) {
+	.section {
+		.wrapper {
+			gap: 15em;
+		}
+
+		.sketchImg {
+			width: 550px;
+		}
+	}
+}

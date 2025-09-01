@@ -1,16 +1,25 @@
 @use '../../sass/common' as *;
 
 .footer {
+	position: relative;
 	display: flex;
 	flex-direction: column;
-	justify-content: start;
+	justify-content: flex-start;
 	align-items: center;
 	gap: 5em;
-	padding-top: 100px;
+	padding-top: 450px;
 	padding-bottom: 2em;
-	background-color: $black;
+	background-color: $footer-dark;
 	font-size: 0.9em;
-	color: rgba(255, 255, 255, 0.7);
+	color: rgba(white, 0.7);
+
+	.offerCTA {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		width: 90%;
+		transform: translate(-50%, -50%);
+	}
 
 	.wrapper {
 		display: flex;
@@ -20,90 +29,135 @@
 		gap: 5em;
 	}
 
-	.logo {
-		img {
-			width: 150px;
-		}
-	}
-
-	.col1,
-	.col2,
-	.col3 {
-		display: flex;
-		flex-direction: column;
-		gap: 1em;
-		text-align: center;
-	}
-
-	.col1 p {
-		max-width: 385px;
-	}
-
-	.col2 {
-		align-items: start;
-		gap: 2em;
-	}
-
-	a, .link {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		gap: 0.5em;
-		color: rgba(255, 255, 255, 0.7);
-		font-style: normal;
-		transition: color 0.2s;
-		background-color: transparent;
-
-		svg {
-			font-size: 1.3em;
-		}
-
-		&:hover {
-			color: white;
-		}
-	}
-
-	.copyright {
-		display: flex;
-		flex-direction: column;
-		margin-top: 2em;
-	}
-
-	.dev_sign {
+	.col {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		gap: 0.6em;
-		font-size: 0.8em;
-		opacity: 0.2;
 
-		img {
-			width: 70px;
+		ul {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+			gap: 1em;
+		}
+
+		.heading {
+			margin-bottom: 2em;
+			color: $white;
+			font-weight: 500;
+			text-transform: uppercase;
+		}
+
+		a {
+			color: rgba(white, 0.7);
+			transition: color 0.2s;
+
+			&:hover {
+				color: white;
+			}
+		}
+	}
+
+	.col1 {
+		gap: 4em;
+
+		.flexContainer {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
+		.logo {
+			img {
+				width: 150px;
+			}
+		}
+
+		.text {
+			margin-top: 1em;
+			width: 90%;
+			max-width: 450px;
+			align-self: center;
+			text-align: center;
+		}
+	}
+
+	.lowerBar {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		gap: 3em;
+
+		.cookieBtn {
+			width: 50px;
+		}
+
+		.copyright {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			a {
+				text-decoration: underline;
+				
+				&:hover {
+					color: white;
+				}
+			}
 		}
 	}
 }
 
-@media (width >= 992px) {
+@media (width>=400px) {
 	.footer {
-		gap: 7em;
+		padding-top: 500px;
+	}
+}
+
+@media (width>=768px) {
+	.footer {
+		padding-top: 350px;
+	}
+}
+
+@media (width>=992px) {
+	.footer {
+		gap: 5em;
 
 		.wrapper {
 			flex-direction: row;
-		}
-
-		.col1,
-		.col2,
-		.col3 {
-			width: 30%;
+			align-items: flex-start;
+			justify-content: space-between;
+			gap: 0;
 		}
 
 		.col1 {
-			gap: 2em;
+			width: 350px;
 		}
 
-		.col2 {
-			order: 3;
+		.lowerBar {
+			width: 100%;
+			flex-direction: row;
+
+			.copyright {
+				flex-direction: row;
+
+				a {
+					margin-left: 0.5em;
+				}
+			}
+
+			.cookieBtn {
+				position: absolute;
+				bottom: 1em;
+				right: 1em;
+			}
 		}
 	}
 }

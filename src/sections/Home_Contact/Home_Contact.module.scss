@@ -3,6 +3,7 @@
 .section {
 	position: relative;
 	padding: 5em 0;
+    padding-bottom: 450px;
 	overflow-x: hidden;
 	@include section-gradient;
 
@@ -43,6 +44,7 @@
 
 @media(width>=768px) {
     .section {
+        padding-bottom: 300px;
         .sketchImg {
             width: 350px;
             top: 8em;

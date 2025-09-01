@@ -18,7 +18,8 @@ export const siteConfig = {
 	},
 
 	externalLinks: {
-		facebook: 'https://www.facebook.com/',
+		facebook: 'https://www.facebook.com/webcraft-studio',
+		insta: 'https://www.instagram.com/@webcraft-studio',
 		googleMaps: 'https://maps.app.goo.gl/VJE1pLzG5yKktoLfA',
 		googleMyBussiness: 'https://g.co/kgs/RXFUxgw',
 		localoSite: 'https://pro-wnetrze-remonty-bielsko-zywiec.localo.site/',

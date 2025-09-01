@@ -6,6 +6,7 @@ import { Wrapper } from '@/components/Wrapper/Wrapper';
 import { ContactNap } from '@/components/ContactNap/ContactNap';
 import Image from 'next/image';
 import { useBreakpoints } from '@/hooks/useBreakpoint';
+import { ContactForm } from '@/components/ContactForm/ContactForm';
 
 export const Home_Contact = () => {
 	const { breakpoint } = useBreakpoints();

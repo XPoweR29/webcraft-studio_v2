@@ -59,13 +59,6 @@ export const ContactForm = ({ className }: { className?: string }) => {
 			id='formularz'
 			onSubmit={submitHandler}
 			className={`${styles.form} ${className}`}>
-			<h2 className={styles.heading}>Have some questions?</h2>
-
-			<p className={styles.text}>
-				We're at your service - fill out the form and we will answer all your
-				questions.
-			</p>
-
 			<div className={styles.formGroup}>
 				<label htmlFor='name' className={`${styles.label} ${styles.srOnly}`}>
 					Imię:
@@ -116,6 +109,41 @@ export const ContactForm = ({ className }: { className?: string }) => {
 							errors.email && styles['error--active']
 						}`}>
 						{errors.email?.message}
+					</p>
+				}
+			</div>
+
+			<div className={styles.formGroup}>
+				<label htmlFor='phone' className={`${styles.label} ${styles.srOnly}`}>
+					Nr. telefonu:
+				</label>
+				<input
+					id='phone'
+					type='tel'
+					inputMode='numeric'
+					autoComplete='tel'
+					className={styles.input}
+					placeholder='Telefon (opcjonalnie)'
+					{...register('phone', {
+						pattern: {
+							value: /^[0-9]*$/,
+							message: 'Podaj 9 cyfr (bez spacji i znaków)',
+						},
+						validate: (v) => {
+							if (!v) return true;
+							return (
+								/^\d{9}$/.test(v) ||
+								'Numer telefonu musi mieć dokłądnie 9 cyfr'
+							);
+						},
+					})}
+				/>
+				{
+					<p
+						className={`${styles.error} ${
+							errors.phone && styles['error--active']
+						}`}>
+						{errors.phone?.message}
 					</p>
 				}
 			</div>

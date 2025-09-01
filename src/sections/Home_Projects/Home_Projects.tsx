@@ -8,7 +8,7 @@ export const Home_Projects = () => {
 		<section className={styles.section} aria-labelledby='home_recent_project'>
 			<Wrapper>
 				<h2 className={styles.heading} id='home_recent_project'>
-					Zobacz moje ostatnie realizacje
+					Zobacz moje ostatnie <span>realizacje</span>
 				</h2>
 				<p className={styles.text}>
 					Każdy projekt tworzę samodzielnie. Bez schematów, bez korporacyjnego
@@ -18,7 +18,7 @@ export const Home_Projects = () => {
 					naprawdę działa – wizualnie i biznesowo.
 				</p>
 
-				<ProjectsSwiper className={styles.recentProjects}/>
+				<ProjectsSwiper className={styles.recentProjects} />
 			</Wrapper>
 		</section>
 	);

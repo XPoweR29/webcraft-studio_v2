@@ -8,6 +8,7 @@ import { Expectation } from '@/components/Expectation/Expectation';
 import { Review_Section } from '@/sections/Review_Sectoin/Review_Section';
 import { FAQ_Section } from '@/sections/FAQ_Section/FAQ_Section';
 import { Blog_Section } from '@/sections/Blog_Section/Blog_Section';
+import { Home_Contact } from '@/sections/Home_Contact/Home_Contact';
 
 const schema = {
 	'@context': 'https://schema.org',
@@ -138,6 +139,7 @@ export default function Home() {
 				]}
 			/>
 			<Blog_Section/>
+			<Home_Contact/>
 		</>
 	);
 }

@@ -2,28 +2,68 @@
 
 import React from 'react';
 import styles from './ContactNap.module.scss';
-import Image from 'next/image';
-import { Icon } from '@iconify/react';
 import { Wrapper } from '../Wrapper/Wrapper';
 import { ContactForm } from '../ContactForm/ContactForm';
 import { siteConfig } from '@/config/site.config';
+import Image from 'next/image';
+import fb_icn from '../../assets/icons/facebook_icon.svg';
+import phone_icn from '../../assets/icons/phone_icon.svg';
+import env_icn from '../../assets/icons/envelope_icon.svg';
+import { useBreakpoints } from '@/hooks/useBreakpoint';
+import { Variants, motion } from 'framer-motion';
 
 interface Props {
 	className?: string;
 }
+
+export const listVariants: Variants = {
+	hidden: {},
+	visible: {
+		transition: {
+			staggerChildren: 0.3,
+		},
+	},
+};
+
+export const itemVariants: Variants = {
+	hidden: {
+		x: -200,
+		opacity: 0,
+		filter: 'blur(20px)' as any,
+	},
+	visible: {
+		x: 0,
+		opacity: 1,
+		filter: 'blur(0)' as any,
+		transition: {
+			duration: 2,
+			ease: [0.25, 0.1, 0.25, 1],
+		},
+	},
+};
+
 export const ContactNap = ({ className }: Props) => {
+	const { breakpoint } = useBreakpoints();
+
 	return (
 		<section className={`${styles.section} ${className}`}>
 			<Wrapper className={styles.wrapper}>
 				<address>
-					<ul className={styles.napContainer}>
-						<li className={styles.napItem}>
+					< motion.ul className={styles.napContainer}
+					initial={'hidden'}
+					whileInView={'visible'}
+					variants={listVariants}
+					viewport={{once: true, amount: 0.2}}
+					>
+						<motion.li className={styles.napItem} variants={itemVariants}>
 							<a
 								href={`tel:${siteConfig.contact.phoneHref}`}
 								aria-label='Zadzwoń do nas'>
-								<Icon
+								<Image
+									src={phone_icn}
+									alt=''
+									draggable={false}
 									className={styles.icon}
-									icon='f7:phone-circle-fill'
 									aria-hidden={true}
 								/>
 
@@ -32,15 +72,17 @@ export const ContactNap = ({ className }: Props) => {
 									<p>Zadzwoń, a udzielimy ci niezbędnych informacji</p>
 								</div>
 							</a>
-						</li>
+						</motion.li>
 
-						<li className={styles.napItem}>
+						<motion.li className={styles.napItem} variants={itemVariants}>
 							<a
 								href={`mailto:${siteConfig.contact.email}`}
 								aria-label='Napisz wiadomość email'>
-								<Icon
+								<Image
 									className={styles.icon}
-									icon='f7:envelope-circle-fill'
+									src={env_icn}
+									alt=''
+									draggable={false}
 									aria-hidden={true}
 								/>
 
@@ -49,17 +91,19 @@ export const ContactNap = ({ className }: Props) => {
 									<p>Napisz bezpośrednio lub skorzystaj z formularza</p>
 								</div>
 							</a>
-						</li>
+						</motion.li>
 
-						<li className={styles.napItem}>
+						<motion.li className={styles.napItem} variants={itemVariants}>
 							<a
 								href={siteConfig.externalLinks.facebook!}
 								target='_blank'
 								rel='noopener noreferrer'
 								aria-label='Śledź nas na Facebooku'>
-								<Icon
+								<Image
 									className={styles.icon}
-									icon='ri:facebook-circle-fill'
+									src={fb_icn}
+									alt=''
+									draggable={false}
 									aria-hidden={true}
 								/>
 
@@ -68,8 +112,21 @@ export const ContactNap = ({ className }: Props) => {
 									<p>Śledź nas na socialach, aby być na bieżąco</p>
 								</div>
 							</a>
-						</li>
-					</ul>
+						</motion.li>
+					</motion.ul>
+					{breakpoint.lg && (
+						<Image
+							className={styles.image}
+							src={'/img/contactImg.webp'}
+							alt='Tworzenie i pozycjonowanie stron internteowych'
+							draggable={false}
+							width={550}
+							height={350}
+							sizes='
+								(min-width: 1200px) 500px, 
+								384px'
+						/>
+					)}
 				</address>
 
 				<ContactForm />

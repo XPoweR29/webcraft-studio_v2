@@ -12,6 +12,7 @@ import { useHomeScrollTop } from '@/hooks/useHomeScrollTop';
 
 import { linkHref } from '@/utils/linkHref.helper';
 import { useCookieContext } from '@/hooks/useCookieContext';
+import { OfferCTA } from '../OfferCTA/OfferCTA';
 
 export const Footer = () => {
 	const { setShowBanner } = useCookieContext();

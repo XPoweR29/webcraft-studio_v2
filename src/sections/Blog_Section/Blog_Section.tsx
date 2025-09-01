@@ -17,7 +17,7 @@ export const Blog_Section = () => {
 					aria-hidden={true}
 					draggable={false}
 				/>
-				<h2 className={styles.heading}>Sprawdź co nowego na blogu</h2>
+				<h2 className={styles.heading}>Sprawdź co <span>nowego</span> na blogu</h2>
 				<p className={styles.text}>
 					Poznaj praktyczne porady, inspiracje i świeże nowości ze świata stron
 					internetowych, SEO oraz promocji lokalnej firmy. Na blogu regularnie

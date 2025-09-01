@@ -25,12 +25,12 @@
 
 		a {
 			display: flex;
-			align-items: flex-start;
+			align-items: center;
 			gap: 1em;
 		}
 
 		.icon {
-			font-size: 4em;
+			width: 50px;
 		}
 
 		.container {
@@ -41,17 +41,17 @@
 
 			span {
 				font-weight: 600;
-				font-size: 1.2em;
+				font-size: 1.1em;
 			}
 
 			p {
-				font-size: 0.85em;
+				font-size: 0.9em;
 				opacity: 0.9;
 			}
 		}
 
 		&:hover {
-			background-color: rgba(0, 0, 0, 0.1);
+			background-color: rgba($accent, 0.3);
 		}
 	}
 }
@@ -69,7 +69,17 @@
 		.wrapper {
 			display: flex;
 			justify-content: space-between;
-			align-items: center;
+			align-items: flex-start;
+			margin-top: 5em;
+			gap: 1em;
+		}
+
+		.image {
+			margin-top: 3em;
+		}
+
+		.form {
+			border: 1px solid $accent;
 		}
 	}
 }
@@ -78,6 +88,10 @@
 	.section {
 		.wrapper {
 			justify-content: space-around;
+		}
+
+		.image {
+			max-width: 500px;
 		}
 	}
 }

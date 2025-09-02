@@ -11,10 +11,7 @@
 	}
 
 	.paragraph {
-		margin-top: 2em;
-		display: flex;
-		flex-direction: column;
-		gap: 1.5em;
+		@include paragraph;
 	}
 
 	.image {

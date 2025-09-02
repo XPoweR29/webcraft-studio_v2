@@ -6,12 +6,11 @@ import { Wrapper } from '@/components/Wrapper/Wrapper';
 import { ContactNap } from '@/components/ContactNap/ContactNap';
 import Image from 'next/image';
 import { useBreakpoints } from '@/hooks/useBreakpoint';
-import { ContactForm } from '@/components/ContactForm/ContactForm';
 
-export const Home_Contact = () => {
+export const Home_Contact = ({ style }: {style?: React.CSSProperties}) => {
 	const { breakpoint } = useBreakpoints();
 	return (
-		<section className={styles.section}>
+		<section className={styles.section} style={style}>
 			<Wrapper className={styles.wrapper}>
 				<Image
 					className={styles.sketchImg}

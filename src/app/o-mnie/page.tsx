@@ -1,5 +1,4 @@
 import { Process_Section } from '@/components/Process_Section/Process_Section';
-import { useBreakpoints } from '@/hooks/useBreakpoint';
 import { About_Content } from '@/sections/About_Content/About_Content';
 import { Home_Contact } from '@/sections/Home_Contact/Home_Contact';
 import { SectionHero } from '@/sections/SectionHero/SectionHero';

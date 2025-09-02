@@ -1,0 +1,98 @@
+@use '../../sass/common' as *;
+
+.offerItem {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.image {
+		position: relative;
+		object-fit: cover;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		margin-top: 1em;
+		gap: 1em;
+	}
+
+	.title {
+		font-weight: bold;
+		font-size: 1.2em;
+		text-transform: uppercase;
+	}
+
+	.button {
+		@include button;
+		width: fit-content;
+		margin-top: 1em;
+		font-weight: 500;
+
+		.icon {
+			font-size: 1.6em;
+		}
+	}
+
+	.sketchImg {
+		position: absolute;
+		width: 200px;
+		right: 0;
+		bottom: -0%;
+		opacity: 0.2;
+		z-index: -1;
+		pointer-events: none;
+	}
+}
+
+@media(width>=576px) {
+	.offerItem {
+		.sketchImg {
+			width: 300px;
+		}
+	}
+}
+
+@media(width>=992px) {
+	.offerItem {
+		flex-direction: row;
+		gap: 3em;
+
+		.content {
+			width: 65%;
+		}
+
+		.sketchImg {
+			width: 200px;
+			top: -30%;
+			bottom: auto;
+		}
+
+		&--inverse {
+			flex-direction: row-reverse;
+
+			.sketchImg {
+				left: 0;
+				right: auto;
+				top: -30%;
+				width: 270px;
+			}
+		}
+	}
+}
+
+@media(width>=1200px) {
+	.offerItem {
+		align-self: flex-start;
+
+		.content {
+			max-width: 570px;
+		}
+
+		&--inverse {
+			align-self: flex-end;
+		}
+	}
+}

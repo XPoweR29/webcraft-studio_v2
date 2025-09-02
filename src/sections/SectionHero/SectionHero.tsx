@@ -58,37 +58,35 @@ export const SectionHero = ({ heading, bgImage, subline }: Props) => {
 				/>
 			</div>
 			<Wrapper className={styles.wrapper}>
-				<h1 className={styles.heading} id='page-hero-title'>
-					<span>{heading}</span>
+				<h1 className={styles.heading} id='page-hero-title' role='text'>
+					<span>{heading}</span>{" "}
 					{subline && (
-						<motion.p
+						<motion.span
 							className={styles.subline}
 							variants={sublineVariants}
 							initial='hidden'
 							whileInView='visible'
 							viewport={{ once: true, amount: 0.6 }}>
-							{subline.split(' ').map((word, wordIdx) => (
-								<span
-									key={wordIdx}
-									style={{
-										whiteSpace: 'nowrap',
-										display: 'inline-block',
-										marginRight: '0.3ch',
-									}}>
-									{Array.from(word).map((char, i) => (
-										<motion.span
-											key={`${wordIdx}-${i}`}
-											variants={letterVariants}
-											style={{
-												display: 'inline-block',
-												whiteSpace: 'pre',
-											}}>
-											{char}
-										</motion.span>
-									))}
-								</span>
+							{subline.split(' ').map((word, wordIdx, arr) => (
+								<React.Fragment key={wordIdx}>
+									<span
+										style={{
+											display: 'inline-block', 
+											whiteSpace: 'nowrap',
+										}}>
+										{Array.from(word).map((char, i) => (
+											<motion.span
+												key={`${wordIdx}-${i}`}
+												variants={letterVariants}
+												style={{ display: 'inline-block', whiteSpace: 'pre' }}>
+												{char}
+											</motion.span>
+										))}
+									</span>
+									{wordIdx < arr.length - 1 && ' '}
+								</React.Fragment>
 							))}
-						</motion.p>
+						</motion.span>
 					)}
 				</h1>
 			</Wrapper>

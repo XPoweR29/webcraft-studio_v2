@@ -14,6 +14,10 @@ export const About_Content = () => {
 					draggable={false}
 					width={494}
 					height={636}
+					sizes='
+								(min-width: 500px) 250px, 
+								(min-width: 992px) 350px,
+								200px'
 					priority
 				/>
 			</Wrapper>

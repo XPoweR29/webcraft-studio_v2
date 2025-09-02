@@ -1,0 +1,31 @@
+@use '../../sass/common' as *;
+
+.section {
+	padding-top: 5em;
+	padding-bottom: 500px;
+	overflow: hidden;
+
+	.heading {
+		@include sectionHeading;
+	}
+
+	.text {
+		margin-top: 2em;
+	}
+
+	.offersList {
+		display: flex;
+		flex-direction: column;
+		gap: 5em;
+		margin-top: 7em;
+	}
+}
+
+@media(width>=992px) {
+	.section {
+		.offersList {
+			margin-top: 12em;
+			gap: 7em;
+		}
+	}
+}

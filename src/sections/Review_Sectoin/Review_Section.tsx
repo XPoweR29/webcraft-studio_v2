@@ -7,10 +7,11 @@ import { ReviewSwiper } from '@/components/ReviewSwiper/ReviewSwiper';
 interface Props {
     heading: string;
     children: React.ReactNode;
+	className?: string;
 }
-export const Review_Section = ({ children, heading}: Props) => {
+export const Review_Section = ({ children, heading, className}: Props) => {
 	return (
-		<section className={styles.section}>
+		<section className={`${styles.section} ${className??""}`}>
 			<Wrapper className={styles.wrapper}>
 				<Image
 					src={'/img/comment_sketch.svg'}

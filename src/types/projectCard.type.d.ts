@@ -1,7 +1,8 @@
-interface ProjectCard {
+interface PortfolioItem {
 	mockupImg: string;
-	imgAlt: string;
+	mockupAlt: string;
 	title: string;
-	excerpt: string;
-	url: string;
+	description: string;
+	externalLink: string;
+	caseStudyLink: string;
 }

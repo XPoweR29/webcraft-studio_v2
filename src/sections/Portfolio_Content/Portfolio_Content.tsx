@@ -4,6 +4,7 @@ import { Wrapper } from '@/components/Wrapper/Wrapper';
 import { PortfolioItem } from '@/components/PortfolioItem/PortfolioItem';
 import { CTA_bar } from '@/components/CTA_bar/CTA_bar';
 import { linkHref } from '@/utils/linkHref.helper';
+import { PROJECTS } from '@/assets/data/projects';
 
 export const Portfolio_Content = () => {
 	return (
@@ -22,30 +23,11 @@ export const Portfolio_Content = () => {
 				</p>
 
 				<ul className={styles.projectList}>
-					<li>
-						<PortfolioItem
-							mockupImg='/img/portfolio/adona_thumb.webp'
-							mockupAlt='Makieta stront internetowej Adona'
-							title='Restauracja orientalna ADONA'
-							description='Przyjemna i przejrzysta strona, która w czytelny sposób
-									przedstawia ofertę lokali ADONA. Całość zaprojektowana tak, by
-									użytkownik szybko znalazł to, czego szuka.'
-							caseStudyLink='/portfolio/adona'
-							externalLink='http://www.adona.net.pl'
-						/>
-					</li>
-					<li>
-						<PortfolioItem
-							mockupImg='/img/portfolio/adona_thumb.webp'
-							mockupAlt='Makieta stront internetowej Adona'
-							title='Restauracja orientalna ADONA'
-							description='Przyjemna i przejrzysta strona, która w czytelny sposób
-									przedstawia ofertę lokali ADONA. Całość zaprojektowana tak, by
-									użytkownik szybko znalazł to, czego szuka.'
-							caseStudyLink='/portfolio/adona'
-							externalLink='http://www.adona.net.pl'
-						/>
-					</li>
+					{PROJECTS.map((project) => (
+						<li key={project.caseStudyLink}>
+							<PortfolioItem {...project}/>
+						</li>
+					))}
 				</ul>
 			</Wrapper>
 

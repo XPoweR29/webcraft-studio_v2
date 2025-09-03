@@ -5,17 +5,18 @@
 	flex-direction: column;
 	justify-content: center;
 	align-items: flex-start;
-    max-width: 410px;
+	max-width: 410px;
 
-    .thumb {
-        max-width: 350px;
-        pointer-events: none;
-    }
+	.thumb {
+		max-width: 350px;
+        object-fit: cover;
+		pointer-events: none;
+	}
 
 	.content {
 		display: flex;
 		flex-direction: column;
-        gap: 1em;
+		gap: 1em;
 	}
 
 	.title {
@@ -23,65 +24,79 @@
 		font-weight: 600;
 	}
 
-    .externalLink {
-        width: fit-content;
-        margin-top: 1em;
-        opacity: 0.5;
-        transition: opacity 0.2s;
+	.description {
+		display: -webkit-box;
+		min-height: 6em;
+		line-height: 1.5em;
+		-webkit-line-clamp: 4;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
 
-        &:hover {
-            opacity: 1
-        }
-    }
+	.externalLink {
+		width: fit-content;
+		margin-top: 1em;
+		opacity: 0.5;
+		transition: opacity 0.2s;
 
-    .button {
-        @include thinBtn;
-        margin-top: 2em;
-        padding: 0.7em 1em;
-        scale: 1;
+		&:hover {
+			opacity: 1;
+		}
+	}
 
-        .icon {
-            font-size: 1.2em;
-            rotate: -45deg;
-        }
+	.button {
+		@include thinBtn;
+		margin-top: 2em;
+		padding: 0.7em 1em;
+		scale: 1;
 
-        &:hover {
-            scale: 0.95;
-        }
-    }
+		.icon {
+			font-size: 1.2em;
+			rotate: -45deg;
+		}
+
+		&:hover {
+			scale: 0.95;
+		}
+	}
 }
 
-@media(width>=992px) {
-    .portfolioItem {
-        flex-direction: row;
-        justify-content: center;
-        align-items: center;
-        gap: 2em;
-        max-width: fit-content;
+@media (width>=992px) {
+	.portfolioItem {
+		flex-direction: row;
+		justify-content: center;
+		align-items: center;
+		gap: 2em;
+		max-width: fit-content;
 
-        .thumb {
-            width: 200px;
-        }
-
-        .button {
-            align-self: center;
-            margin-top: 0;
-        }
-    }
-}
-
-@media(width>=1200px) {
-    .portfolioItem {
-        .thumb {
-            width: 300px;
-        }
+		.thumb {
+			width: 250px;
+		}
 
         .content {
             width: 50%;
         }
 
-        .button {
-            margin-left: 2em;
-        }
-    }
+		.button {
+			align-self: center;
+			margin-top: 0;
+		}
+	}
+}
+
+@media (width>=1200px) {
+	.portfolioItem {
+		.thumb {
+			width: 300px;
+		}
+
+		.content {
+			width: 50%;
+		}
+
+		.button {
+			margin-left: 2em;
+		}
+	}
 }

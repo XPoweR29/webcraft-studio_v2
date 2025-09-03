@@ -6,6 +6,8 @@
 @use './common' as *;
 
 @import 'tailwindcss';
+@import 'swiper/css';
+@import 'swiper/css/a11y';
 
 html {
 	scroll-behavior: smooth;

@@ -1,0 +1,14 @@
+@use '../../sass/common' as *;
+
+.blogSection {
+    padding-bottom: 450px;
+    @include section-gradient(150deg);
+
+    @media(width>=500px) {
+        padding-bottom: 500px;
+    }
+
+    @media(width>=768px) {
+        padding-bottom: 350px;
+    }
+}

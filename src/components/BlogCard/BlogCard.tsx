@@ -32,7 +32,6 @@ export const BlogCard = ({
 						alt={imgAlt}
 						draggable={false}
 						fill
-						// sizes='100%'
 					/>
 				</div>
 

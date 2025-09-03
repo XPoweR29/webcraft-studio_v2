@@ -8,7 +8,6 @@ import { REVIEWS } from '@/assets/data/reviews';
 import starsImg from '../../assets/icons/stars.svg';
 
 import styles from './ReviewSwiper.module.scss';
-import 'swiper/css';
 import Image from 'next/image';
 import { QuoteIcon } from '../QuoteIcon/QuoteIcon';
 

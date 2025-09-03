@@ -4,9 +4,9 @@ import { Wrapper } from '@/components/Wrapper/Wrapper';
 import Image from 'next/image';
 import { RecentBlogPosts } from '@/components/RecentBlogArticles/RecentBlogPosts';
 
-export const Blog_Section = () => {
+export const Blog_Section = ({ className }: {className?: string}) => {
 	return (
-		<section className={styles.section}>
+		<section className={`${styles.section} ${className??""}`}>
 			<Wrapper className={styles.wrapper}>
 				<Image
 					src={'/img/pen_sketch.svg'}

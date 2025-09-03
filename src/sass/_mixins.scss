@@ -83,6 +83,22 @@
 	}
 }
 
+@mixin thinBtn {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 0.3em 0.7em;
+	gap: 0.5em;
+	background-color: $dark;
+	color: white;
+	border-radius: 7px;
+	transition: 0.3s;
+
+	&:hover {
+		@include accent-gradient();
+	}
+}
+
 @mixin accent-gradient {
 	background: $accent-gradient;
 	background-color: $accent;

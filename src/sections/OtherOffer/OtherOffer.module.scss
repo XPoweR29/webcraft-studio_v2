@@ -1,0 +1,127 @@
+@use '../../sass/common' as *;
+
+.section {
+	@include section-gradient;
+	padding: 5em 0;
+	padding-bottom: 7em;
+	overflow: hidden;
+
+	.wrapper {
+		max-width: 930px;
+	}
+
+	.heading {
+		@include sectionHeading(center);
+		justify-self: center;
+		text-align: center;
+	}
+
+	.text {
+		margin-top: 2em;
+		text-align: center;
+	}
+
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin-top: 5em;
+		gap: 5em;
+	}
+
+	.paragraph {
+		position: relative;
+		display: flex;
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 1em;
+		max-width: 400px;
+	}
+
+	.icon {
+		width: 80px;
+		z-index: 1;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		z-index: 2;
+	}
+
+	.title {
+		font-size: 1.3em;
+		font-weight: 700;
+	}
+
+	.button {
+		@include thinBtn();
+		align-self: flex-end;
+		width: fit-content;
+		margin-top: 2em;
+		font-weight: 500;
+
+		svg {
+			font-size: 1.4em;
+		}
+	}
+
+	.sketchImg {
+		position: absolute;
+		top: -25px;
+		right: -20px;
+		opacity: 0.3;
+		width: 200px;
+		z-index: 0;
+		pointer-events: none;
+	}
+}
+
+@media (width>=768px) {
+	.section {
+
+		.container {
+			margin-top: 7em;
+		}
+
+		.paragraph {
+			flex-direction: row;
+			max-width: 600px;
+		}
+
+		.icon {
+			width: 130px;
+		}
+
+		.content {
+			width: 80%;
+		}
+
+		.sketchImg {
+			right: auto;
+			left: 0;
+			transform: translate(-50%, -30%);
+
+			&[data-sketch='www'] {
+				opacity: 0.25;
+			}
+			&[data-sketch='gmb'] {
+				width: 300px;
+			}
+			&[data-sketch='seo'] {
+				width: 300px;
+			}
+		}
+
+		.paragraph:nth-of-type(even) {
+			.sketchImg {
+				top: auto;
+				left: auto;
+				bottom: 0;
+				right: 0;
+				transform: translate(20%, -30%);
+			}
+		}
+	}
+}

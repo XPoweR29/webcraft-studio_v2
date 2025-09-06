@@ -83,7 +83,7 @@
 	}
 }
 
-@mixin thinBtn {
+@mixin thinBtn($variant: default) {
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -96,6 +96,11 @@
 
 	&:hover {
 		@include accent-gradient();
+	}
+
+	@if $variant == 'accent' {
+		@include accent-gradient();
+		font-weight: 500;
 	}
 }
 

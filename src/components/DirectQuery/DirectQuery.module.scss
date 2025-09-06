@@ -9,7 +9,7 @@
 		justify-content: center;
 		align-items: center;
 		gap: 2em;
-        max-width: 960px
+		max-width: 960px;
 	}
 
 	h2 {
@@ -20,5 +20,21 @@
 	p {
 		font-weight: 600;
 		text-align: center;
+	}
+
+	&--alignLeft {
+		.wrapper {
+			@include wrapper;
+			align-items: flex-start;
+		}
+
+		h2 {
+			@include sectionHeading(left);
+			text-align: start;
+		}
+
+		p {
+			text-align: start;
+		}
 	}
 }

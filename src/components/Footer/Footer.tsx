@@ -14,7 +14,11 @@ import { useCookieContext } from '@/hooks/useCookieContext';
 import { OfferCTA } from '../OfferCTA/OfferCTA';
 import { FooterNap } from '../FooterNap/FooterNap';
 
-export const Footer = () => {
+interface Props {
+	processContainer?: boolean;
+}
+
+export const Footer = ({}: Props) => {
 	const { setShowBanner } = useCookieContext();
 	const currentYear = new Date().getFullYear();
 	const handleScrollTop = useHomeScrollTop();
@@ -23,6 +27,7 @@ export const Footer = () => {
 		<footer className={styles.footer}>
 			<Wrapper className={styles.wrapper}>
 				<OfferCTA className={styles.offerCTA} />
+
 				<div className={`${styles.col1} ${styles.col}`}>
 					<div className={styles.flexContainer}>
 						<Link

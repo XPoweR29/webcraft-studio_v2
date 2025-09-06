@@ -1,0 +1,60 @@
+@use '../../sass/common' as *;
+
+.paragraph {
+	display: flex;
+	flex-direction: column;
+	gap: 1em;
+
+	.image {
+        width: 100%;
+		max-width: 450px;
+		align-self: center;
+	}
+
+	.content {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+	}
+
+	.heading {
+		@include sectionHeading;
+	}
+}
+
+@media (width>=992px) {
+	.paragraph {
+		flex-direction: row;
+		gap: 2em;
+
+		.image {
+			width: 400px;
+		}
+
+        .content {
+            width: 55%;
+        }
+
+		&--reverse {
+			flex-direction: row-reverse;
+		}
+	}
+}
+
+@media (width>=1200px) {
+	.paragraph {
+		gap: 5em;
+		.image {
+			width: 450px;
+			max-width: none;
+		}
+	}
+}
+
+@media (width>=1400px) {
+	.paragraph {
+		.image {
+			width: 500px;
+		}
+	}
+}

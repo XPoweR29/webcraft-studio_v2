@@ -1,0 +1,138 @@
+@use '../../sass/common' as *;
+
+.card {
+	display: flex;
+	flex-direction: column;
+	width: 350px;
+	padding: 1em;
+    padding-bottom: 2em;
+	gap: 1em;
+	border: 2px solid $dark;
+	border-radius: 15px;
+	box-shadow: 0px 0px 10px 5px rgba(black, 0.1);
+
+	header {
+		display: flex;
+		align-items: flex-start;
+		gap: 1em;
+		padding-bottom: 0.5em;
+		border-bottom: 2px solid $accent;
+
+		.icon {
+			width: 50px;
+		}
+
+		.content {
+			display: flex;
+			flex-direction: column;
+			gap: 0.2em;
+		}
+
+		.title {
+			font-size: 1.2em;
+			font-weight: 700;
+			text-transform: uppercase;
+		}
+	}
+
+	.priceBox {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+        margin: 1em auto;
+        margin-top: 1.5em;
+
+        .info {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5em;
+            height: 1em;
+            font-size: 0.8em;
+
+            &--disable {
+                visibility: hidden;
+            }
+        }
+
+		.price {
+            margin-top: 0.25em;
+			font-size: 2.7em;
+			font-weight: 800;
+			line-height: 1.2em;
+
+            .prefix {
+                margin-left: 0;
+                margin-right: 0.3em;
+            }
+
+			span {
+				font-size: 0.8em;
+				font-weight: 500;
+				margin-left: 0.1em;
+			}
+		}
+
+		.taxInfo {
+			font-size: 0.7em;
+			opacity: 0.7;
+		}
+	}
+
+	.featuresList {
+        
+        display: flex;
+		flex-direction: column;
+		gap: 1em;
+        height: 100%;
+		margin-top: 1em;
+
+		.featureItem {
+			display: flex;
+			align-items: center;
+			gap: 0.5em;
+            font-weight: 500;
+            font-size: 0.9em
+		}
+	}
+
+	.button {
+		@include thinBtn();
+		align-self: center;
+		margin-top: 3em;
+		padding: 0.7em 1.7em;
+		width: 80%;
+		border-radius: 10px;
+	}
+
+	&--dark {
+		@include dark-gradient;
+		color: $white;
+
+		.button {
+			@include thinBtn(accent);
+			align-self: center;
+			margin-top: 3em;
+			padding: 0.7em 1.7em;
+			width: 80%;
+			border-radius: 10px;
+		}
+	}
+}
+
+@media(width>=400px) {
+    .card {
+        width: 100%;
+        max-width: 400px;
+    }
+}
+
+@media(width>=992px) {
+    .card {
+        width: 100%;
+        max-width: 400px;
+        height: 100%;
+    }
+}
+

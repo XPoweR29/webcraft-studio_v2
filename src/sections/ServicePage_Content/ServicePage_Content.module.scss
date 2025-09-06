@@ -1,0 +1,20 @@
+@use '../../sass/common' as *;
+
+.section {
+	padding: 7em 0;
+    @include section-gradient;
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+        gap: 5em;
+	}
+}
+
+@media(width>=992px) {
+    .section {
+        .wrapper {
+            gap: 9em;
+        }
+    }
+}

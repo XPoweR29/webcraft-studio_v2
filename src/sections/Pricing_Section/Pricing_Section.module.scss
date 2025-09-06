@@ -1,0 +1,104 @@
+@use '../../sass/common' as *;
+
+.section {
+	padding: 7em 0;
+	padding-bottom: 5em;
+	min-height: 100vh;
+    overflow: hidden;
+
+	.wrapper {
+		position: relative;
+	}
+
+	.heading {
+		@include sectionHeading;
+		max-width: 90%;
+	}
+
+	.text {
+		margin-top: 2em;
+		max-width: 90%;
+	}
+
+	.sketchImg {
+		position: absolute;
+		top: -80px;
+		right: 0;
+		width: 200px;
+		opacity: 0.3;
+	}
+
+	.packages {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-top: 5em;
+		gap: 4em;
+	}
+}
+
+@media (width>=500px) {
+	.section {
+		.sketchImg {
+			width: 250px;
+		}
+	}
+}
+
+@media (width>=576px) {
+	.section {
+		.sketchImg {
+            right: -5%;
+		}
+	}
+}
+
+@media(width>=768px) {
+    .section {
+        .heading {
+            width: 70%;
+        }
+    }
+}
+
+@media (width>=992px) {
+	.section {
+		.wrapper {
+			max-width: 100%;
+		}
+
+        .sketchImg {
+            width: 300px;
+            right: 0;
+        }
+
+        .heading {
+            width: 100%;
+        }
+
+        .text {
+            width: 80%;
+        }
+
+		.packages {
+			flex-direction: row;
+			align-items: stretch;
+			justify-content: space-between;
+			width: 100%;
+			gap: 1em;
+		}
+	}
+}
+
+@media (width>=1200px) {
+	.section {
+        .sketchImg {
+            width: 350px;
+        }
+
+		.wrapper {
+			@include wrapper;
+		}
+	}
+}

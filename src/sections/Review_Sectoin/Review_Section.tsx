@@ -5,27 +5,27 @@ import Image from 'next/image';
 import { ReviewSwiper } from '@/components/ReviewSwiper/ReviewSwiper';
 
 interface Props {
-    heading: string;
-    children: React.ReactNode;
+	heading: string;
+	children: React.ReactNode;
 	className?: string;
 }
-export const Review_Section = ({ children, heading, className}: Props) => {
+export const Review_Section = ({ children, heading, className }: Props) => {
 	return (
-		<section className={`${styles.section} ${className??""}`}>
+		<section className={`${styles.section} ${className ?? ''}`}>
 			<Wrapper className={styles.wrapper}>
 				<Image
 					src={'/img/comment_sketch.svg'}
-                    className={styles.sketchImg}
+					className={styles.sketchImg}
 					alt=''
 					aria-hidden={true}
 					draggable={false}
-                    width={350}
-                    height={350}
+					width={350}
+					height={350}
 				/>
 				<h2 className={styles.heading}>{heading}</h2>
 				<p className={styles.text}>{children}</p>
 
-				<ReviewSwiper className={styles.reviewSwiper}/>
+				<ReviewSwiper className={styles.reviewSwiper} />
 			</Wrapper>
 		</section>
 	);

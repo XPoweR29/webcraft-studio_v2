@@ -42,7 +42,7 @@
 	}
 
 	.button {
-		@include thinBtn;
+		@include thinBtn();
 		margin-top: 2em;
 		padding: 0.7em 1em;
 		scale: 1;

@@ -1,6 +1,6 @@
 'use client';
 
-import React from 'react';
+import React, { useEffect } from 'react';
 import styles from './Footer.module.scss';
 import Link from 'next/link';
 import { Wrapper } from '../Wrapper/Wrapper';
@@ -13,20 +13,33 @@ import { linkHref } from '@/utils/linkHref.helper';
 import { useCookieContext } from '@/hooks/useCookieContext';
 import { OfferCTA } from '../OfferCTA/OfferCTA';
 import { FooterNap } from '../FooterNap/FooterNap';
+import { ProfitsCTA } from '../ProfitsCTA/ProfitsCTA';
+import { usePathname } from 'next/navigation';
+import { CTA_PROFITS } from '@/assets/data/footerCTA.config';
 
-interface Props {
-	processContainer?: boolean;
-}
-
-export const Footer = ({}: Props) => {
+export const Footer = () => {
 	const { setShowBanner } = useCookieContext();
 	const currentYear = new Date().getFullYear();
 	const handleScrollTop = useHomeScrollTop();
+	const pathname = usePathname();
+	const slug = pathname.split('/').filter(Boolean).pop();
+
+	const cta =  slug ? CTA_PROFITS[slug] : undefined;
+	const isOfferPage = pathname.startsWith('/oferta');
 
 	return (
-		<footer className={styles.footer}>
+		<footer className={`${styles.footer} ${isOfferPage?styles['footer--offer']:''}`}>
 			<Wrapper className={styles.wrapper}>
-				<OfferCTA className={styles.offerCTA} />
+				{cta? (
+					<ProfitsCTA
+						className={styles.offerCTA}
+						heading={cta.heading}
+						text={cta.text}
+						children={cta.children}
+					/>
+				) : (
+					<OfferCTA className={styles.offerCTA}/>
+				)}
 
 				<div className={`${styles.col1} ${styles.col}`}>
 					<div className={styles.flexContainer}>

@@ -26,7 +26,7 @@ export const ProfitsCTA = ({ className, heading, text, children }: ProfitsCTAPPr
 		<section className={`${styles.cta} ${className}`}>
 			<Image
 				className={styles.sketchImg}
-				src={'/img/progress_Sketch.svg'}
+				src={'/img/handshake_Sketch.svg'}
 				alt=''
 				aria-hidden={true}
 				draggable={false}
@@ -38,7 +38,7 @@ export const ProfitsCTA = ({ className, heading, text, children }: ProfitsCTAPPr
 				<h3 className={styles.title}>{heading}</h3>
 				<p className={styles.text}>{text}</p>
 
-				{breakpoint.md && (
+				{breakpoint.lg && (
 					<Link href={linkHref('contact')} className={styles.button}>
 						Skontaktuj się{' '}
 						<Icon icon='solar:arrow-right-broken' className={styles.icon} />
@@ -55,7 +55,7 @@ export const ProfitsCTA = ({ className, heading, text, children }: ProfitsCTAPPr
 				))}
 			</ul>
 
-			{!breakpoint.md && (
+			{!breakpoint.lg && (
 				<Link href={linkHref('contact')} className={styles.button}>
 					Skontaktuj się{' '}
 					<Icon icon='solar:arrow-right-broken' className={styles.icon} />

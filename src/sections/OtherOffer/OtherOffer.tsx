@@ -53,7 +53,7 @@ export const OtherOffer = ({ heading, text, offerLinks }: Props) => {
 							initial='hidden'
 							whileInView='visible'
 							variants={variants}
-							viewport={{ once: false, amount: 0.4 }}>
+							viewport={{ once: true, amount: 0.4 }}>
 							<Image
 								src={link.sketchImg}
 								className={styles.sketchImg}

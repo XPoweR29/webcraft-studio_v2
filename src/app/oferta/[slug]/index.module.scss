@@ -1,0 +1,15 @@
+@use '../../../sass/common' as *;
+
+.reviewSection {
+	@include section-gradient;
+	padding-top: 10em;
+	padding-bottom: 470px;
+
+	@media(width>=400px) {
+		padding-bottom: 550px;
+	}	
+
+	@media(width>=992px) {
+		padding-bottom: 370px;
+	}	
+}

@@ -27,7 +27,7 @@ export const linksMap = [
 			{
 				id: 'seo',
 				label: 'SEO',
-				href: '/oferta/seo',
+				href: '/oferta/optymalizacja-seo',
 				hidden: false,
 				icon: seo_icon,
 				altIcon: 'Pozycjonowanie SEO',

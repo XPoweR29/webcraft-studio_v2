@@ -1,7 +1,0 @@
-@use '../../../sass/common' as *;
-
-.reviewSection {
-	@include section-gradient;
-	padding-top: 10em;
-	padding-bottom: 350px;
-}

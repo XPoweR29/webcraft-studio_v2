@@ -112,17 +112,29 @@
 			}
 		}
 	}
+
+	&--offer {
+		padding-top: 500px;
+	}
 }
 
 @media (width>=400px) {
 	.footer {
 		padding-top: 500px;
+
+		&--offer {
+			padding-top: 570px;
+		}
 	}
 }
 
 @media (width>=768px) {
 	.footer {
 		padding-top: 350px;
+
+		&--offer {
+			padding-top: 570px;
+		}
 	}
 }
 
@@ -158,6 +170,10 @@
 				bottom: 1em;
 				right: 1em;
 			}
+		}
+
+		&--offer {
+			padding-top: 400px;
 		}
 	}
 }

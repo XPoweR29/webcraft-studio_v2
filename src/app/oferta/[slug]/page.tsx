@@ -13,6 +13,14 @@ import { Review_Section } from '@/sections/Review_Sectoin/Review_Section';
 
 import styles from './index.module.scss';
 
+//FIXME: Pozostać przy dynamicznie tworzonych slugach i wszystkie propsy jakimi tutaj uzupełniamy ten page.tsx powinny znaleźć się w jakimś configu tej strony - czytelniej będzie jak będzie jeden folder który zbiera dane dotycznące różnych stron a w nim rozdzielone poszczególne configi dla różnych stron. W takim configu oczywiśćie treści i zdjęcia używane na tej stornie ale również metadane title i OG data. Tak samo schema. 
+
+//IMPROVE: trzeba sie zastanowić czy w /data porobić foldery dla kazdej podstrony a w tym folderze configi osobno dla metadanych, schema i treści wraz z grafikami czy raczej może to wszystko w jednym zbiorczym configu dla jednej strony. - co będzie bardziej przejrzyste w wygodne w użytkowaniu?
+
+//TODO: wciącnąć dane ctaFooter dla każdej podstrony do jej wląsnego configa - tak będzie bardziej przejżyście i lepiej uporządkowane. 
+
+//IMPROVE: warto się podjąć takiego rozwiązania bo ia tak tego nie będzie dało sie uniknąć przy blogu.... 
+
 const ServicePage = () => {
 	return (
 		<>

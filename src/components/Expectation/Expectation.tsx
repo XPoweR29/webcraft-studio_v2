@@ -69,3 +69,6 @@ export const Expectation = () => {
 		</section>
 	);
 };
+
+
+//FIXME: Wyśrodkowanie sekcji na Firefoxie nie działa. Na pozostałuch przeglądarkach jest ok.

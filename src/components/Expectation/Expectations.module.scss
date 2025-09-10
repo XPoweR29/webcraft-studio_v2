@@ -44,6 +44,7 @@
 	}
 
 	.text {
+		margin: 0 auto;
 		margin-top: 2em;
 		font-weight: 300;
 		text-align: center;
@@ -96,6 +97,8 @@
 			align-items: center;
 			max-width: 630px;
 			justify-self: center;
+			margin-left: auto;
+			margin-right: auto;
 			gap: 5em 7em;
 		}
 	}

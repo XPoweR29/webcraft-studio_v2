@@ -3,8 +3,8 @@ import styles from './MegaMenu.module.scss';
 import Link from 'next/link';
 import { Variants, motion } from 'framer-motion';
 import { useMegaMenu } from '@/hooks/useMegaMenu';
-import { linksMap } from '@/assets/data/linksMap';
 import Image from 'next/image';
+import { LINKS_MAP } from '@/config/links.config';
 
 export const MegaMenu = () => {
 	const { openMenu, closeMenu, isSubmenuOpen } = useMegaMenu();
@@ -34,19 +34,25 @@ export const MegaMenu = () => {
 			initial='close'
 			variants={menuVariants}
 			animate={isSubmenuOpen ? 'open' : 'closed'}>
-
-			{linksMap
+			{LINKS_MAP
 				.find((link) => link.id === 'offer')
 				?.children?.map((sublink) => (
-						<Link href={`${sublink.href}`} className={styles.linkItem} key={sublink.href}>
-							<Image src={sublink.icon} className={styles.icon} alt={sublink.altIcon} draggable={false}/>
-							<div className={styles.description}>
-								<span className={styles.title}>{sublink.label}</span>
-								<span className={styles.text}>{sublink.description}</span>
-							</div>
-						</Link>
+					<Link
+						href={`${sublink.href}`}
+						className={styles.linkItem}
+						key={sublink.href}>
+						<Image
+							src={sublink.icon}
+							className={styles.icon}
+							alt={sublink.altIcon}
+							draggable={false}
+						/>
+						<div className={styles.description}>
+							<span className={styles.title}>{sublink.label}</span>
+							<span className={styles.text}>{sublink.description}</span>
+						</div>
+					</Link>
 				))}
-
 		</motion.ul>
 	);
 };

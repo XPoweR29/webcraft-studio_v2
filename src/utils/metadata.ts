@@ -1,5 +1,5 @@
+import { SITE_CONFIG } from '@/config/site.config';
 import { Metadata } from 'next';
-import { siteConfig } from '@/config/site.config';
 
 type MetadataBaseParams = {
 	title: string;
@@ -19,7 +19,7 @@ export const createMetadata = (
 ): Metadata => {
 	const { title, description, slug = '/' } = base;
 
-	const fullUrl = `${siteConfig.baseUrl}/${slug.replace(/^\/+/, '')}`;
+	const fullUrl = `${SITE_CONFIG.baseUrl}/${slug.replace(/^\/+/, '')}`;
 
 	const defaultMetadata: Metadata = {
 		title,
@@ -28,15 +28,15 @@ export const createMetadata = (
 			title,
 			description,
 			url: fullUrl,
-			siteName: siteConfig.siteName,
+			siteName: SITE_CONFIG.siteName,
 			locale: 'pl_PL',
 			type: 'website',
 			images: [
 				{
-					url: `${siteConfig.baseUrl}/og_img.jpg`,
+					url: `${SITE_CONFIG.baseUrl}/og_img.jpg`,
 					width: 1200,
 					height: 630,
-					alt: siteConfig.siteName,
+					alt: SITE_CONFIG.siteName,
 				},
 			],
 		},

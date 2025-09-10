@@ -4,13 +4,13 @@ import React from 'react';
 import styles from './ContactNap.module.scss';
 import { Wrapper } from '../Wrapper/Wrapper';
 import { ContactForm } from '../ContactForm/ContactForm';
-import { siteConfig } from '@/config/site.config';
 import Image from 'next/image';
 import fb_icn from '../../assets/icons/facebook_icon.svg';
 import phone_icn from '../../assets/icons/phone_icon.svg';
 import env_icn from '../../assets/icons/envelope_icon.svg';
 import { useBreakpoints } from '@/hooks/useBreakpoint';
 import { Variants, motion } from 'framer-motion';
+import { SITE_CONFIG } from '@/config/site.config';
 
 interface Props {
 	className?: string;
@@ -57,7 +57,7 @@ export const ContactNap = ({ className }: Props) => {
 					>
 						<motion.li className={styles.napItem} variants={itemVariants}>
 							<a
-								href={`tel:${siteConfig.contact.phoneHref}`}
+								href={`tel:${SITE_CONFIG.contact.phoneHref}`}
 								aria-label='Zadzwoń do nas'>
 								<Image
 									src={phone_icn}
@@ -68,7 +68,7 @@ export const ContactNap = ({ className }: Props) => {
 								/>
 
 								<div className={styles.container}>
-									<span>+48 {siteConfig.contact.phone}</span>
+									<span>+48 {SITE_CONFIG.contact.phone}</span>
 									<p>Zadzwoń, a udzielimy ci niezbędnych informacji</p>
 								</div>
 							</a>
@@ -76,7 +76,7 @@ export const ContactNap = ({ className }: Props) => {
 
 						<motion.li className={styles.napItem} variants={itemVariants}>
 							<a
-								href={`mailto:${siteConfig.contact.email}`}
+								href={`mailto:${SITE_CONFIG.contact.email}`}
 								aria-label='Napisz wiadomość email'>
 								<Image
 									className={styles.icon}
@@ -87,7 +87,7 @@ export const ContactNap = ({ className }: Props) => {
 								/>
 
 								<div className={styles.container}>
-									<span>{siteConfig.contact.email}</span>
+									<span>{SITE_CONFIG.contact.email}</span>
 									<p>Napisz bezpośrednio lub skorzystaj z formularza</p>
 								</div>
 							</a>
@@ -95,7 +95,7 @@ export const ContactNap = ({ className }: Props) => {
 
 						<motion.li className={styles.napItem} variants={itemVariants}>
 							<a
-								href={siteConfig.externalLinks.facebook!}
+								href={SITE_CONFIG.externalLinks.facebook!}
 								target='_blank'
 								rel='noopener noreferrer'
 								aria-label='Śledź nas na Facebooku'>

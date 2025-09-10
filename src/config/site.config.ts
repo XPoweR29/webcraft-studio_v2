@@ -1,4 +1,6 @@
-export const siteConfig = {
+import { SiteConfig } from "@/types/siteConfig.type";
+
+export const SITE_CONFIG: SiteConfig = {
 	baseUrl: 'https://webcraft-studio.pl/',
 	siteName:
 		'WebCraftSTUDIO – tworzenie stron internetowych i pozycjonowanie SEO',
@@ -21,7 +23,7 @@ export const siteConfig = {
 		facebook: 'https://www.facebook.com/webcraft-studio',
 		insta: 'https://www.instagram.com/@webcraft-studio',
 		googleMaps: 'https://maps.app.goo.gl/VJE1pLzG5yKktoLfA',
-		googleMyBussiness: 'https://g.co/kgs/RXFUxgw',
+		googleMyBusiness: 'https://g.co/kgs/RXFUxgw',
 		localoSite: 'https://pro-wnetrze-remonty-bielsko-zywiec.localo.site/',
 	},
 };

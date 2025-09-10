@@ -1,4 +1,5 @@
-import { linksMap } from '@/assets/data/linksMap';
+import { LINKS_MAP } from "@/config/links.config";
+
 
 type RecursiveNav<T extends readonly NavLink[]> = T[number] extends infer L
 	? L extends { id: infer I; children?: infer C }
@@ -10,7 +11,7 @@ type RecursiveNav<T extends readonly NavLink[]> = T[number] extends infer L
 		: never
 	: never;
 
-export type NavLinkId = RecursiveNav<typeof linksMap>;
+export type NavLinkId = RecursiveNav<typeof LINKS_MAP>;
 
 export function linkHref(id: NavLinkId): string {
 	const find = (items: readonly NavLink[]): string | undefined => {
@@ -24,7 +25,7 @@ export function linkHref(id: NavLinkId): string {
 		return undefined;
 	};
 
-	const result = find(linksMap);
+	const result = find(LINKS_MAP);
 	if (!result) {
 		throw new Error(`linkHref: ${id} does not exist`);
 	}

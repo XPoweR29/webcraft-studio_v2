@@ -11,16 +11,17 @@ import { Review_Section } from '@/sections/Review_Sectoin/Review_Section';
 import styles from './index.module.scss';
 import { ServiceContentConfig } from '@/types/servicePage.types';
 import { notFound } from 'next/navigation';
-import { getServicePageContent} from '@/utils/getServicePageContent';
-import { linksMap } from '@/assets/data/linksMap';
+import { getServicePageContent } from '@/utils/getServicePageContent';
+import { LINKS_MAP } from '@/config/links.config';
 
 interface Props {
 	params: { slug: string };
 }
-
+//FIXME: i teraz na gotowo jedziemy z meta / schema / opengraph
 export async function generateStaticParams() {
-	const offerPages = linksMap.find(link=>link.id==="offer")?.children??[];
-	return offerPages.map(page => ({
+	const offerPages =
+		LINKS_MAP.find((link) => link.id === 'offer')?.children ?? [];
+	return offerPages.map((page) => ({
 		slug: page.href.split('/').pop(),
 	}));
 }

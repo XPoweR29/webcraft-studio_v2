@@ -1,6 +1,5 @@
 import { Home_Start } from '@/sections/Home_Start/Home_Start';
 import { Home_About } from '@/sections/Home_About/Home_About';
-import { siteConfig } from '@/config/site.config';
 import { Home_Projects } from '@/sections/Home_Projects/Home_Projects';
 import { Process_Section } from '@/components/Process_Section/Process_Section';
 import { linkHref } from '@/utils/linkHref.helper';
@@ -9,35 +8,35 @@ import { Review_Section } from '@/sections/Review_Sectoin/Review_Section';
 import { FAQ_Section } from '@/sections/FAQ_Section/FAQ_Section';
 import { Blog_Section } from '@/sections/Blog_Section/Blog_Section';
 import { Home_Contact } from '@/sections/Home_Contact/Home_Contact';
-import LayoutShell from '@/components/LayoutShell/LayoutShell';
+import { SITE_CONFIG } from '@/config/site.config';
 
 const schema = {
 	'@context': 'https://schema.org',
 	'@type': ['WebSite', 'Organization'],
-	'@id': `${siteConfig.baseUrl}/#main`,
-	url: siteConfig.baseUrl,
-	name: siteConfig.siteName,
+	'@id': `${SITE_CONFIG.baseUrl}/#main`,
+	url: SITE_CONFIG.baseUrl,
+	name: SITE_CONFIG.siteName,
 	alternateName: 'Professional Frontend Starter for Developers',
 	description:
 		'Kickstart your modern frontend projects with this clean, SEO-friendly, and scalable boilerplate built with Next.js, TypeScript, and SCSS Modules.',
 	logo: {
 		'@type': 'ImageObject',
-		url: `${siteConfig.baseUrl}/logo.jpg`,
+		url: `${SITE_CONFIG.baseUrl}/logo.jpg`,
 		width: 600,
 		height: 600,
 	},
 	image: {
 		'@type': 'ImageObject',
-		url: `${siteConfig.baseUrl}/og_img.jpg`,
+		url: `${SITE_CONFIG.baseUrl}/og_img.jpg`,
 		width: 1200,
 		height: 630,
 	},
-	telephone: siteConfig.contact.phoneHref,
-	email: siteConfig.contact.email,
+	telephone: SITE_CONFIG.contact.phoneHref,
+	email: SITE_CONFIG.contact.email,
 	address: {
 		'@type': 'PostalAddress',
-		addressLocality: siteConfig.address.city,
-		postalCode: siteConfig.address.postalCode,
+		addressLocality: SITE_CONFIG.address.city,
+		postalCode: SITE_CONFIG.address.postalCode,
 		addressCountry: 'PL',
 	},
 	areaServed: [
@@ -46,7 +45,7 @@ const schema = {
 			name: 'woj. Śląskie',
 		},
 	],
-	sameAs: Object.values(siteConfig.externalLinks).filter(Boolean),
+	sameAs: Object.values(SITE_CONFIG.externalLinks).filter(Boolean),
 };
 
 export default function Home() {

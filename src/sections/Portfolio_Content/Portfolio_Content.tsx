@@ -4,7 +4,7 @@ import { Wrapper } from '@/components/Wrapper/Wrapper';
 import { PortfolioItem } from '@/components/PortfolioItem/PortfolioItem';
 import { CTA_bar } from '@/components/CTA_bar/CTA_bar';
 import { linkHref } from '@/utils/linkHref.helper';
-import { PROJECTS } from '@/assets/data/projects';
+import { PROJECTS } from '@/config/projects.config';
 
 export const Portfolio_Content = () => {
 	return (
@@ -25,7 +25,7 @@ export const Portfolio_Content = () => {
 				<ul className={styles.projectList}>
 					{PROJECTS.map((project) => (
 						<li key={project.caseStudyLink}>
-							<PortfolioItem {...project}/>
+							<PortfolioItem {...project} />
 						</li>
 					))}
 				</ul>

@@ -13,7 +13,7 @@ import check_icon from '../../assets/icons/citcle_check_icon.svg';
 import Link from 'next/link';
 import { linkHref } from '@/utils/linkHref.helper';
 import { OfferCard } from '@/components/OfferCard/OfferCard';
-import { offerCards } from '@/assets/data/offerCards';
+import { OFFER_CARD_LINKING } from '@/config/offerLinking.config';
 
 export const listVariants: Variants = {
 	hidden: {},
@@ -188,7 +188,7 @@ export const Home_Start = () => {
 							</p>
 
 							<ul className={styles.offerContainer}>
-								{offerCards.map((card, i) => (
+								{OFFER_CARD_LINKING.map((card, i) => (
 									<OfferCard
 										key={card.pageUrl}
 										title={card.title}

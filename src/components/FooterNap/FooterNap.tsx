@@ -1,10 +1,9 @@
 import React from 'react';
 import styles from './FooterNap.module.scss';
-import { Wrapper } from '../Wrapper/Wrapper';
-import { siteConfig } from '@/config/site.config';
 import Image from 'next/image';
 import phone_icn from '../../assets/icons/phone_icon_white.svg';
 import env_icn from '../../assets/icons/envelope_icon_white.svg';
+import { SITE_CONFIG } from '@/config/site.config';
 
 interface Props {
 	className?: string;
@@ -17,7 +16,7 @@ export const FooterNap = ({ className }: Props) => {
 					<ul className={styles.napContainer}>
 						<li className={styles.napItem}>
 							<a
-								href={`tel:${siteConfig.contact.phoneHref}`}
+								href={`tel:${SITE_CONFIG.contact.phoneHref}`}
 								aria-label='Zadzwoń do nas'>
 								<Image
 									src={phone_icn}
@@ -26,13 +25,13 @@ export const FooterNap = ({ className }: Props) => {
 									className={styles.icon}
 									aria-hidden={true}
 								/>
-								<span>+48 {siteConfig.contact.phone}</span>
+								<span>+48 {SITE_CONFIG.contact.phone}</span>
 							</a>
 						</li>
 
 						<li className={styles.napItem}>
 							<a
-								href={`mailto:${siteConfig.contact.email}`}
+								href={`mailto:${SITE_CONFIG.contact.email}`}
 								aria-label='Napisz wiadomość email'>
 								<Image
 									className={styles.icon}
@@ -42,7 +41,7 @@ export const FooterNap = ({ className }: Props) => {
 									aria-hidden={true}
 								/>
 
-								<span>{siteConfig.contact.email}</span>
+								<span>{SITE_CONFIG.contact.email}</span>
 							</a>
 						</li>
 					</ul>

@@ -4,7 +4,7 @@ import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { A11y, Autoplay } from 'swiper/modules';
 import { useBreakpoints } from '@/hooks/useBreakpoint';
-import { REVIEWS } from '@/assets/data/reviews';
+import { REVIEWS } from '@/config/reviews.config';
 import starsImg from '../../assets/icons/stars.svg';
 
 import styles from './ReviewSwiper.module.scss';

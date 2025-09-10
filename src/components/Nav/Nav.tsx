@@ -1,7 +1,7 @@
 'use client';
 import styles from './Nav.module.scss';
 import Link from 'next/link';
-import { linksMap } from '@/assets/data/linksMap';
+import { LINKS_MAP } from '@/config/links.config';
 import { useHomeScrollTop } from '@/hooks/useHomeScrollTop';
 import { useMegaMenu } from '../../hooks/useMegaMenu';
 import { MegaMenu } from '../MegaMenu/MegaMenu';
@@ -13,7 +13,7 @@ export const Nav = () => {
 	return (
 		<nav>
 			<ul className={styles.linkbar}>
-				{linksMap
+				{LINKS_MAP
 					.filter((link) => !link.hidden)
 					.map((link) => (
 						<li key={link.id} className={styles.menuItem}>

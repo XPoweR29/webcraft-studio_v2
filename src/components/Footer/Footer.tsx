@@ -1,11 +1,10 @@
 'use client';
 
-import React, { useEffect } from 'react';
+import React from 'react';
 import styles from './Footer.module.scss';
 import Link from 'next/link';
 import { Wrapper } from '../Wrapper/Wrapper';
 import Image from 'next/image';
-import { siteConfig } from '@/config/site.config';
 import { useHomeScrollTop } from '@/hooks/useHomeScrollTop';
 import cookieIcon from '../../assets/icons/cookie_icon.svg';
 
@@ -15,7 +14,8 @@ import { OfferCTA } from '../OfferCTA/OfferCTA';
 import { FooterNap } from '../FooterNap/FooterNap';
 import { ProfitsCTA } from '../ProfitsCTA/ProfitsCTA';
 import { usePathname } from 'next/navigation';
-import { CTA_PROFITS } from '@/assets/data/footerCTA.config';
+import { SITE_CONFIG } from '@/config/site.config';
+import { getServicePageContent } from '@/utils/getServicePageContent';
 
 export const Footer = () => {
 	const { setShowBanner } = useCookieContext();
@@ -23,9 +23,10 @@ export const Footer = () => {
 	const handleScrollTop = useHomeScrollTop();
 	const pathname = usePathname();
 	const slug = pathname.split('/').filter(Boolean).pop();
-
-	const cta =  slug ? CTA_PROFITS[slug] : undefined;
+	
 	const isOfferPage = pathname.startsWith('/oferta');
+	const offerContent =  slug ? getServicePageContent(slug) : undefined;
+	const cta = offerContent?.footerCTA;
 
 	return (
 		<footer className={`${styles.footer} ${isOfferPage?styles['footer--offer']:''}`}>
@@ -116,7 +117,7 @@ export const Footer = () => {
 					<ul>
 						<li>
 							<a
-								href={siteConfig.externalLinks.facebook}
+								href={SITE_CONFIG.externalLinks.facebook}
 								target='_blank'
 								rel='noopener noreferrer me'
 								aria-label='WebCraft Studio na Facebooku'>
@@ -125,7 +126,7 @@ export const Footer = () => {
 						</li>
 						<li>
 							<a
-								href={siteConfig.externalLinks.insta}
+								href={SITE_CONFIG.externalLinks.insta}
 								target='_blank'
 								rel='noopener noreferrer me'
 								aria-label='WebCraft Studio na Instagramie'>

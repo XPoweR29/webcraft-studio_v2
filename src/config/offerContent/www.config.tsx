@@ -4,7 +4,7 @@ import { ServiceContentConfig } from '@/types/servicePage.types';
 import basicIcon from '../../assets/icons/lighting_icon.svg';
 import standardIcon from '../../assets/icons/rocket_icon.svg';
 import proIcon from '../../assets/icons/crown_icon.svg';
-import { OFFER_LINKING } from '@/assets/data/offerLinks';
+import { OFFER_LINKING } from '@/config/offerLinking.config';
 
 export const WWW_CONTENT: ServiceContentConfig = {
 	heroSection: {
@@ -171,5 +171,32 @@ export const WWW_CONTENT: ServiceContentConfig = {
 		heading: 'Dołącz do zadowolonych klientów',
 		children:
 			'Opinie klientów najlepiej pokazują skuteczność moich działań przy projektowaniu stron internetowych i tworzeniu nowoczesnych stron WWW dla firm. Każda realizacja to indywidualny projekt, optymalizowany pod SEO, by Twoja strona nie tylko wyglądała, ale też była widoczna w Google. Zaufanie klientów potwierdza, że profesjonalne strony internetowe mogą realnie wspierać rozwój biznesu. klientów.',
+	},
+
+	footerCTA: {
+		heading: 'Co zyskujesz dzięki współpracy ze mną?',
+		text: 'Tworzę strony, które nie tylko dobrze wyglądają, ale realnie wspierają Twój biznes. Jasne zasady, szybka realizacja i pełne skupienie na Twoich celach.',
+		children: [
+			{
+				title: 'Skrojone pod Twój biznes',
+				description:
+					'Każdy projekt tworzę od podstaw, tak aby idealnie pasował do Twojej branży i klientów.',
+			},
+			{
+				title: 'Wyniki, nie obietnice',
+				description:
+					'Projektuję z myślą o efektach – większa widoczność, lepszy odbiór marki i więcej zapytań od klientów.',
+			},
+			{
+				title: 'Przejrzysty proces',
+				description:
+					'Od początku wiesz, co robimy – konkretny plan działań i zero zbędnego chaosu.',
+			},
+			{
+				title: 'Stałe wsparcie',
+				description:
+					'Po wdrożeniu pomagam, doradzam i dbam, aby strona działała bez zarzutu.',
+			},
+		],
 	},
 };

@@ -47,6 +47,7 @@ const ServicePage = async ({ params }: Props) => {
 	const {
 		SCHEMA,
 		heroSection,
+		contentSection,
 		processSection,
 		pricingSection,
 		directQuery,
@@ -55,8 +56,8 @@ const ServicePage = async ({ params }: Props) => {
 		reviewSection,
 	} = content;
 
-	const schema =
-		typeof SCHEMA === 'function' ? SCHEMA(content.METADATA, content.faqSection.items, content.pricingSection.packages) : SCHEMA;
+
+		const schema = typeof SCHEMA === 'function' ? SCHEMA(content.METADATA, content.faqSection.items, content.pricingSection.packages) : SCHEMA;
 
 	return (
 		<>
@@ -66,7 +67,8 @@ const ServicePage = async ({ params }: Props) => {
 			/>
 
 			<SectionHero {...heroSection} />
-			<ServicePage_Content />
+			
+			<ServicePage_Content {...contentSection}/>
 
 			<Process_Section {...processSection} />
 

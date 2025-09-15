@@ -7,4 +7,5 @@ interface PricingCard {
 	dark?: boolean;
 	info?: string;
 	pricePrefix?: string;
+	priceSuffix?: string;
 }

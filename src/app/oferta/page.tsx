@@ -39,7 +39,7 @@ const schema = [
 			{
 				'@type': 'Service',
 				'@id': `${SITE_CONFIG.baseUrl}${linkHref('seo')}/#service`,
-				name: 'Pozycjonowanie SEO',
+				name: 'Optymalizacja SEO',
 			},
 			{
 				'@type': 'Service',

@@ -9,6 +9,7 @@ import { Review_Section } from '@/sections/Review_Sectoin/Review_Section';
 import { ProfitsCTAPProps } from '@/components/ProfitsCTA/ProfitsCTA';
 import { MetadataBaseParams } from '@/utils/creataeMetadata';
 import { AccordionItem } from '@/components/Accordion/Accordion';
+import { ServicePage_Content } from '@/sections/ServicePage_Content/ServicePage_Content';
 
 export type SchemaType =
 	| ((
@@ -25,6 +26,7 @@ export interface ServiceContentConfig {
 	SCHEMA?: SchemaType;
 
 	heroSection: ComponentProps<typeof SectionHero>;
+	contentSection: ComponentProps<typeof ServicePage_Content>
 	processSection: ComponentProps<typeof Process_Section>;
 	pricingSection: ComponentProps<typeof Pricing_Section>;
 	directQuery: ComponentProps<typeof DirectQuery>;

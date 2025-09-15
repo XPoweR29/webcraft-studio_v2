@@ -6,7 +6,6 @@ import standardIcon from '../../assets/icons/rocket_icon.svg';
 import proIcon from '../../assets/icons/crown_icon.svg';
 import { OFFER_LINKING } from '@/config/offerLinking.config';
 import { SITE_CONFIG } from '../site.config';
-import { image } from 'framer-motion/client';
 
 export const WWW_CONTENT: ServiceContentConfig = {
 	METADATA: {
@@ -46,14 +45,18 @@ export const WWW_CONTENT: ServiceContentConfig = {
 				'@id': `${SITE_CONFIG.baseUrl}/${meta.relPath}/#webpage`,
 			},
 			offers: (products ?? []).map((pkg) => ({
-				'@id': `${SITE_CONFIG.baseUrl}/${meta.relPath}/#${pkg.name.toLowerCase()}-offer`,
+				'@id': `${SITE_CONFIG.baseUrl}/${
+					meta.relPath
+				}/#${pkg.name.toLowerCase()}-offer`,
 			})),
 		},
 
 		...(products ?? []).map((pkg) => ({
 			'@context': 'https://schema.org',
 			'@type': 'Product',
-			'@id': `${SITE_CONFIG.baseUrl}/${meta.relPath}/#${pkg.name.toLowerCase()}`,
+			'@id': `${SITE_CONFIG.baseUrl}/${
+				meta.relPath
+			}/#${pkg.name.toLowerCase()}`,
 			name: `Pakiet ${pkg.name} – strona internetowa`,
 			description: pkg.description,
 			image: `${SITE_CONFIG.baseUrl}/logo.jpg`,
@@ -96,16 +99,14 @@ export const WWW_CONTENT: ServiceContentConfig = {
 			? {
 					'@context': 'https://schema.org',
 					'@type': 'FAQPage',
-					mainEntity: [
-						faq.map(({ title: q, content: a }) => ({
-							'@type': 'Question',
-							name: q,
-							acceptedAnswer: {
-								'@type': 'Answer',
-								text: a,
-							},
-						})),
-					],
+					mainEntity: faq.map(({ title: q, content: a }) => ({
+						'@type': 'Question',
+						name: q,
+						acceptedAnswer: {
+							'@type': 'Answer',
+							text: a,
+						},
+					})),
 			  }
 			: null,
 	],
@@ -114,6 +115,34 @@ export const WWW_CONTENT: ServiceContentConfig = {
 		heading: 'Strony internetowe dla firm i biznesów',
 		subline: 'Indywidualny projekt WWW dla Twojej marki',
 		bgImage: '/img/photos/websites_hero_image.webp',
+	},
+
+	contentSection: {
+		paragraphs: [
+			{
+				heading: (
+					<>
+						Strony internetowe, które <span>przyciągają</span> klientów i budują
+						zaufanie
+					</>
+				),
+				children:
+					'W WebCraftSTUDIO specjalizuję się w projektowaniu stron internetowych tworzonych od podstaw – bez gotowych szablonów. Każda strona internetowa powstaje z myślą o Twojej branży, użytkownikach oraz widoczności w Google. Oferuję tworzenie stron WWW, które łączą atrakcyjny wygląd, intuicyjną nawigację i pełną optymalizację SEO. Dzięki temu Twój projekt strony internetowej nie tylko dobrze się prezentuje, ale przede wszystkim skutecznie pozyskuje nowych klientów. Niezależnie od tego, czy potrzebujesz prostej strony wizytówki, czy rozbudowanego serwisu, przygotuję rozwiązanie dopasowane do Twoich celów biznesowych.',
+				image: '/img/devices.webp',
+				imgAlt: 'Profesjonalne strony internetowe',
+			},
+			{
+				heading: (
+					<>
+						Dlaczego warto <span>zainwestować</span> w profesjonalną stronę WWW?
+					</>
+				),
+				children:
+					'Profesjonalna strona internetowa to nie tylko estetyka, ale przede wszystkim funkcjonalność i realne wsparcie dla Twojego biznesu. Nowoczesny projekt WWW działa jak skuteczne narzędzie sprzedaży i marketingu – generuje leady, ułatwia kontakt z klientami i automatyzuje wiele procesów. Dzięki optymalizacji technicznej i responsywności Twoja witryna będzie działać szybko i poprawnie na każdym urządzeniu, co ma bezpośredni wpływ na pozycjonowanie w Google i satysfakcję użytkowników. To inwestycja, która przekłada się na większą widoczność, lepszą konwersję i stały rozwój firmy w internecie.',
+				image: '/img/codding_laptop.webp',
+				imgAlt: 'Projektowanie stron internetowych',
+			},
+		],
 	},
 
 	processSection: {
@@ -224,7 +253,7 @@ export const WWW_CONTENT: ServiceContentConfig = {
 				Sprawdź co jeszcze mogę dla <span>Ciebie</span> zrobić
 			</>
 		),
-		text: 'Wizytówka Google to doskonałe narzędzie do pozyskiwania lokalnych klientów. Gdy dodasz do niej profesjonalną stronę internetową i skuteczne SEO, tworzysz spójny system widoczności w sieci. Zapoznaj się z pełną ofertą i wybierz rozwiązania, które najlepiej wspierają Twój biznes.',
+		text: 'Profesjonalna strona WWW to dopiero początek. Aby naprawdę przyciągała klientów, warto zadbać o skuteczne pozycjonowanie SEO w Google oraz widoczność w Mapach dzięki wizytówce Google Moja Firma. Sprawdź, jak kompleksowe działania mogą zwiększyć Twoją rozpoznawalność w sieci.',
 		offerLinks: OFFER_LINKING,
 	},
 

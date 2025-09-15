@@ -15,6 +15,7 @@ export const PricingCard = ({
 	dark,
 	info,
 	pricePrefix,
+	priceSuffix
 }: PricingCard) => {
 	return (
 		<article className={`${styles.card} ${dark ? styles['card--dark'] : ''}`}>
@@ -42,6 +43,7 @@ export const PricingCard = ({
 					<span className={styles.prefix}>{pricePrefix}</span>
 					{price}
 					<span>zł</span>
+					{priceSuffix && <span className={styles.suffix}>{priceSuffix}</span>}
 				</p>
 				<span className={styles.taxInfo}>Podana cena jest ceną netto*</span>
 			</div>

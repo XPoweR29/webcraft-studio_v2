@@ -5,7 +5,7 @@ export interface ContactInfo {
 }
 
 export interface Address {
-	street: string | null;
+	streetAddress: string | null;
 	city: string;
 	postalCode: string;
 	countryCode: string;

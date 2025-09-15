@@ -13,17 +13,30 @@ import { ServiceContentConfig } from '@/types/servicePage.types';
 import { notFound } from 'next/navigation';
 import { getServicePageContent } from '@/utils/getServicePageContent';
 import { LINKS_MAP } from '@/config/links.config';
+import { createMetadata } from '@/utils/creataeMetadata';
 
 interface Props {
 	params: { slug: string };
 }
-//FIXME: i teraz na gotowo jedziemy z meta / schema / opengraph
 export async function generateStaticParams() {
 	const offerPages =
 		LINKS_MAP.find((link) => link.id === 'offer')?.children ?? [];
 	return offerPages.map((page) => ({
 		slug: page.href.split('/').pop(),
 	}));
+}
+export async function generateMetadata({ params }: Props) {
+	const content: ServiceContentConfig | null = getServicePageContent(
+		params.slug
+	);
+	if (!content) return {};
+
+	content.METADATA.relPath = `oferta/${params.slug}`;
+
+	return createMetadata({
+		...content.METADATA,
+		relPath: `/oferta/${params.slug}`,
+	});
 }
 
 const ServicePage = async ({ params }: Props) => {
@@ -32,6 +45,7 @@ const ServicePage = async ({ params }: Props) => {
 	);
 	if (!content) return notFound();
 	const {
+		SCHEMA,
 		heroSection,
 		processSection,
 		pricingSection,
@@ -41,8 +55,16 @@ const ServicePage = async ({ params }: Props) => {
 		reviewSection,
 	} = content;
 
+	const schema =
+		typeof SCHEMA === 'function' ? SCHEMA(content.METADATA, content.faqSection.items, content.pricingSection.packages) : SCHEMA;
+
 	return (
 		<>
+			<script
+				type='application/ld+json'
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+			/>
+
 			<SectionHero {...heroSection} />
 			<ServicePage_Content />
 

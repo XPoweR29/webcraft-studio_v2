@@ -1,7 +1,7 @@
 import React from 'react';
 import styles from './polityka-ptywatnosci.module.scss';
 import { Wrapper } from '@/components/Wrapper/Wrapper';
-import { createMetadata } from '@/utils/metadata';
+import { createMetadata } from '@/utils/creataeMetadata';
 
 const SLUG = 'polityka-prywatnosci';
 

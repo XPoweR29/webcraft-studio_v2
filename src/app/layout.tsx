@@ -2,7 +2,7 @@ import { Montserrat } from 'next/font/google';
 import '../sass/globals.scss';
 import { Header } from '@/components/Header/Header';
 import { Toaster } from 'react-hot-toast';
-import { createMetadata } from '@/utils/metadata';
+import { createMetadata } from '@/utils/creataeMetadata';
 import { Footer } from '@/components/Footer/Footer';
 import { CookieConsentBanner } from '@/components/CookieConsentBanner/CookieConsentBanner';
 import { GAScriptLoader } from '@/system/GAScriptLoader';
@@ -14,9 +14,9 @@ const mainFont = Montserrat({
 });
 
 export const metadata = createMetadata({
-	title: 'Professional Frontend Starter for Developers',
+	title: 'Tworzenie stron internetowych i SEO | WebCraftSTUDIO',
 	description:
-		'Kickstart your modern frontend projects with this clean, SEO-friendly, and scalable boilerplate built with Next.js, TypeScript, and SCSS Modules.',
+		'Projektowanie stron WWW i pozycjonowanie w Google. Nowoczesne strony internetowe dla firm oraz lokalne SEO, które zwiększa Twoją widoczność w sieci.',
 });
 
 export default function RootLayout({

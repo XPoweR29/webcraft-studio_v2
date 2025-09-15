@@ -7,10 +7,23 @@ import { OtherOffer } from '@/sections/OtherOffer/OtherOffer';
 import { FAQ_Section } from '@/sections/FAQ_Section/FAQ_Section';
 import { Review_Section } from '@/sections/Review_Sectoin/Review_Section';
 import { ProfitsCTAPProps } from '@/components/ProfitsCTA/ProfitsCTA';
+import { MetadataBaseParams } from '@/utils/creataeMetadata';
+import { AccordionItem } from '@/components/Accordion/Accordion';
 
+export type SchemaType =
+	| ((
+			meta: MetadataBaseParams,
+			faq?: AccordionItem[],
+			products?: PricingCard[]
+	  ) => Record<string, any> | Record<string, any>[])
+	| Record<string, any>
+	| Record<string, any>[];
 
 /////main interface/////
 export interface ServiceContentConfig {
+	METADATA: MetadataBaseParams;
+	SCHEMA?: SchemaType;
+
 	heroSection: ComponentProps<typeof SectionHero>;
 	processSection: ComponentProps<typeof Process_Section>;
 	pricingSection: ComponentProps<typeof Pricing_Section>;

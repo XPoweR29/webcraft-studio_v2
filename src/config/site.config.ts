@@ -1,7 +1,7 @@
 import { SiteConfig } from "@/types/siteConfig.type";
 
 export const SITE_CONFIG: SiteConfig = {
-	baseUrl: 'https://webcraft-studio.pl/',
+	baseUrl: 'https://webcraft-studio.pl',
 	siteName:
 		'WebCraftSTUDIO – tworzenie stron internetowych i pozycjonowanie SEO',
 
@@ -12,7 +12,7 @@ export const SITE_CONFIG: SiteConfig = {
 	},
 
 	address: {
-		street: null,
+		streetAddress: "Mostowa 2",
 		city: 'Zasole Bielańskie',
 		postalCode: '43-330',
 		countryCode: 'PL',

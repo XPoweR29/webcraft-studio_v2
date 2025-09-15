@@ -10,6 +10,7 @@ interface Props {
 	heading: string;
 	subline?: string;
 	bgImage: string;
+	className?: string;
 }
 
 const LETTER_DURATION = 0.3;
@@ -41,7 +42,7 @@ const letterVariants: Variants = {
 	},
 };
 
-export const SectionHero = ({ heading, bgImage, subline }: Props) => {
+export const SectionHero = ({ heading, bgImage, subline, className }: Props) => {
 	return (
 		<header className={styles.hero} aria-labelledby='page-hero-title'>
 			<div className={styles.background}>
@@ -57,7 +58,7 @@ export const SectionHero = ({ heading, bgImage, subline }: Props) => {
 					style={{ objectFit: 'cover' }}
 				/>
 			</div>
-			<Wrapper className={styles.wrapper}>
+			<Wrapper className={`${styles.wrapper} ${className??""}`}>
 				<h1 className={styles.heading} id='page-hero-title' role='text'>
 					<span>{heading}</span>{" "}
 					{subline && (

@@ -1,49 +1,49 @@
 import { ContactNap } from '@/components/ContactNap/ContactNap';
 import { SITE_CONFIG } from '@/config/site.config';
-import { ContactStart } from '@/sections/ContactStart/ContactStart';
-import { createMetadata } from '@/utils/metadata';
+import { Contact_Content } from '@/sections/Contact_Content/Contact_Content';
+import { SectionHero } from '@/sections/SectionHero/SectionHero';
+import { createMetadata } from '@/utils/creataeMetadata';
 import React from 'react';
-
-const SLUG = 'contact';
-
-const schema = {
-	'@context': 'https://schema.org',
-	'@type': 'ContactPage',
-	'@id': `${SITE_CONFIG.baseUrl}/${SLUG}/#contact`,
-	url: `${SITE_CONFIG.baseUrl}/${SLUG}`,
-	name: 'Contact | Frontend Starter for Developers',
-	description:
-		'Get in touch with us — whether you have questions, feedback, or want to contribute to this frontend boilerplate.',
-	isPartOf: {
-		'@type': 'WebSite',
-		'@id': `${SITE_CONFIG.baseUrl}/#main`,
-	},
-	mainEntityOfPage: {
-		'@type': 'WebPage',
-		'@id': `${SITE_CONFIG.baseUrl}/${SLUG}`,
-	},
-	potentialAction: [
-		{
-			'@type': 'SendAction',
-			name: 'Send a message',
-			target: {
-				'@type': 'EntryPoint',
-				urlTemplate: `${SITE_CONFIG.baseUrl}/${SLUG}#formularz`,
-				actionPlatform: [
-					'https://schema.org/DesktopWebPlatform',
-					'https://schema.org/MobileWebPlatform',
-				],
-			},
-		}
-	],
-};
+import styles from './index.module.scss';
 
 export const metadata = createMetadata({
-	slug: SLUG,
-	title: 'Contact | Frontend Starter Boilerplate for Developers',
+	title: 'Kontakt – WebCraftSTUDIO | Strony internetowe i SEO',
 	description:
-		'Want to ask something or contribute to this frontend starter project? Get in touch via the form or call us directly.',
+		'Chcesz dowiedzieć się więcej o tworzeniu stron WWW i SEO? Skontaktuj się ze mną przez formularz, e-mail lub telefon.',
+	relPath: '/kontakt',
 });
+
+const schema = [
+	{
+		'@context': 'https://schema.org',
+		'@type': 'ContactPage',
+		'@id': `${SITE_CONFIG.baseUrl}/#contact`,
+		url: `${SITE_CONFIG.baseUrl}${metadata.relPath}`,
+		name: metadata.title,
+		description: metadata.description,
+		isPartOf: {
+			'@id': `${SITE_CONFIG.baseUrl}/#website`,
+		},
+	},
+	{
+		'@context': 'https://schema.org',
+		'@type': 'BreadcrumbList',
+		itemListElement: [
+			{
+				'@type': 'ListItem',
+				position: 1,
+				name: 'Strona główna',
+				item: SITE_CONFIG.baseUrl,
+			},
+			{
+				'@type': 'ListItem',
+				position: 2,
+				name: 'Kontakt',
+				item: `${SITE_CONFIG.baseUrl}${metadata.relPath}`,
+			},
+		],
+	},
+];
 
 const Contact = () => {
 	return (
@@ -53,8 +53,14 @@ const Contact = () => {
 				dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
 			/>
 
-			<ContactStart />
-			<ContactNap />
+			<SectionHero
+				heading='Skontaktuj się ze mną'
+				subline='Chętnie odpowiem na Twoje pytania'
+				bgImage='/img/photos/contact_hero_image.webp'
+				className={styles.headingWrapper}
+			/>
+			<Contact_Content />
+			<ContactNap className={styles.form}/>
 		</>
 	);
 };

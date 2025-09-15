@@ -5,8 +5,111 @@ import basicIcon from '../../assets/icons/lighting_icon.svg';
 import standardIcon from '../../assets/icons/rocket_icon.svg';
 import proIcon from '../../assets/icons/crown_icon.svg';
 import { OFFER_LINKING } from '@/config/offerLinking.config';
+import { SITE_CONFIG } from '../site.config';
+import { image } from 'framer-motion/client';
 
 export const WWW_CONTENT: ServiceContentConfig = {
+	METADATA: {
+		title:
+			'Strony internetowe | Projektowanie i tworzenie stron WWW – WebCraftSTUDIO',
+		description:
+			'Zaprojektuję i wykonam Twoją stronę WWW od podstaw. Estetyczny projekt, szybki kod i widoczność w Google dzięki SEO.',
+	},
+
+	SCHEMA: (meta, faq, products) => [
+		{
+			'@context': 'https://schema.org',
+			'@type': 'WebPage',
+			'@id': `${SITE_CONFIG.baseUrl}/${meta.relPath}/#webpage`,
+			url: `${SITE_CONFIG.baseUrl}/${meta.relPath}`,
+			name: meta.title,
+			description: meta.description,
+			isPartOf: {
+				'@id': `${SITE_CONFIG.baseUrl}/#website`,
+			},
+			mainEntity: {
+				'@id': `${SITE_CONFIG.baseUrl}/${meta.relPath}/#service`,
+			},
+		},
+		//SERVICE
+		{
+			'@context': 'https://schema.org',
+			'@type': 'Service',
+			'@id': `${SITE_CONFIG.baseUrl}/${meta.relPath}/#service`,
+			serviceType: 'Tworzenie stron internetowych',
+			name: meta.title,
+			description: meta.description,
+			provider: {
+				'@id': `${SITE_CONFIG.baseUrl}/#organization`,
+			},
+			mainEntityOfPage: {
+				'@id': `${SITE_CONFIG.baseUrl}/${meta.relPath}/#webpage`,
+			},
+			offers: (products ?? []).map((pkg) => ({
+				'@id': `${SITE_CONFIG.baseUrl}/${meta.relPath}/#${pkg.name.toLowerCase()}-offer`,
+			})),
+		},
+
+		...(products ?? []).map((pkg) => ({
+			'@context': 'https://schema.org',
+			'@type': 'Product',
+			'@id': `${SITE_CONFIG.baseUrl}/${meta.relPath}/#${pkg.name.toLowerCase()}`,
+			name: `Pakiet ${pkg.name} – strona internetowa`,
+			description: pkg.description,
+			image: `${SITE_CONFIG.baseUrl}/logo.jpg`,
+			offers: {
+				'@type': 'Offer',
+				priceCurrency: 'PLN',
+				price: pkg.price.toString(),
+				availability: 'https://schema.org/InStock',
+				url: `${SITE_CONFIG.baseUrl}/${meta.relPath}`,
+			},
+		})),
+
+		//BREADCRUMB
+		{
+			'@context': 'https://schema.org',
+			'@type': 'BreadcrumbList',
+			itemListElement: [
+				{
+					'@type': 'ListItem',
+					position: 1,
+					name: 'Strona główna',
+					item: SITE_CONFIG.baseUrl,
+				},
+				{
+					'@type': 'ListItem',
+					position: 2,
+					name: 'Oferta',
+					item: `${SITE_CONFIG.baseUrl}/oferta`,
+				},
+				{
+					'@type': 'ListItem',
+					position: 3,
+					name: 'Tworzenie stron WWW',
+					item: `${SITE_CONFIG.baseUrl}/${meta.relPath}`,
+				},
+			],
+		},
+		//FAQ
+		faq?.length
+			? {
+					'@context': 'https://schema.org',
+					'@type': 'FAQPage',
+					mainEntity: [
+						faq.map(({ title: q, content: a }) => ({
+							'@type': 'Question',
+							name: q,
+							acceptedAnswer: {
+								'@type': 'Answer',
+								text: a,
+							},
+						})),
+					],
+			  }
+			: null,
+	],
+
 	heroSection: {
 		heading: 'Strony internetowe dla firm i biznesów',
 		subline: 'Indywidualny projekt WWW dla Twojej marki',

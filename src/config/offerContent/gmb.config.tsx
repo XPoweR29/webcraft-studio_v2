@@ -9,9 +9,9 @@ import { SITE_CONFIG } from '../site.config';
 
 export const GMB_CONTENT: ServiceContentConfig = {
 	METADATA: {
-		title: 'Optymalizacja SEO i pozycjonowanie stron internetowych w Google',
+		title: 'Pozycjonowanie Wizytówki Google | Zwiększ widoczność w Google Maps',
 		description:
-			'Skuteczne pozycjonowanie SEO – popraw widoczność swojej strony w Google, zwiększ ruch i zdobądź nowych klientów. Sprawdź ofertę WebCraftSTUDIO.',
+			'Twoja firma w Google Maps może być wyżej. Oferuję pozycjonowanie wizytówki Google, dodawanie ofert, produkty, opinie i pełną optymalizację profilu.',
 	},
 
 	SCHEMA: (meta, faq, products) => [
@@ -34,7 +34,7 @@ export const GMB_CONTENT: ServiceContentConfig = {
 			'@context': 'https://schema.org',
 			'@type': 'Service',
 			'@id': `${SITE_CONFIG.baseUrl}/${meta.relPath}/#service`,
-			serviceType: 'Tworzenie stron internetowych',
+			serviceType: 'Pozycjonowaine wizytówki Google Moja Firma',
 			name: meta.title,
 			description: meta.description,
 			provider: {
@@ -56,7 +56,7 @@ export const GMB_CONTENT: ServiceContentConfig = {
 			'@id': `${SITE_CONFIG.baseUrl}/${
 				meta.relPath
 			}/#${pkg.name.toLowerCase()}`,
-			name: `Pakiet ${pkg.name} – strona internetowa`,
+			name: `Pakiet ${pkg.name} – Wizytówka Google`,
 			description: pkg.description,
 			image: `${SITE_CONFIG.baseUrl}/logo.jpg`,
 			offers: {
@@ -88,7 +88,7 @@ export const GMB_CONTENT: ServiceContentConfig = {
 				{
 					'@type': 'ListItem',
 					position: 3,
-					name: 'Tworzenie stron WWW',
+					name: 'Wizytówka Google',
 					item: `${SITE_CONFIG.baseUrl}/${meta.relPath}`,
 				},
 			],
@@ -111,9 +111,9 @@ export const GMB_CONTENT: ServiceContentConfig = {
 	],
 
 	heroSection: {
-		heading: 'Optymalizacja SEO dla Twojej strony',
-		subline: 'Skuteczne pozycjonowanie stron internetowych w Google',
-		bgImage: '/img/photos/seo_hero_image.jpg',
+		heading: 'Pozycjonowanie Wizytówki Google',
+		subline: 'Zwiększ swoją widoczność w Google Maps',
+		bgImage: '/img/photos/gmb_hero_image.webp',
 	},
 
 	contentSection: {
@@ -121,117 +121,96 @@ export const GMB_CONTENT: ServiceContentConfig = {
 			{
 				heading: (
 					<>
-						Zbuduj <span>silną markę</span>, którą klienci znajdą w Google
+						Wizytówka Google, która buduje <span>zaufanie</span> do Twojej marki
 					</>
 				),
 				children:
-					'Dobrze zoptymalizowana i widoczna w Google strona internetowa buduje prestiż Twojej firmy i sprawia, że klienci od razu traktują Cię jako wiarygodnego partnera. Pozycjonowanie stron internetowych to inwestycja w wizerunek – im wyżej pojawiasz się w wynikach wyszukiwania, tym większe zaufanie zdobywasz w oczach potencjalnych klientów. Profesjonalne strony internetowe wsparte SEO stają się wizytówką marki i pracują na Twoją rozpoznawalność 24/7.',
-				image: '/img/searching.webp',
-				imgAlt: 'Pozycjonowanie strony w Google',
+					'Wizytówka Google Moja Firma to jeden z najważniejszych elementów obecności Twojej firmy w internecie. Dla wielu potencjalnych klientów jest to pierwszy kontakt z Twoją marką – zanim wejdą na stronę internetową, widzą Twój profil w Mapach Google i wynikach wyszukiwania. Profesjonalna optymalizacja wizytówki Google sprawia, że Twoja firma wygląda wiarygodnie, nowocześnie i wyróżnia się na tle konkurencji. Uzupełnione dane kontaktowe, godziny otwarcia, zdjęcia oraz atrakcyjne opisy usług zwiększają zaufanie i zachęcają do wyboru właśnie Ciebie. Dobrze wypozycjonowany profil Google Moja Firma nie tylko przyciąga uwagę, ale także generuje realny ruch – więcej telefonów, zapytań o trasę i wizyt w Twojej lokalizacji. To skuteczne narzędzie marketingowe, które buduje wizerunek profesjonalnej marki i wspiera pozyskiwanie klientów lokalnych.',
+				image: '/img/gmb_position.webp',
+				imgAlt: 'Wysoka pozycja w Google Maps',
 			},
 			{
 				heading: (
 					<>
-						Dlaczego <span>optymalizacja SEO</span> to najlepsza inwestycja?
+						Dlaczego pozycjonowanie wizytówki Google<span>zwiększa</span> liczbę
+						klientów?
 					</>
 				),
 				children:
-					'Pozycjonowanie stron WWW to nie tylko widoczność, ale przede wszystkim konkretne efekty biznesowe – więcej wejść, więcej zapytań i więcej sprzedaży. Odpowiednia optymalizacja SEO sprawia, że Twoja strona działa szybciej, jest lepiej dopasowana do potrzeb użytkowników i generuje wyższy zwrot z inwestycji. Funkcjonalna strona WWW w połączeniu z systematycznym SEO daje Ci przewagę nad konkurencją i zamienia odwiedzających w realnych klientów.',
-				image: '/img/devices_dashboard.webp',
-				imgAlt: 'Opotymalizacja stron internetowych',
+					'Dobrze wypozycjonowana wizytówka Google Moja Firma to jedno z najskuteczniejszych narzędzi lokalnego marketingu. Dzięki optymalizacji profilu, wykorzystaniu odpowiednich fraz kluczowych oraz regularnym aktualizacjom treści, Twoja firma zyskuje lepszą widoczność w Mapach Google i wynikach wyszukiwania. To sprawia, że klienci szybciej znajdują Twoje usługi i chętniej wybierają właśnie Ciebie zamiast konkurencji. Pozycjonowanie wizytówki Google przekłada się na większą liczbę telefonów, zapytań o trasę, rezerwacji i realnych zamówień. Profesjonalnie prowadzony profil buduje wiarygodność marki, wspiera SEO lokalne i stanowi uzupełnienie strony internetowej, dzięki czemu Twoja obecność online staje się spójna i skuteczna.',
+				image: '/img/gmb_device.webp',
+				imgAlt: 'Pozycjonowanie wizytówki Google Maps',
 			},
 		],
 	},
 
 	processSection: {
-		heading: 'Jak wygląda proces pozycjonowania strony?',
+		heading: 'Proces optymalizacji wizytówki Google',
 		bgImage: '/img/steps_sketch.svg',
 		btnLabel: 'skontaktuj się',
 		redirectTo: linkHref('contact'),
 		steps: [
 			{
-				title: 'Audyt i analiza',
-				text: 'Sprawdzam kondycję Twojej strony, analizuję konkurencję i słowa kluczowe. Na tej podstawie tworzę plan działań SEO dopasowany do Twojej branży.',
+				title: 'Audyt profilu',
+				text: 'Sprawdzam aktualny stan wizytówki – dane, zdjęcia, opinie, kategorie i słowa kluczowe. Na tej podstawie przygotowuję plan działań.',
 			},
 			{
-				title: 'Optymalizacja techniczna',
-				text: 'Wdrażam poprawki w strukturze strony, meta tagach, nagłówkach i prędkości ładowania. Dzięki temu Twoja witryna jest lepiej oceniana przez Google.',
+				title: 'Publikacje i aktualizacje',
+				text: 'Regularnie dodaję posty, zdjęcia i oferty, które zwiększają aktywność profilu i budują zaufanie klientów.',
 			},
 			{
-				title: 'Treści i linkowanie',
-				text: 'Przygotowuję wartościowe treści oparte na słowach kluczowych i dbam o linkowanie wewnętrzne oraz zewnętrzne. To fundament trwałej widoczności w wyszukiwarce.',
+				title: 'Optymalizacja treści',
+				text: 'Uzupełniam i poprawiam wszystkie informacje: opisy firmy, usługi, produkty i kategorie. Dbam, by były atrakcyjne i zgodne z wytycznymi Google.',
 			},
 			{
 				title: 'Monitoring i rozwój',
-				text: 'Regularnie analizuję wyniki i dopasowuję strategię SEO, aby utrzymać i zwiększać pozycje Twojej strony. To proces ciągły, który stale pracuje na Twoją przewagę.',
+				text: 'Śledzę widoczność wizytówki, opinie i zapytania klientów. W razie potrzeby wprowadzam zmiany, by profil stale przyciągał nowych odbiorców.',
 			},
 		],
 		children:
-			'Pozycjonowanie stron internetowych opieram na sprawdzonej strategii SEO. Dzięki jasno określonym etapom wiesz, jakie działania podejmuję i kiedy możesz spodziewać się pierwszych efektów.',
+			'Twoja wizytówka Google to klucz do pozyskiwania lokalnych klientów. Dzięki sprawdzonemu procesowi optymalizacji wiesz, jakie działania podejmuję i kiedy możesz spodziewać się lepszej widoczności w Mapach Google i wyszukiwarce.',
 	},
 
 	pricingSection: {
 		heading: (
 			<>
-				Wybierz pakiet SEO <span>opasowany</span> do Twoich potrzeb
+				Pozycjonowanie w Mapach Google w <span>elastycznych</span> pakietach
 			</>
 		),
-		text: 'Każda firma potrzebuje innej strategii widoczności w sieci, dlatego przygotowałem trzy elastyczne pakiety SEO. Dzięki nim możesz wybrać rozwiązanie dopasowane do swojego budżetu i etapu rozwoju biznesu – od podstawowej optymalizacji SEO po pełne pozycjonowanie stron internetowych w Google z linkowaniem i tworzeniem treści. Jasna struktura oferty pozwala szybko zdecydować, który pakiet najlepiej wspiera cele Twojej firmy: zwiększenie ruchu na stronie, pozyskiwanie klientów lokalnych czy budowanie przewagi nad konkurencją. Każdy wariant opiera się na sprawdzonych działaniach SEO, które realnie podnoszą widoczność Twojej strony w Google i przyspieszają rozwój biznesu.',
-		sketchImg: '/img/seo_sketch.webp',
+		text: 'Wizytówka Google Moja Firma to kluczowe narzędzie dla biznesów lokalnych – pozwala zdobywać nowych klientów bezpośrednio z Map Google i wyszukiwarki. Dlatego przygotowałem dwa elastyczne pakiety usług, które dopasujesz do potrzeb swojej firmy. Jeśli nie masz jeszcze wizytówki, pomogę Ci ją założyć i prawidłowo skonfigurować, a następnie zoptymalizować treści pod frazy branżowe, aby przyciągała właściwych odbiorców. Dla firm posiadających już profil proponuję pełną optymalizację i regularne działania SEO, dzięki którym wizytówka będzie stale rosnąć w widoczności, zdobywać opinie i generować realne zapytania od klientów. Niezależnie od wybranego pakietu, zyskujesz sprawdzone działania, które zwiększają Twoją obecność w Google i przewagę nad lokalną konkurencją.',
+		sketchImg: '/img/gmb_sketch.webp',
 		packages: [
 			{
 				name: 'START',
-				description:
-					'Szybka poprawa podstaw SEO i gotowość do dalszych działań.',
+				description: 'Zyskaj poprawnie skonfigurowaną wizytówkę',
 				icon: basicIcon,
-				pricePrefix: 'od',
-				price: 999,
+				price: 390,
 				features: [
-					'Audyt techniczny strony',
-					'Core Web Vitals + optymalizacja',
-					'Integracja z Google Search Console',
-					'Analiza 5 fraz kluczowych',
-					'Analiza struktury i treści podstron',
-					'Raport z rekomendacjami',
+					'Założenie lub aktualizacja wizytówki',
+					'Kompletne uzupełnienie profilu',
+					'Dodanie logo i zdjęć firmowych',
+					'Podstawowa optymalizacja SEO',
+					'Powiązanie wizytówki ze stroną www',
+					'Przygotowanie do aktywnego działania',
 				],
 				info: 'Usługa jednorazowa',
 			},
 			{
-				name: 'SEO PLUS',
-				description: 'Zyskaj stały ruch z Google i realnych klientów online',
+				name: 'LOCAL PRO',
+				description: 'Stały rozwój i większa widoczność lokalna',
 				icon: standardIcon,
-				price: 955,
+				price: 499,
 				priceSuffix: '/msc',
 				features: [
 					'Wszystko z pakietu START',
-					'+1 podstrona pod frazę w Google',
-					'Podstawowy Link Building',
-					'Obecność w katalogach lokalnych',
-					'Miesięczny raport pozycji i ruchu',
-					'2 wpisy blogowe miesięcznie',
-					'Doradztwo i wsparcie SEO',
+					'Cotygodniowe aktualizacje profilu',
+					'Optymalizacja produktów i usług',
+					'Monitoring opinii i odpowiedzi',
+					'Optymalizacja treści pod frazy branżowe',
+					'Comiesięczne raporty widoczności',
+					'Stałe doradztwo SEO',
 				],
 				dark: true,
-				info: 'Min. 3 msc. abonamentu',
-			},
-			{
-				name: 'SEO PREMIUM',
-				description:
-					'Pełna strategia SEO i content, który pracuje na Twoją markę.',
-				icon: proIcon,
-				pricePrefix: 'od',
-				price: 1749,
-				priceSuffix: '/msc',
-				features: [
-					'Wszystko z pakietu SEO PLUS',
-					'Rozszerzenie struktury podstron SEO',
-					'Rozbudowany Link Building',
-					'Kwartalne analizy konkurencji',
-					'Kwartalna strategia contentowa',
-					'Cotygodniowa optymalizacja treści',
-					'Szkolenie SEO dla klienta',
-					'Priorytetowa obsługa SEO',
-				],
 				info: 'Min. 3 msc. abonamentu',
 			},
 		],
@@ -240,31 +219,12 @@ export const GMB_CONTENT: ServiceContentConfig = {
 	directQuery: {
 		heading: (
 			<>
-				Czy Twoja strona internetowa naprawdę <span>wyróżnia</span> Twoją firmę
-				w sieci?
+				Jak <span>wyróżnić</span> swój profil Google Moja Firma na tle
+				konkurencji?
 			</>
 		),
-		children: (
-			<>
-				<p>
-					Pozycjonowanie SEO to klucz do zbudowania trwałej przewagi na rynku –
-					Twoja strona internetowa nie tylko pojawia się w Google, ale
-					faktycznie przyciąga uwagę klientów. Dzięki indywidualnej strategii
-					SEO Twoja firma zyskuje unikalną pozycję w sieci, która odróżnia Cię
-					od innych. To właśnie dzięki skutecznemu pozycjonowaniu strona
-					internetowa Twojej firmy staje się narzędziem, które pomaga wyróżnić
-					się w branży i zdobywać klientów szybciej niż konkurencja.
-				</p>
-				<p>
-					Twoi konkurenci już inwestują w SEO – pytanie, czy Ty chcesz ich
-					dogonić, czy wyprzedzić. Dzięki indywidualnemu podejściu, analizie
-					branży i lokalnym frazom, pomagam tworzyć strategię, która wyróżnia
-					Twoją firmę w sieci. Nie działam szablonowo – SEO to nie pakiet, tylko
-					proces, który buduje przewagę krok po kroku. Wyróżnij się w Google –
-					zanim zrobią to inni.
-				</p>
-			</>
-		),
+		children:
+			'W wielu branżach to właśnie wizytówka Google Moja Firma decyduje o tym, czy klient wybierze Twoją ofertę. Profesjonalna optymalizacja profilu – unikalne opisy usług, dodanie produktów, aktualne zdjęcia, a także regularne publikowanie postów – sprawia, że Twoja firma staje się bardziej widoczna i atrakcyjna niż konkurencja. Opinie klientów dodatkowo wzmacniają wiarygodność marki, a odpowiednio prowadzone pozycjonowanie wizytówki Google pozwala zająć wysokie miejsca w Mapach Google i lokalnych wynikach wyszukiwania. Dzięki temu zyskujesz nie tylko przewagę wizerunkową, ale także realny wzrost liczby zapytań, telefonów i nowych klientów z Twojego regionu.',
 	},
 
 	otherOffer: {
@@ -273,7 +233,7 @@ export const GMB_CONTENT: ServiceContentConfig = {
 				Sprawdź co jeszcze mogę dla <span>Ciebie</span> zrobić
 			</>
 		),
-		text: 'Skuteczne SEO najlepiej działa w połączeniu z nowoczesną stroną internetową oraz zoptymalizowaną wizytówką Google Moja Firma. Dzięki temu budujesz spójny system widoczności online – od wyników wyszukiwania, przez mapy Google, aż po profesjonalną prezentację Twojej firmy w sieci.',
+		text: 'Wizytówka Google przyciąga lokalnych klientów, ale jej potencjał rośnie, gdy łączysz ją ze skutecznym pozycjonowaniem SEO oraz profesjonalną stroną internetową. Razem tworzą pełny ekosystem marketingu online, który zwiększa widoczność Twojej firmy i wspiera sprzedaż.',
 		offerLinks: OFFER_LINKING,
 	},
 
@@ -281,39 +241,39 @@ export const GMB_CONTENT: ServiceContentConfig = {
 		items: [
 			{
 				id: '1',
-				title: 'Na czym polega pozycjonowanie strony w Google?',
+				title: 'Na czym polega pozycjonowanie wizytówki Google?',
 				content:
-					'Pozycjonowanie strony w Google to proces zwiększania jej widoczności w wynikach wyszukiwania. Obejmuje optymalizację techniczną, tworzenie wartościowych treści oraz link building. Dzięki temu Twoja strona internetowa może uzyskiwać wyższe pozycje i przyciągać nowych klientów.',
+					'Pozycjonowanie wizytówki Google to działania, które poprawiają widoczność Twojej firmy w mapach i wynikach lokalnych. Obejmuje optymalizację profilu, dodawanie zdjęć, ofert, produktów oraz regularne aktualizacje treści.',
 			},
 			{
 				id: '2',
-				title: 'Ile kosztuje pozycjonowanie SEO?',
+				title: 'Czym różni się pozycjonowanie lokalne od tradycyjnego SEO?',
 				content:
-					'Koszt pozycjonowania strony internetowej zależy od konkurencyjności branży, liczby fraz oraz zakresu działań. Ceny zaczynają się już od kilkuset złotych miesięcznie, ale dla skutecznych efektów rekomendowane są rozbudowane pakiety SEO. Każda wycena jest przygotowywana indywidualnie.',
+					'Pozycjonowanie lokalne skupia się na tym, aby firma była widoczna dla klientów w najbliższej okolicy – głównie w mapach Google i Google Moja Firma. Tradycyjne SEO obejmuje szerszy zakres działań i pozycjonowanie na poziomie ogólnopolskim lub globalnym.',
 			},
 			{
 				id: '3',
-				title: 'Jak długo trwa pozycjonowanie stron internetowych?',
+				title: 'Jak poprawić pozycję wizytówki Google?',
 				content:
-					'Pierwsze efekty pozycjonowania stron w Google można zauważyć po kilku tygodniach, jednak na stabilne wyniki potrzeba zwykle od 3 do 6 miesięcy. SEO to proces długofalowy – regularna optymalizacja i rozbudowa treści zapewniają trwałe efekty.',
+					'Na pozycję wizytówki w Google wpływają m.in. opinie klientów, regularne dodawanie zdjęć, opis usług, a także optymalizacja wizytówki pod kątem fraz kluczowych. Ważne jest też powiązanie profilu z dobrze wypozycjonowaną stroną internetową.',
 			},
 			{
 				id: '4',
-				title: 'Czym różni się optymalizacja SEO od pozycjonowania?',
+				title: 'Na czym polega zarządzanie wizytówką Google?',
 				content:
-					'Optymalizacja SEO to działania wewnątrz strony – poprawa kodu, szybkości ładowania czy struktury nagłówków. Pozycjonowanie stron internetowych to szerszy proces, który obejmuje również link building, content marketing oraz monitoring pozycji w Google.',
+					'Zarządzanie wizytówką Google to systematyczna aktualizacja danych, dodawanie postów, produktów, usług oraz odpowiadanie na opinie klientów. Dzięki temu wizytówka jest aktywna i buduje większe zaufanie użytkowników.',
 			},
 			{
 				id: '5',
-				title: 'Czy pozycjonowanie organiczne jest lepsze od płatnych reklam?',
+				title: 'Dlaczego optymalizacja wizytówki Google jest ważna?',
 				content:
-					'Pozycjonowanie organiczne pozwala na długotrwałą obecność strony w wynikach wyszukiwania, nawet bez dodatkowych opłat za kliknięcia. Reklamy Google Ads dają szybkie efekty, ale znikają po zakończeniu kampanii. Najlepsze rezultaty daje połączenie SEO i kampanii płatnych.',
+					'Optymalizacja wizytówki Google sprawia, że profil jest bardziej atrakcyjny dla klientów i lepiej widoczny w wynikach lokalnych. To prosty sposób na zwiększenie liczby zapytań i wizyt w Twojej firmie.',
 			},
 			{
 				id: '6',
-				title: 'Jak sprawdzić pozycję mojej strony w Google?',
+				title: 'Czy wizytówka Google może zastąpić stronę internetową?',
 				content:
-					'Pozycję strony w Google możesz monitorować ręcznie, wpisując frazy w wyszukiwarkę, ale bardziej precyzyjnie zrobisz to za pomocą profesjonalnych narzędzi SEO. W ramach współpracy regularnie przygotowuję raporty pozycji i ruchu, abyś wiedział, jak rośnie widoczność Twojej strony.',
+					'Wizytówka Google jest świetnym narzędziem do pozyskiwania klientów lokalnych, ale nie zastąpi w pełni strony internetowej. Najlepsze efekty daje połączenie pozycjonowania wizytówki Google z profesjonalną stroną WWW i SEO.',
 			},
 		],
 	},
@@ -321,30 +281,32 @@ export const GMB_CONTENT: ServiceContentConfig = {
 	reviewSection: {
 		heading: 'Dołącz do zadowolonych klientów',
 		children:
-			'Opinie klientów to dowód na to, że skuteczne pozycjonowanie stron internetowych i rzetelna optymalizacja SEO przynoszą wymierne efekty. Dzięki regularnym działaniom SEO i widoczności w Google firmy zyskują nowych klientów i zwiększają ruch na stronie. Zaufanie klientów pokazuje, że dobrze zaplanowane SEO naprawdę działa.',
+			'Opinie przedsiębiorców potwierdzają, że odpowiednio zoptymalizowana wizytówka Google Moja Firma zwiększa lokalną widoczność w mapach Google i pomaga dotrzeć do klientów z Twojej okolicy. Dzięki działaniom SEO i stałej obsłudze profilu wizytówki Google, firmy notują więcej zapytań i wizyt. Zadowoleni klienci to najlepszy dowód, że pozycjonowanie lokalne wizytówki Google ma sens.',
 	},
 
 	footerCTA: {
-		heading: 'Co zyskasz dzięki pozycjonowaniu SEO',
-		text: 'Skuteczne SEO to nie tylko techniczne poprawki, ale przede wszystkim większa widoczność Twojej firmy w Google, stabilny napływ klientów i realne wyniki biznesowe. Pracuję przejrzyście i stawiam na działania, które dają wymierne efekty.',
+		heading: 'Co zyskasz dzięki wizytówce Google?',
+		text: 'Twoja wizytówka Google to pierwsze miejsce, gdzie klienci szukają informacji o firmie. Dzięki optymalizacji i regularnym aktualizacjom zyskujesz większą widoczność w Mapach Google, więcej zapytań i przewagę nad lokalną konkurencją.',
 		children: [
 			{
-				title: 'Więcej klientów z Google',
-				description: 'Twoja strona pojawia się tam, gdzie szukają Cię klienci.',
-			},
-			{
-				title: 'Stabilne efekty',
+				title: 'Większa widoczność',
 				description:
-					'SEO działa długofalowo – inwestujesz raz, a widoczność rośnie miesiącami.',
+					'Twoja firma częściej pojawia się w Mapach Google i wynikach lokalnych.',
 			},
 			{
-				title: 'Transparentne działania',
-				description: 'Jasny plan krok po kroku, raporty i konkretne wyniki..',
-			},
-			{
-				title: 'Stałe wsparcie SEO',
+				title: 'Nowi klienci',
 				description:
-					'Nie zostawiam Cię samego – doradzam i dbam o stały rozwój strony.',
+					'Przyciągasz osoby faktycznie szukające usług w Twojej branży.',
+			},
+			{
+				title: 'Silniejsza marka',
+				description:
+					'Profesjonalny profil budzi zaufanie i wyróżnia Cię na tle konkurencji.',
+			},
+			{
+				title: 'Stałe wsparcie',
+				description:
+					'Pomagam w aktualizacjach i odpowiadaniu na opinie klientów.',
 			},
 		],
 	},

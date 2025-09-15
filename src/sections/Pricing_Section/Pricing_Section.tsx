@@ -9,10 +9,14 @@ interface Props {
 	text: string;
 	sketchImg: string;
 	packages: PricingCard[];
-}
+};
 
 
 export const Pricing_Section = ({ heading, text, sketchImg, packages }: Props) => {
+	let gmbClass = '';
+	if(packages.length === 2) gmbClass = 'gmb';
+	console.log(gmbClass);
+
 	return (
 		<section className={styles.section}>
 			<Wrapper className={styles.wrapper}>
@@ -28,7 +32,7 @@ export const Pricing_Section = ({ heading, text, sketchImg, packages }: Props) =
 				<h2 className={styles.heading}>{heading}</h2>
 				<p className={styles.text}>{text}</p>
 
-				<ul className={styles.packages}>
+				<ul className={`${styles.packages} ${gmbClass?styles['packages--gmb']:''}`}>
 					{packages.map((pck) => (
 						<li key={pck.name}>
 							<PricingCard {...pck} />

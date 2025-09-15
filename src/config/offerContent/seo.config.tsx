@@ -56,7 +56,7 @@ export const SEO_CONTENT: ServiceContentConfig = {
 			'@id': `${SITE_CONFIG.baseUrl}/${
 				meta.relPath
 			}/#${pkg.name.toLowerCase()}`,
-			name: `Pakiet ${pkg.name} – strona internetowa`,
+			name: `Pakiet ${pkg.name} – Optymalizacja SEO`,
 			description: pkg.description,
 			image: `${SITE_CONFIG.baseUrl}/logo.jpg`,
 			offers: {

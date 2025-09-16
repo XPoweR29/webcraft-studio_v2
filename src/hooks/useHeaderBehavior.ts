@@ -20,15 +20,23 @@ export const useHeaderBehavior = ({
 	const pathname = usePathname();
 	const prevScrollPos = useRef(0);
 	const firstLoad = useRef(true);
+	const skipNextScrollCheck = useRef(false);
 
 	const [showNav, setShowNav] = useState(true);
 	const [bgColor, setBgColor] = useState<string>(defaultColor);
 
 	useEffect(() => {
+		setShowNav(true);
 		firstLoad.current = true;
 		prevScrollPos.current = 0;
+		skipNextScrollCheck.current = true;
 
 		const handleScroll = () => {
+			if(skipNextScrollCheck.current) {
+				skipNextScrollCheck.current = false;
+				return;
+			};
+
 			const currentScrollPos = window.scrollY;
 
 			if (scrollHide) {

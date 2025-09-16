@@ -15,7 +15,7 @@ interface Props {
 
 const variants: Variants = {
 	hidden: {
-		y: 50,
+		y: 30,
 		filter: 'blur(8px)',
 		opacity: 0,
 	},
@@ -25,7 +25,7 @@ const variants: Variants = {
 		opacity: 1,
 
 		transition: {
-			duration: 0.3,
+			duration: 0.4,
 			ease: 'easeOut',
 		},
 	},

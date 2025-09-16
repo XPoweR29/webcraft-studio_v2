@@ -5,8 +5,8 @@
 	flex-direction: column;
 	gap: 1em;
 
-	.image {
-        width: 100%;
+	.imageWrapper {
+		width: 100%;
 		max-width: 450px;
 		align-self: center;
 	}
@@ -27,13 +27,13 @@
 		flex-direction: row;
 		gap: 2em;
 
-		.image {
+		.imageWrapper {
 			width: 400px;
 		}
 
-        .content {
-            width: 55%;
-        }
+		.content {
+			width: 55%;
+		}
 
 		&--reverse {
 			flex-direction: row-reverse;
@@ -44,7 +44,8 @@
 @media (width>=1200px) {
 	.paragraph {
 		gap: 5em;
-		.image {
+		
+		.imageWrapper {
 			width: 450px;
 			max-width: none;
 		}

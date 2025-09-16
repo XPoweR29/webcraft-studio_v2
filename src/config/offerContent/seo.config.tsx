@@ -237,6 +237,15 @@ export const SEO_CONTENT: ServiceContentConfig = {
 		],
 	},
 
+	subscriptionCTA: {
+		heading: (
+			<>
+				Zyskaj <span>więcej</span> w abonamencie
+			</>
+		),
+		text: 'Optymalizacja SEO to dobry start, ale dopiero długofalowe pozycjonowanie stron internetowych pozwala wyprzedzić konkurencję. Regularne aktualizacje treści, link building i analiza fraz sprawiają, że Twoja strona buduje trwałą widoczność w Google i generuje więcej zapytań od klientów.',
+	},
+
 	directQuery: {
 		heading: (
 			<>

@@ -10,6 +10,7 @@ import { ProfitsCTAPProps } from '@/components/ProfitsCTA/ProfitsCTA';
 import { MetadataBaseParams } from '@/utils/creataeMetadata';
 import { AccordionItem } from '@/components/Accordion/Accordion';
 import { ServicePage_Content } from '@/sections/ServicePage_Content/ServicePage_Content';
+import { SubscriptionCTA } from '@/components/SubscriptionCTA/SubscriptionCTA';
 
 export type SchemaType =
 	| ((
@@ -29,6 +30,7 @@ export interface ServiceContentConfig {
 	contentSection: ComponentProps<typeof ServicePage_Content>
 	processSection: ComponentProps<typeof Process_Section>;
 	pricingSection: ComponentProps<typeof Pricing_Section>;
+	subscriptionCTA?: ComponentProps<typeof SubscriptionCTA>;
 	directQuery: ComponentProps<typeof DirectQuery>;
 	otherOffer: ComponentProps<typeof OtherOffer>;
 	faqSection: ComponentProps<typeof FAQ_Section>;

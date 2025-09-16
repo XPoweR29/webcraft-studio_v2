@@ -14,6 +14,7 @@ import { notFound } from 'next/navigation';
 import { getServicePageContent } from '@/utils/getServicePageContent';
 import { LINKS_MAP } from '@/config/links.config';
 import { createMetadata } from '@/utils/creataeMetadata';
+import { SubscriptionCTA } from '@/components/SubscriptionCTA/SubscriptionCTA';
 
 interface Props {
 	params: { slug: string };
@@ -50,6 +51,7 @@ const ServicePage = async ({ params }: Props) => {
 		contentSection,
 		processSection,
 		pricingSection,
+		subscriptionCTA,
 		directQuery,
 		otherOffer,
 		faqSection,
@@ -73,6 +75,8 @@ const ServicePage = async ({ params }: Props) => {
 			<Process_Section {...processSection} />
 
 			<Pricing_Section {...pricingSection} />
+
+			{subscriptionCTA && <SubscriptionCTA {...subscriptionCTA}/>}
 
 			<Expectation />
 

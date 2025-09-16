@@ -97,7 +97,7 @@ export const Footer = () => {
 					</h3>
 					<ul>
 						<li>
-							<Link href={linkHref('websites')}>Strony www</Link>
+							<Link href={linkHref('websites')}>Strony WWW</Link>
 						</li>
 						<li>
 							<Link href={linkHref('seo')}>SEO</Link>

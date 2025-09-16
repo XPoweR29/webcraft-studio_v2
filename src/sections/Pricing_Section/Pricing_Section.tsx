@@ -15,14 +15,13 @@ interface Props {
 export const Pricing_Section = ({ heading, text, sketchImg, packages }: Props) => {
 	let gmbClass = '';
 	if(packages.length === 2) gmbClass = 'gmb';
-	console.log(gmbClass);
 
 	return (
 		<section className={styles.section}>
 			<Wrapper className={styles.wrapper}>
 				<Image
 					src={sketchImg}
-					className={styles.sketchImg}
+					className={`${styles.sketchImg} ${gmbClass?styles['sketchImg--gmb']:''}`}
 					alt=''
 					aria-hidden={true}
 					draggable={false}

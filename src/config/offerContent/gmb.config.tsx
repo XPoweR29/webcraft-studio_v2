@@ -4,7 +4,6 @@ import { OFFER_LINKING } from '@/config/offerLinking.config';
 
 import basicIcon from '../../assets/icons/lighting_icon.svg';
 import standardIcon from '../../assets/icons/rocket_icon.svg';
-import proIcon from '../../assets/icons/crown_icon.svg';
 import { SITE_CONFIG } from '../site.config';
 
 export const GMB_CONTENT: ServiceContentConfig = {
@@ -216,6 +215,15 @@ export const GMB_CONTENT: ServiceContentConfig = {
 		],
 	},
 
+	subscriptionCTA: {
+		heading: (
+			<>
+				Zyskaj <span>więcej</span> w abonamencie
+			</>
+		),
+		text: 'Jednorazowa konfiguracja wizytówki Google daje solidny start, ale prawdziwe efekty pojawiają się dzięki stałej współpracy. Regularne aktualizacje profilu, optymalizacja treści pod lokalne frazy i aktywne zarządzanie opiniami sprawiają, że Twoja firma zyskuje większą widoczność w mapach Google, więcej zapytań od klientów i realną przewagę nad lokalną konkurencją.',
+	},
+
 	directQuery: {
 		heading: (
 			<>
@@ -311,3 +319,7 @@ export const GMB_CONTENT: ServiceContentConfig = {
 		],
 	},
 };
+
+//FIXME: sekcja zachęcenia do wybrania abonamentu pod cennikami (figma GMB)
+
+//IMPROVE: dodaj lekkie animacje na obrazki w paragrafach oferty.

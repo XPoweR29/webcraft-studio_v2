@@ -3,7 +3,7 @@
 .section {
 	position: relative;
 	padding: 15em 0;
-    padding-bottom: 5em;
+	padding-bottom: 5em;
 
 	.wrapper {
 		position: relative;
@@ -18,9 +18,7 @@
 	}
 
 	.photoWrapper {
-		position: absolute;
-		top: 0;
-		justify-self: center;
+		position: relative;
 	}
 
 	.devPhoto {
@@ -28,7 +26,7 @@
 		top: 0;
 		right: 1em;
 		width: 200px;
-		transform: translateY(-45%);
+		transform: translateY(-125%);
 	}
 
 	.sketchImg {
@@ -40,14 +38,18 @@
 	}
 }
 
+@media (width>=450px) {
+	.section {
+		.devPhoto {
+			width: 250px;
+			transform: translateY(-110%);
+		}
+	}
+}
+
 @media (width>=500px) {
 	.section {
 		padding-top: 17em;
-
-		.devPhoto {
-			width: 250px;
-			transform: translateY(-35%);
-		}
 
 		.sketchImg {
 			top: -10em;
@@ -58,10 +60,15 @@
 @media (width>=768px) {
 	.section {
 		padding-top: 12em;
-        padding-bottom: 7em;
+		padding-bottom: 7em;
 
 		.heading {
 			width: 50%;
+		}
+
+		.devPhoto {
+			width: 280px;
+			transform: translateY(-90%);
 		}
 
 		.sketchImg {
@@ -74,20 +81,20 @@
 
 @media (width>=992px) {
 	.section {
-        padding-bottom: 10em;
+		padding-bottom: 10em;
 
 		.heading {
 			width: 50%;
 		}
 
-        .paragraph {
-            width: 90%;
-        }
+		.paragraph {
+			width: 90%;
+		}
 
 		.devPhoto {
 			right: 3em;
 			width: 350px;
-			transform: translateY(-50%);
+			transform: translateY(-100%);
 		}
 	}
 }

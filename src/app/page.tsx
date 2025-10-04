@@ -1,6 +1,6 @@
 import { Home_Start } from '@/sections/Home_Start/Home_Start';
 import { Home_About } from '@/sections/Home_About/Home_About';
-import { Home_Projects } from '@/sections/Home_Projects/Home_Projects';
+import { Recent_Projects } from '@/sections/Home_Projects/Recent_Projects';
 import { Process_Section } from '@/components/Process_Section/Process_Section';
 import { linkHref } from '@/utils/linkHref.helper';
 import { Expectation } from '@/components/Expectation/Expectation';
@@ -159,7 +159,14 @@ export default function Home() {
 
 			<Home_Start />
 			<Home_About />
-			<Home_Projects />
+			<Recent_Projects
+				heading={<>Zobacz moje ostatnie <span>realizacje</span></>}
+				text='Każdy projekt tworzę samodzielnie. Bez schematów, bez korporacyjnego
+					podejścia. Dzięki temu masz bezpośredni kontakt z osobą odpowiedzialną
+					za cały proces i pewność, że nic nie zostanie potraktowane „taśmowo”.
+					Stawiam na indywidualne podejście, realne zaangażowanie i efekt, który
+					naprawdę działa – wizualnie i biznesowo.'
+			/>
 			<Process_Section
 				heading='Jak wygląda współpraca?'
 				bgImage='/img/handshake_sketch.svg'

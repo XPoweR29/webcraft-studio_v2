@@ -55,6 +55,14 @@ export const LINKS_MAP = [
 		label: 'Portfolio',
 		href: '/portfolio',
 		hidden: false,
+		children: [
+			{
+				id: 'adona',
+				label: 'Adona',
+				href: '/portfolio/adona',
+				hidden: false,
+			},
+		],
 	},
 	{
 		id: 'blog',

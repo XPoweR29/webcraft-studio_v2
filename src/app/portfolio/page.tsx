@@ -5,7 +5,7 @@ import React from 'react';
 import styles from './index.module.scss';
 import { createMetadata } from '@/utils/creataeMetadata';
 import { SITE_CONFIG } from '@/config/site.config';
-import { PROJECTS } from '@/config/projects.config';
+import { RECENT_PROJECTS } from '@/utils/getProjectsInfo';
 
 export const metadata = createMetadata({
 	title: 'Moje realizacje | Strony WWW stworzone w WebCraftSTUDIO',
@@ -25,12 +25,12 @@ const schema = [
 		isPartOf: {
 			'@id': `${SITE_CONFIG.baseUrl}/#website`,
 		},
-		mainEntity: PROJECTS.map((p) => ({
+		mainEntity: RECENT_PROJECTS.map((p) => ({
 			'@id': `${SITE_CONFIG.baseUrl}${p.caseStudyLink}/#project`,
 		})),
 	},
 
-	...(PROJECTS ?? []).map((p) => ({
+	...(RECENT_PROJECTS ?? []).map((p) => ({
 		'@context': 'https://schema.org',
 		'@type': 'CreativeWork',
 		'@id': `${SITE_CONFIG.baseUrl}${p.caseStudyLink}/#project`,

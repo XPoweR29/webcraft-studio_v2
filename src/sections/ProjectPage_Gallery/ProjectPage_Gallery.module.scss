@@ -1,0 +1,7 @@
+@use '../../sass/common' as *;
+
+.section {
+	:global(.swiper-wrapper) {
+		transition-timing-function: linear !important;
+	};
+}

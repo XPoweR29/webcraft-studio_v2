@@ -320,6 +320,3 @@ export const GMB_CONTENT: ServiceContentConfig = {
 	},
 };
 
-//FIXME: sekcja zachęcenia do wybrania abonamentu pod cennikami (figma GMB)
-
-//IMPROVE: dodaj lekkie animacje na obrazki w paragrafach oferty.

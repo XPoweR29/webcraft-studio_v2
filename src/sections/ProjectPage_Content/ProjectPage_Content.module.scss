@@ -1,0 +1,137 @@
+@use '../../sass/common' as *;
+
+.section {
+	@include section-gradient;
+	position: relative;
+	padding-top: 12em;
+	padding-bottom: 7em;
+	overflow-x: clip;
+	z-index: 1;
+
+	.mockupWrapper {
+		@include wrapper;
+		position: absolute;
+		left: 50%;
+		top: 0;
+		height: fit-content;
+		transform: translateX(-50%);
+	}
+
+	.mockupImg {
+		position: absolute;
+		width: 90%;
+		max-width: 400px;
+		top: 0%;
+		left: 50%;
+		transform: translate(-50%, -40%);
+	}
+
+	.wrapper {
+		position: relative;
+	}
+
+	.sketchImg {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 150px;
+		transform: translate(5%, 50%);
+		opacity: 0.3;
+		z-index: -1
+	}
+
+	.heading {
+		@include sectionHeading;
+		margin-bottom: 3em;
+	}
+
+	.blockContainer {
+		display: flex;
+		flex-direction: column;
+		gap: 4em;
+	}
+
+	.block {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+
+		h3 {
+			width: fit-content;
+			padding: 2px 5px;
+			font-weight: 500;
+			@include dark-gradient;
+			color: $white;
+			border-radius: 5px;
+		}
+	}
+
+	.serviceList {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+	}
+}
+
+@media (width>=450px) {
+	.section {
+		.mockupImg {
+			transform: translate(-50%, -35%);
+		}
+	}
+}
+
+@media (width>=500px) {
+	.section {
+
+		.sketchImg {
+			width: 200px;
+			transform: translate(5%, 30%);
+		}
+
+		.wrapper {
+			margin-top: 3em;
+			max-width: 800px;
+		}
+
+		.blockContainer {
+			margin: 0 auto;
+			max-width: 95%;
+		}
+
+		.block {
+			& .serviceList, & p {
+				padding-left: 1em;
+			}
+		}
+
+	}
+}
+
+@media (width>=768px) {
+	.section {
+		.mockupImg {
+			max-width: 450px;
+			left: auto;
+			right: 0;
+			transform: translate(0%, -30%);
+		}
+	}
+}
+
+@media (width>=992px) {
+	.section {
+		.mockupImg {
+			max-width: 500px;
+			transform: translate(0%, -50%);
+		}
+	}
+}
+
+@media (width>=1200px) {
+	.section {
+		.mockupWrapper {
+			max-width: 1140px;
+		}
+	}
+}

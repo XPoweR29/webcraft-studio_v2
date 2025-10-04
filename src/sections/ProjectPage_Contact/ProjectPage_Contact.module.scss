@@ -1,0 +1,65 @@
+@use '../../sass/common' as *;
+
+.section {
+	position: relative;
+	padding: 5em 0;
+    padding-bottom: 450px;
+	overflow-x: hidden;
+	@include section-gradient;
+
+	.wrapper {
+		position: relative;
+	}
+
+	.sketchImg {
+		position: absolute;
+		top: 12em;
+		right: 0;
+		width: 250px;
+		opacity: 0.3;
+	}
+
+	.heading {
+		@include sectionHeading;
+	}
+
+	.text {
+		margin-top: 2em;
+	}
+
+    .image {
+        justify-self: center;
+        width: 100%;
+        max-width: 550px;
+    }
+}
+
+@media(width>=500px) {
+    .section {
+        .sketchImg {
+            width: 300px;
+        }
+    }
+}
+
+@media(width>=768px) {
+    .section {
+        padding-bottom: 300px;
+        .sketchImg {
+            width: 350px;
+            top: 8em;
+        }
+    }
+}
+
+@media(width>=992px) {
+    .section {
+
+        .text {
+            max-width: 80%;
+        }
+        .sketchImg {
+            top: -3em;
+        }
+    }
+}

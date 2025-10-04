@@ -1,0 +1,9 @@
+.info_item {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+
+	.icon {
+		width: 24px;
+	}
+}

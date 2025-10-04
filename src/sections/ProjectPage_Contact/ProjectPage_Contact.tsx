@@ -1,20 +1,26 @@
 'use client';
 
 import React from 'react';
-import styles from './Home_Contact.module.scss';
+import styles from './ProjectPage_Contact.module.scss';
 import { Wrapper } from '@/components/Wrapper/Wrapper';
 import { ContactNap } from '@/components/ContactNap/ContactNap';
 import Image from 'next/image';
 import { useBreakpoints } from '@/hooks/useBreakpoint';
 
-export const Home_Contact = ({ style }: {style?: React.CSSProperties}) => {
+interface Props {
+	heading: string;
+	text: string;
+	className?: string;
+}
+
+export const ProjectPage_Contact = ({ className, heading, text }: Props) => {
 	const { breakpoint } = useBreakpoints();
 	return (
-		<section className={styles.section} style={style}>
+		<section className={`${styles.section} ${className}`}>
 			<Wrapper className={styles.wrapper}>
 				<Image
 					className={styles.sketchImg}
-					src={'./img/plane_sketch.svg'}
+					src={'/img/plane_sketch.svg'}
 					alt=''
 					aria-hidden={true}
 					draggable={false}
@@ -22,13 +28,10 @@ export const Home_Contact = ({ style }: {style?: React.CSSProperties}) => {
 					height={280}
 				/>
 				<h2 className={styles.heading}>
-					Gotowy na <span>sukces</span>? Zacznijmy współpracę!
+					{heading}
 				</h2>
 				<p className={styles.text}>
-					Chcesz rozwijać swoją firmę i potrzebujesz wsparcia w zakresie
-					tworzenia stron internetowych? Skontaktuj się ze mną, aby omówić
-					szczegóły i rozpocząć współpracę. Pomogę Ci stworzyć stronę, która
-					naprawdę wspiera Twój biznes.
+					{text}
 				</p>
 
 				<ContactNap />

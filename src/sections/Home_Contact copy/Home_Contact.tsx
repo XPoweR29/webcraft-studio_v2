@@ -51,3 +51,4 @@ export const Home_Contact = ({ style }: {style?: React.CSSProperties}) => {
 		</section>
 	);
 };
+

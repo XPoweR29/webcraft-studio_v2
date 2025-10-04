@@ -25,7 +25,7 @@ export async function generateStaticParams() {
 	return offerPages.map((page) => ({
 		slug: page.href.split('/').pop(),
 	}));
-}
+};
 export async function generateMetadata({ params }: Props) {
 	const content: ServiceContentConfig | null = getServicePageContent(
 		params.slug
@@ -41,9 +41,7 @@ export async function generateMetadata({ params }: Props) {
 }
 
 const ServicePage = async ({ params }: Props) => {
-	const content: ServiceContentConfig | null = getServicePageContent(
-		params.slug
-	);
+	const content: ServiceContentConfig | null = getServicePageContent(params.slug);
 	if (!content) return notFound();
 	const {
 		SCHEMA,

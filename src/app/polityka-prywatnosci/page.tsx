@@ -3,11 +3,10 @@ import styles from './polityka-ptywatnosci.module.scss';
 import { Wrapper } from '@/components/Wrapper/Wrapper';
 import { createMetadata } from '@/utils/creataeMetadata';
 
-const SLUG = 'polityka-prywatnosci';
 
 export const metadata = createMetadata(
 	{
-		slug: SLUG,
+		relPath: '/polityka-prywatnosci',
 		title: 'Polityka Prywatności',
 		description:
 			'Dowiedz się, jakie dane zbieramy i w jaki sposób je przetwarzamy.',

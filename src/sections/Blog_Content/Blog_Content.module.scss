@@ -1,0 +1,66 @@
+@use '../../sass/common' as *;
+
+.section {
+	padding-top: 7em;
+	.wrapper {
+		position: relative;
+	}
+
+	.sketchImg {
+		position: absolute;
+		top: 0;
+		right: 0;
+		width: 200px;
+		transform: translate(0, -100%);
+		opacity: 0.3;
+	}
+
+	.heading {
+		@include sectionHeading;
+	}
+
+	.text {
+		margin-top: 2em;
+	}
+}
+
+@media (width >= 425px) {
+	.section {
+		.sketchImg {
+			width: 300px;
+			transform: translate(0, -70%);
+		}
+	}
+}
+
+@media (width >= 576px) {
+	.section {
+		padding-top: 5em;
+		.sketchImg {
+			width: 350px;
+			transform: translate(0, -30%);
+		}
+	}
+}
+
+@media (width >= 992px) {
+	.section {
+		padding-top: 7em;
+		.sketchImg {
+			transform: translate(0, -60%);
+		}
+	}
+}
+
+@media (width >= 1200px) {
+	.section {
+		.sketchImg {
+			width: 450px;
+			transform: translate(0, -40%);
+		}
+
+		.text {
+			max-width: 85%;
+		}
+	}
+}

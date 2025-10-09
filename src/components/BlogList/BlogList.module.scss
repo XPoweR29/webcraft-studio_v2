@@ -1,0 +1,51 @@
+@use '../../sass/common' as *;
+
+.section {
+	margin-top: 3em;
+	padding-bottom: 35em;
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		margin-top: 5em;
+	}
+
+	.filter {
+		margin-bottom: 3em;
+	}
+
+	.cardsContainer {
+		position: relative;
+		display: grid;
+		gap: 3rem;
+		grid-template-columns: 1fr;
+		justify-content: center;
+		align-self: center;
+	}
+
+	.postCard {
+		margin: 0 auto;
+		width: 100%;
+		max-width: 350px;
+	}
+}
+
+@media (width >= 768px) {
+	.section {
+		padding-bottom: 25em;
+
+		.cardsContainer {
+			grid-template-columns: repeat(2, 1fr);
+			max-width: 690px;
+		}
+	}
+}
+
+@media (width >= 1200px) {
+	.section {
+		.cardsContainer {
+			max-width: 1140px;
+			grid-template-columns: repeat(3, 1fr);
+		}
+	}
+}

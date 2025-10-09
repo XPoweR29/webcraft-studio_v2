@@ -12,6 +12,7 @@ export type BlogCard = {
 	title: string;
 	excerpt: string;
 	date: string;
+	categoryTag?: string;
 };
 
 export const BlogCard = ({
@@ -21,10 +22,13 @@ export const BlogCard = ({
 	title,
 	excerpt,
 	date,
+	categoryTag
 }: BlogCard) => {
 	return (
 		<article className={styles.blogCard}>
 			<Link href={href}>
+				{categoryTag && <span className={styles.categoryTag}>{categoryTag}</span>}
+			
 				<div className={styles.thumb}>
 					<Image
 						src={image}

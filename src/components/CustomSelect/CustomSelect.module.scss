@@ -1,0 +1,70 @@
+@use '../../sass/common' as *;
+
+.select {
+	position: relative;
+	display: inline-flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 1em;
+	width: fit-content;
+}
+
+.label {
+	font-weight: 600;
+}
+
+.trigger {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 0.3em;
+	min-width: 160px;
+
+	@include accent-gradient;
+	color: $dark;
+	font-weight: 600;
+	font-size: 0.9em;
+	border: none;
+	border-radius: 8px;
+	cursor: pointer;
+	transition: background 0.2s ease;
+
+	&:hover {
+		background: #02a9bf;
+	}
+}
+
+.icon {
+	transition: transform 0.2s ease;
+}
+
+.menu {
+	position: absolute;
+	top: 100%;
+	left: 0;
+	width: 100%;
+	margin-top: 0.4rem;
+	border-radius: 8px;
+	background: #fff;
+	box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+	z-index: 10;
+	overflow: hidden;
+}
+
+.option {
+	padding: 0.5em;
+	cursor: pointer;
+	color: #333;
+	font-weight: 500;
+	font-size: 0.9em;
+	transition: background 0.15s ease;
+
+	&:hover {
+		background: #e0f7fa;
+	}
+
+	&.active {
+		background: #00bcd4;
+		color: #fff;
+	}
+}

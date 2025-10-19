@@ -6,9 +6,10 @@ import { BlogCard } from '../BlogCard/BlogCard';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { A11y, Autoplay } from 'swiper/modules';
 import { useBreakpoints } from '@/hooks/useBreakpoint';
+import { PostPageConfig } from '@/types/blog.type';
 
 interface Props {
-	articles: BlogCard[];
+	articles: PostPageConfig[];
 	className?: string;
 }
 
@@ -24,9 +25,9 @@ export const RecentBlogPosts = ({ className, articles }: Props) => {
 				delay: 5000,
 			}}
 			loop={true}>
-			{articles.map((post) => (
-				<SwiperSlide key={post.href}>
-					<BlogCard {...post} />
+			{articles.map((post, i) => (
+				<SwiperSlide key={`${post.metadata.slug}${i}`}>
+					<BlogCard {...post} href={post.metadata.relPath!}/>
 				</SwiperSlide>
 			))}
 		</Swiper>

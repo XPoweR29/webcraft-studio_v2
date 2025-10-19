@@ -1,9 +1,49 @@
-.post {
-	min-height: 100vh;
-	border: 2px solid red;
-	margin-top: 4em;
+@use '../../../sass/common' as *;
 
-	.wrapper {
-		margin-top: 5em;
+.post {
+	.bodyWrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 2em;
+	}
+
+	.cta {
+		margin: 1em 0;
+		margin-top: 2em;
+	}
+
+	.blogSection {
+		@include section-gradient;
+		padding-top: 14em;
+		padding-bottom: 35em;
+
+		@media (width>=768px) {
+			padding-bottom: 25em;
+		}
+
+		h2 {
+			@include sectionHeading(center, 30%);
+			width: fit-content;
+			margin-right: auto;
+			text-align: center;
+		}
+
+		p {
+			text-align: center;
+			margin-right: auto;
+			font-weight: 500;
+		}
+	}
+
+	ul {
+		margin: 3em 0;
+	}
+
+	li {
+		margin: 1em 0;
+
+		&:global(.indent) {
+			padding-left: 1em;
+		}
 	}
 }

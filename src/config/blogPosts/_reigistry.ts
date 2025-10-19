@@ -1,22 +1,15 @@
 import { PostPageConfig } from '@/types/blog.type';
-import { FIRST_POST } from './wprowadzenie-do-moich-postow.config';
-import { SECOND_POST } from './po-co-ci-strona-internetowa.config';
-import { THIRD_POST } from './poprawne-pozycjonowanie-online.config';
-import { FIRST_POST as I } from './wprowadzenie-do-moich-postow.config';
-import { SECOND_POST as II } from './po-co-ci-strona-internetowa.config';
-import { THIRD_POST as III } from './poprawne-pozycjonowanie-online.config';
-import { GMB_POST } from './pokaz-swoja-pozycje-w-google-maps.config';
-import { FIRST_POST as i } from './wprowadzenie-do-moich-postow.config';
-import { SECOND_POST as ii } from './po-co-ci-strona-internetowa.config';
-import { THIRD_POST as iii } from './poprawne-pozycjonowanie-online.config';
-import { GMB_POST as iv } from './pokaz-swoja-pozycje-w-google-maps.config';
-import { THIRD_POST as v } from './poprawne-pozycjonowanie-online.config';
-import { GMB_POST as vi } from './pokaz-swoja-pozycje-w-google-maps.config';
-import { KIJAS } from './kijas.config';
+import { DLACZEGO_TWOJA_FIRMA_POTRZEBUJE_PROFESJONALNEJ_STRONY } from './dlaczego-twoja-firma-potrzebuje-profesjonalnej-strony-internetowej.config';
+import { DRUGI_WPIS } from './drugi-wpis.config';
+import { TRZECI } from './trzeci.config';
 
-export const BLOG_POSTS: PostPageConfig[] = [FIRST_POST, SECOND_POST, THIRD_POST, I, II, III, GMB_POST,i,ii,iii,iv, v, vi, KIJAS];
+export const BLOG_POSTS: PostPageConfig[] = [
+	DLACZEGO_TWOJA_FIRMA_POTRZEBUJE_PROFESJONALNEJ_STRONY,
+	DRUGI_WPIS,
+	TRZECI
+];
 
-//NOTE Dodawanie klejnego wpisu: 
+//NOTE Dodawanie klejnego wpisu:
 // 1 - dodaj nowy plik .tsx do /blogPosts
 // 2 - uzupełnij odpowiednio configa
 // 3 - dodaj nową stronę do rejestru
@@ -49,4 +42,3 @@ export const BLOG_POSTS: PostPageConfig[] = [FIRST_POST, SECOND_POST, THIRD_POST
  * - Później wystarczy podmienić helpery → zapytania do API / MySQL.
  * ✅ bez zmian w strukturze i komponentach frontu.
  */
-

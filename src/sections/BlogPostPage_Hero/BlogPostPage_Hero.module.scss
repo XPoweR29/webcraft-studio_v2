@@ -1,0 +1,96 @@
+@use '../../sass/common' as *;
+
+.hero {
+	position: relative;
+	height: 350px;
+	border-radius: 0px 0px 40px 40px;
+	border-bottom: 2px solid $accent;
+	overflow: hidden;
+
+	.wrapper {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: flex-start;
+		color: $white;
+		z-index: 2;
+	}
+
+	.heading {
+		display: flex;
+		flex-direction: column;
+		@include mainHeading;
+		font-size: 1.5em;
+		letter-spacing: 1px;
+		color: $white;
+
+		@media (width >= 768px) {
+			font-size: 2.2em;
+		}
+	}
+
+	.tagContainer {
+		display: flex;
+		gap: 1em;
+	}
+
+	.date {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin-top: 1em;
+		gap: 0.7em;
+		opacity: 0.8;
+		font-size: 0.8em;
+
+		.icon {
+			width: 18px;
+		}
+	}
+
+	.category {
+		width: fit-content;
+		margin-top: 1em;
+		padding: 0.3em 0.5em;
+		color: $dark;
+		@include accent-gradient;
+		font-weight: 600;
+		font-size: 0.7em;
+		border-radius: 5px;
+		text-transform: uppercase;
+	}
+
+	.background {
+		position: absolute;
+		inset: 0;
+		z-index: -1;
+		pointer-events: none;
+
+		&::before {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background-color: rgba($dark, 0.5);
+			z-index: 1;
+		}
+
+		&::after {
+			content: '';
+			position: absolute;
+			inset: 0;
+			background: linear-gradient(
+				45deg,
+				rgba($footer-dark, 0.9),
+				rgba($semi-dark, 0.9),
+				rgba($accent, 0.2)
+			);
+			z-index: 1;
+		}
+	}
+}
+
+@media (width>=992px) {
+	.hero {
+		height: 400px;
+	}
+}

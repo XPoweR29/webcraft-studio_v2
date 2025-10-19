@@ -11,12 +11,14 @@ import { MetadataBaseParams } from '@/utils/creataeMetadata';
 import { AccordionItem } from '@/components/Accordion/Accordion';
 import { ServicePage_Content } from '@/sections/ServicePage_Content/ServicePage_Content';
 import { SubscriptionCTA } from '@/components/SubscriptionCTA/SubscriptionCTA';
+import { PostPageConfig } from './blog.type';
 
 export type SchemaType =
-	| ((
-			meta: MetadataBaseParams,
+	| ((args:
+			{met?: MetadataBaseParams,
 			faq?: AccordionItem[],
-			products?: PricingCard[]
+			products?: PricingCard[],
+			post?: PostPageConfig}
 	  ) => Record<string, any> | Record<string, any>[])
 	| Record<string, any>
 	| Record<string, any>[];

@@ -21,7 +21,7 @@ export async function generateStaticParams() {
 	return projectsPages.map((page) => ({
 		slug: page.href.split('/').pop(),
 	}));
-}
+};
 
 export async function generateMetadata({ params }: Props) {
 	const content: ProjectContentConfig | null = getProjectPageContent(

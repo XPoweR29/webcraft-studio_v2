@@ -14,6 +14,7 @@ interface Props {
 	textLines: string[];
 	redirectTo: string;
 	buttonLabel: string;
+	className?: string;
 }
 
 const LETTER_DURATION = 0.3;
@@ -51,7 +52,7 @@ const wholeLineVariants: Variants = {
 	},
 };
 
-export const CTA_bar = ({ textLines, redirectTo, buttonLabel }: Props) => {
+export const CTA_bar = ({ textLines, redirectTo, buttonLabel, className }: Props) => {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true, amount: 0.6 });
 
@@ -77,7 +78,7 @@ export const CTA_bar = ({ textLines, redirectTo, buttonLabel }: Props) => {
 	}, [isInView, controlsArray, textLines]);
 
 	return (
-		<section className={styles.cta} aria-labelledby='cta_bar-heading' ref={ref}>
+		<section className={`${styles.cta}  ${className||""}`} aria-labelledby='cta_bar-heading' ref={ref}>
 			<h3 id='cta_bar-heading' className={styles.heading}>
 				{textLines.map((line, lineIndex) => {
 					if (lineIndex === 0) {

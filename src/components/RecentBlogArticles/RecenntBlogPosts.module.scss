@@ -2,11 +2,17 @@
 
 .swiper {
 	padding: 1em;
-	max-width: 430px;
+
+}
+
+@media (width>=400px) {
+	.swiper {
+		max-width: 430px;
+	}
 }
 
 @media (width>=992px) {
 	.swiper {
-		max-width: fit-content;
+		max-width: 1110px;
 	}
 }

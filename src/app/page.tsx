@@ -160,7 +160,11 @@ export default function Home() {
 			<Home_Start />
 			<Home_About />
 			<Recent_Projects
-				heading={<>Zobacz moje ostatnie <span>realizacje</span></>}
+				heading={
+					<>
+						Zobacz moje ostatnie <span>realizacje</span>
+					</>
+				}
 				text='Każdy projekt tworzę samodzielnie. Bez schematów, bez korporacyjnego
 					podejścia. Dzięki temu masz bezpośredni kontakt z osobą odpowiedzialną
 					za cały proces i pewność, że nic nie zostanie potraktowane „taśmowo”.
@@ -246,7 +250,18 @@ export default function Home() {
 					},
 				]}
 			/>
-			<Blog_Section />
+			<Blog_Section
+				heading={
+					<>
+						Sprawdź co <span>nowego</span> na blogu
+					</>
+				}
+				text='Poznaj praktyczne porady, inspiracje i świeże nowości ze świata stron
+					internetowych, SEO oraz promocji lokalnej firmy. Na blogu regularnie
+					dzielę się sprawdzonymi wskazówkami i rozwiązaniami, które naprawdę
+					pomagają rozwinąć Twój biznes online.'
+					variant='latest'
+			/>
 			<Home_Contact />
 		</>
 	);

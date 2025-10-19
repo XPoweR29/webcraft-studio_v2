@@ -7,6 +7,7 @@ import { BlogCard } from '../BlogCard/BlogCard';
 import { Wrapper } from '../Wrapper/Wrapper';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
 import { Pagination } from '../Pagiantion/Pagination';
+import { formatDatePL } from '@/utils/formatDatePL';
 
 const POSTS_PER_PAGE = 6;
 export const BlogList = () => {
@@ -52,12 +53,12 @@ export const BlogList = () => {
 						<div key={i} className={styles.postCard}>
 							<BlogCard
 								href={p.metadata.relPath}
-								image={p.img}
-								imgAlt={p.imgAlt}
+								mainImg={p.mainImg}
+								mainImgAlt={p.mainImgAlt}
 								title={p.title}
-								excerpt={p.description}
+								description={p.description}
 								date={p.date}
-								categoryTag={p.category}
+								category={p.category}
 							/>
 						</div>
 					))}

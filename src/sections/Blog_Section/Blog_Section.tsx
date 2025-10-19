@@ -3,8 +3,28 @@ import styles from './Blog_Section.module.scss';
 import { Wrapper } from '@/components/Wrapper/Wrapper';
 import Image from 'next/image';
 import { RecentBlogPosts } from '@/components/RecentBlogArticles/RecentBlogPosts';
+import { PostPageConfig } from '@/types/blog.type';
+import { getLatestPosts, getPostsByCategory } from '@/utils/getBlogData';
 
-export const Blog_Section = ({ className }: {className?: string}) => {
+interface Props {
+	heading: string | React.ReactNode;
+	text: string;
+	className?: string;
+	variant: 'latest' | 'related';
+	currentPost?: PostPageConfig;
+};
+
+export const Blog_Section = ({ heading, text, className, variant, currentPost }: Props) => {
+	let POSTS: PostPageConfig[];
+
+	if(variant === 'latest') {
+		POSTS = getLatestPosts();
+	} else {
+		POSTS = getPostsByCategory(currentPost?.category!, currentPost?.metadata.slug!);
+	}
+
+	const NO_SCHEMA_POSTS  = POSTS.map(({ SCHEMA, ...rest }) => rest);
+
 	return (
 		<section className={`${styles.section} ${className??""}`}>
 			<Wrapper className={styles.wrapper}>
@@ -17,48 +37,12 @@ export const Blog_Section = ({ className }: {className?: string}) => {
 					aria-hidden={true}
 					draggable={false}
 				/>
-				<h2 className={styles.heading}>Sprawdź co <span>nowego</span> na blogu</h2>
-				<p className={styles.text}>
-					Poznaj praktyczne porady, inspiracje i świeże nowości ze świata stron
-					internetowych, SEO oraz promocji lokalnej firmy. Na blogu regularnie
-					dzielę się sprawdzonymi wskazówkami i rozwiązaniami, które naprawdę
-					pomagają rozwinąć Twój biznes online.
-				</p>
+				<h2 className={styles.heading}>{heading}</h2>
+				<p className={styles.text}>{text}</p>
 
 				<RecentBlogPosts
 					className={styles.recentBlog}
-					articles={[
-						{
-							title:
-								'Co to jest SEO i dlaczego jest ważne dla Twojej strony internetowej?',
-							excerpt:
-								'SEO to nie tylko modne hasło – to klucz do tego, by Twoja strona była widoczna w Google. Dowiedz się, czym jest optymalizacja SEO i jak wpływa na liczbę odwiedzin...',
-								date: '27 Aug 2025',
-								href: '/blog/co-to-jest-seo-i-dlaczego-jest-wazne-dla-twojej-strony-internetowej',
-								image: '/img/blog/test_blogcardImg.jpg', 
-								imgAlt: 'Pozycjonowanie SEO dla strony internetowej'
-						},
-						{
-							title:
-								'Co to jest SEO i dlaczego jest ważne dla Twojej strony internetowej?',
-							excerpt:
-								'SEO to nie tylko modne hasło – to klucz do tego, by Twoja strona była widoczna w Google. Dowiedz się, czym jest optymalizacja SEO i jak wpływa na liczbę odwiedzin...',
-								date: '27 Aug 2025',
-								href: '/blog/co-to-jest-seo-i-dlaczego-jest-wazne-dla-twojej',
-								image: '/img/blog/test_blogcardImg.jpg', 
-								imgAlt: 'Pozycjonowanie SEO dla strony internetowej'
-						},
-						{
-							title:
-								'Co to jest SEO i dlaczego jest ważne dla Twojej strony internetowej?',
-							excerpt:
-								'SEO to nie tylko modne hasło – to klucz do tego, by Twoja strona była widoczna w Google. Dowiedz się, czym jest optymalizacja SEO i jak wpływa na liczbę odwiedzin...',
-								date: '27 Aug 2025',
-								href: '/blog/co-to-jest-seo-i-dlaczego-jest-wazne-dla-twojej-strony-',
-								image: '/img/blog/test_blogcardImg.jpg', 
-								imgAlt: 'Pozycjonowanie SEO dla strony internetowej'
-						},
-					]}
+					articles={NO_SCHEMA_POSTS}
 				/>
 			</Wrapper>
 		</section>

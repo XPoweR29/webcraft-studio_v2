@@ -1,0 +1,32 @@
+.section {
+	padding-top: 3em;
+
+	.postImgWrapper {
+		position: relative;
+		width: 100%;
+		max-height: 400px;
+		border-radius: 0px 40px 00px 40px;
+		overflow: hidden;
+
+		.postImg {
+			width: 100%;
+			object-fit: cover;
+		}
+	}
+
+	.intro {
+		margin: 2em 0;
+		font-weight: 600;
+		letter-spacing: 0.5px;
+	}
+}
+
+@media (width>=992px) {
+	.section {
+		.postImgWrapper {
+			margin: 0 auto;
+			max-width: 80%;
+			max-height: 550px;
+		}
+	}
+}

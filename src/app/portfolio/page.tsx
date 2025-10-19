@@ -75,7 +75,18 @@ const Portfolio = () => {
 			/>
 
 			<Portfolio_Content />
-			<Blog_Section className={styles.blogSection} />
+			<Blog_Section
+				heading={
+					<>
+						Sprawdź co <span>nowego</span> na blogu
+					</>
+				}
+				text='Poznaj praktyczne porady, inspiracje i świeże nowości ze świata stron
+					internetowych, SEO oraz promocji lokalnej firmy. Na blogu regularnie
+					dzielę się sprawdzonymi wskazówkami i rozwiązaniami, które naprawdę
+					pomagają rozwinąć Twój biznes online.'
+				variant='latest'
+			/>
 		</>
 	);
 };

@@ -4,36 +4,37 @@ import Link from 'next/link';
 import Image from 'next/image';
 import calendarIcon from '../../assets/icons/calendar_icon.svg';
 import { Icon } from '@iconify/react/dist/iconify.js';
+import { formatDatePL } from '@/utils/formatDatePL';
 
 export type BlogCard = {
 	href: string;
-	image: string;
-	imgAlt: string;
+	mainImg: string;
+	mainImgAlt: string;
 	title: string;
-	excerpt: string;
+	description: string;
 	date: string;
-	categoryTag?: string;
+	category: string;
 };
 
 export const BlogCard = ({
 	href,
-	image,
-	imgAlt,
+	mainImg,
+	mainImgAlt,
 	title,
-	excerpt,
+	description,
 	date,
-	categoryTag
+	category
 }: BlogCard) => {
 	return (
 		<article className={styles.blogCard}>
 			<Link href={href}>
-				{categoryTag && <span className={styles.categoryTag}>{categoryTag}</span>}
+				{category && <span className={styles.categoryTag}>{category}</span>}
 			
 				<div className={styles.thumb}>
 					<Image
-						src={image}
+						src={mainImg}
 						className={styles.image}
-						alt={imgAlt}
+						alt={mainImgAlt}
 						draggable={false}
 						fill
 					/>
@@ -41,7 +42,7 @@ export const BlogCard = ({
 
 				<div className={styles.body}>
 					<h3 className={styles.title}>{title}</h3>
-					<p className={styles.excerpt}>{excerpt}</p>
+					<p className={styles.excerpt}>{description}</p>
 
 					<footer className={styles.footer}>
 						<div className={styles.date}>
@@ -51,7 +52,7 @@ export const BlogCard = ({
 								aria-hidden={true}
 								draggable={false}
 							/>
-							<span>{date}</span>
+							<span>{formatDatePL(date)}</span>
 						</div>
 						<span className={styles.button}>
 							Czytaj więcej{' '}

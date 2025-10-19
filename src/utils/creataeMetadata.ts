@@ -5,6 +5,7 @@ export type MetadataBaseParams = {
 	title: string;
 	description: string;
 	relPath?: string;
+	slug?: string;
 	image?: {
 		url: string;
 		width?: number;

@@ -8,28 +8,16 @@ import { FAQ_Section } from '@/sections/FAQ_Section/FAQ_Section';
 import { Review_Section } from '@/sections/Review_Sectoin/Review_Section';
 import { ProfitsCTAPProps } from '@/components/ProfitsCTA/ProfitsCTA';
 import { MetadataBaseParams } from '@/utils/creataeMetadata';
-import { AccordionItem } from '@/components/Accordion/Accordion';
 import { ServicePage_Content } from '@/sections/ServicePage_Content/ServicePage_Content';
 import { SubscriptionCTA } from '@/components/SubscriptionCTA/SubscriptionCTA';
-import { PostPageConfig } from './blog.type';
+import { SchemaType } from './schema.type';
 
-export type SchemaType =
-	| ((args:
-			{met?: MetadataBaseParams,
-			faq?: AccordionItem[],
-			products?: PricingCard[],
-			post?: PostPageConfig}
-	  ) => Record<string, any> | Record<string, any>[])
-	| Record<string, any>
-	| Record<string, any>[];
-
-/////main interface/////
 export interface ServiceContentConfig {
 	METADATA: MetadataBaseParams;
 	SCHEMA?: SchemaType;
 
 	heroSection: ComponentProps<typeof SectionHero>;
-	contentSection: ComponentProps<typeof ServicePage_Content>
+	contentSection: ComponentProps<typeof ServicePage_Content>;
 	processSection: ComponentProps<typeof Process_Section>;
 	pricingSection: ComponentProps<typeof Pricing_Section>;
 	subscriptionCTA?: ComponentProps<typeof SubscriptionCTA>;

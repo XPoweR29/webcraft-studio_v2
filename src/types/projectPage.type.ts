@@ -5,16 +5,16 @@ import { ProjectPage_Content } from '@/sections/ProjectPage_Content/ProjectPage_
 import { ProjectPage_Hero } from '@/sections/ProjectPage_Hero/ProjectPage_Hero';
 import { Recent_Projects } from '@/sections/Home_Projects/Recent_Projects';
 import { ProjectPage_Contact } from '@/sections/ProjectPage_Contact/ProjectPage_Contact';
+import { SchemaType } from './schema.type';
 
-type SchemaType =
-	| (( meta: MetadataBaseParams ) => Record<string, any> | Record<string, any>[])
-	| Record<string, any>
-	| Record<string, any>[];
 
 /////main interface/////
 export interface ProjectContentConfig {
-	METADATA: MetadataBaseParams;
+	metadata: MetadataBaseParams;
 	SCHEMA?: SchemaType;
+	externalLink: string;
+	mckpImage: string;
+	mckpImageAlt: string;
 
 	heroSection: ComponentProps<typeof ProjectPage_Hero>;
 	contentSection: ComponentProps<typeof ProjectPage_Content>;

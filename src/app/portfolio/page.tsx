@@ -2,10 +2,9 @@ import { Blog_Section } from '@/sections/Blog_Section/Blog_Section';
 import { Portfolio_Content } from '@/sections/Portfolio_Content/Portfolio_Content';
 import { SectionHero } from '@/sections/SectionHero/SectionHero';
 import React from 'react';
-import styles from './index.module.scss';
 import { createMetadata } from '@/utils/creataeMetadata';
 import { SITE_CONFIG } from '@/config/site.config';
-import { RECENT_PROJECTS } from '@/utils/getProjectsInfo';
+import { PROJECTS } from '@/config/projectsContent/_reigistry';
 
 export const metadata = createMetadata({
 	title: 'Moje realizacje | Strony WWW stworzone w WebCraftSTUDIO',
@@ -17,7 +16,7 @@ export const metadata = createMetadata({
 const schema = [
 	{
 		'@context': 'https://schema.org',
-		'@type': 'CollectionPage',
+		'@type': ['WebPage', 'CollectionPage'],
 		'@id': `${SITE_CONFIG.baseUrl}${metadata.relPath}/#portfolio`,
 		url: `${SITE_CONFIG.baseUrl}${metadata.relPath}`,
 		name: metadata.title,
@@ -25,20 +24,18 @@ const schema = [
 		isPartOf: {
 			'@id': `${SITE_CONFIG.baseUrl}/#website`,
 		},
-		mainEntity: RECENT_PROJECTS.map((p) => ({
-			'@id': `${SITE_CONFIG.baseUrl}${p.caseStudyLink}/#project`,
-		})),
+		mainEntity: {
+			'@type': 'ItemList',
+			itemListElement: PROJECTS.map((p, i) => ({
+				'@type': 'ListItem',
+				position: i + 1,
+				item: {
+					'@type': 'CreativeWork',
+					'@id': `${SITE_CONFIG.baseUrl}${p.metadata.relPath}/#project`,
+				},
+			})),
+		},
 	},
-
-	...(RECENT_PROJECTS ?? []).map((p) => ({
-		'@context': 'https://schema.org',
-		'@type': 'CreativeWork',
-		'@id': `${SITE_CONFIG.baseUrl}${p.caseStudyLink}/#project`,
-		name: p.title,
-		description: p.description,
-		url: `${SITE_CONFIG.baseUrl}${p.caseStudyLink}`,
-		image: `${SITE_CONFIG.baseUrl}${p.mockupImg}`,
-	})),
 
 	{
 		'@context': 'https://schema.org',
@@ -92,3 +89,5 @@ const Portfolio = () => {
 };
 
 export default Portfolio;
+
+//FIXME: blogSection is shifting layout and cover cta - fix it!

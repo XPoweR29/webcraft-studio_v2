@@ -22,7 +22,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
 	const post = getBlogPostBySlug(params.slug);
 	if (!post) return {};
-	return createMetadata({ ...post.metadata });
+	return createMetadata(post.metadata );
 }
 
 const BlogPostPage = async ({ params }: Props) => {

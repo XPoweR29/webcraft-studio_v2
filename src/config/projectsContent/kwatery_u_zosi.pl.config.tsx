@@ -1,18 +1,17 @@
-import { linkHref } from '@/utils/linkHref.helper';
 import { SITE_CONFIG } from '../site.config';
 import { ProjectContentConfig } from '@/types/projectPage.type';
 
-const SLUG = 'restauracja-orientalna-adona';
-const TITLE = 'Restauracja orientalna ADONA';
+const SLUG = 'kwatery-u-zosi';
+const TITLE = 'Pokoje gościnne "Kwatery u Zosi"';
 const DESCRIPTION =
-	'Przejrzysta i czytelna strona, która przedstawia ofertę lokalu ADONA. Całość zaprojektowana tak, by użytkownik szybko znalazł to, czego szuka.';
-const EXTERNAL_LINK = 'http://adona.net.pl';
+	'Jeśli szukasz komfortowego wypoczynku wśród pięknych krajobrazów oraz gór, koniecznie zajżyj do tego miejsca. Czeka Cie tutaj niezwykłe ciepłe przywitanie no i wiadomo zimna wódeczka.';
+const EXTERNAL_LINK = 'http://kwateryuzosi.pl';
 const MOCKUP = {
 	img: '/img/portfolio/adona_mockup.webp',
 	alt: 'Strona internetowa restauracji Adona',
 };
 
-export const ADONA: ProjectContentConfig = {
+export const KWATERY_U_ZOSI: ProjectContentConfig = {
 	metadata: {
 		title: TITLE,
 		description: DESCRIPTION,
@@ -53,7 +52,7 @@ export const ADONA: ProjectContentConfig = {
 				'@id': `${SITE_CONFIG.baseUrl}/portfolio/#portfolio`,
 			},
 			mainEntityOfPage: {
-				'@id': `${SITE_CONFIG.baseUrl}${project?.metadata.relPath}/#webpage`,
+				'@id': `${SITE_CONFIG.baseUrl}/${project?.metadata.relPath}/#webpage`,
 			},
 			publisher: {
 				'@type': 'Organization',
@@ -61,7 +60,7 @@ export const ADONA: ProjectContentConfig = {
 			},
 			image: {
 				'@type': 'ImageObject',
-				url: `${SITE_CONFIG.baseUrl}${project?.mckpImage}`,
+				url: `${SITE_CONFIG.baseUrl}${project?.mckpImage}`
 			},
 		},
 
@@ -78,8 +77,8 @@ export const ADONA: ProjectContentConfig = {
 				{
 					'@type': 'ListItem',
 					position: 2,
-					name: 'Blog',
-					item: `${SITE_CONFIG.baseUrl}${linkHref('portfolio')}`,
+					name: 'Portfolio',
+					item: `${SITE_CONFIG.baseUrl}/portfolio`,
 				},
 				{
 					'@type': 'ListItem',
@@ -92,15 +91,15 @@ export const ADONA: ProjectContentConfig = {
 	],
 
 	heroSection: {
-		heading: 'Adona',
-		subline: 'Restauracja orientalna',
+		heading: 'Kwateru u Zosi',
+		subline: 'Przytulne pokoje Gościnne',
 		bgImage: '/img/photos/project_hero_image.webp',
 		techStack: 'React, TypeScript, NodeJS, Firebase, SCSS',
 		externalUrl: EXTERNAL_LINK,
 	},
 
 	contentSection: {
-		heading: 'Strona internetowa dla restauracji z systemem zarządzania menu',
+		heading: 'Strona ofertowa dla domu gościnnego w Węgierskiej Górce',
 		customerInfo:
 			'Restauracja Adona to lokal gastronomiczny serwujący orientalne dania. Właścicielowi zależało na stworzeniu strony, która nie tylko zaprezentuje ofertę w przejrzysty sposób, ale również pozwoli na samodzielne zarządzanie menu – bez konieczności ingerencji w kod.',
 		mockupImg: MOCKUP.img,

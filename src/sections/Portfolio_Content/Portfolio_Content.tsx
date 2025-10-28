@@ -4,7 +4,7 @@ import { Wrapper } from '@/components/Wrapper/Wrapper';
 import { PortfolioItem } from '@/components/PortfolioItem/PortfolioItem';
 import { CTA_bar } from '@/components/CTA_bar/CTA_bar';
 import { linkHref } from '@/utils/linkHref.helper';
-import { RECENT_PROJECTS } from '@/utils/getProjectsInfo';
+import { PROJECTS } from '@/config/projectsContent/_reigistry';
 
 export const Portfolio_Content = () => {
 	return (
@@ -23,9 +23,10 @@ export const Portfolio_Content = () => {
 				</p>
 
 				<ul className={styles.projectList}>
-					{RECENT_PROJECTS.map((project) => (
-						<li key={project.caseStudyLink}>
-							<PortfolioItem {...project} />
+					{PROJECTS.map((project) => (
+						<li key={project.metadata.relPath
+						}>
+							<PortfolioItem {...project.previewInfo} />
 						</li>
 					))}
 				</ul>

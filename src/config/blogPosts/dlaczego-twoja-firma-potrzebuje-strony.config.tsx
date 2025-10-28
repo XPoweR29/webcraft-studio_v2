@@ -3,13 +3,13 @@ import { linkHref } from '@/utils/linkHref.helper';
 import { SITE_CONFIG } from '../site.config';
 
 const SLUG =
-	'3-wpisy-tego';
+	'dlaczego-twoja-firma-potrzebuje-profesjonalnej-strony-internetowej';
 const TITLE =
-	'Fajnie jest uprawiać sport i realizować się w tym.';
+	'Dlaczego Twoja firma potrzebuje profesjonalnej strony internetowej w 2025 roku';
 const DESCRIPTION =
-	'Dowiedz się, dlaczego profesjonalna strona internetowa to dziś podstawa każdego biznesu. Poznaj korzyści z tworzenia stron dla firm i zobacz, jak WebCraftSTUDIO pomaga w budowie wizerunku online. To jest takie niekończąca się opowieść o mnie i o moich perypetiach.';
+	'Dowiedz się, dlaczego profesjonalna strona internetowa to dziś podstawa każdego biznesu. Poznaj korzyści z tworzenia stron dla firm i zobacz, jak WebCraftSTUDIO pomaga w budowie wizerunku online.';
 
-export const TRZECI: PostPageConfig = {
+export const DLACZEGO_TWOJA_FIRMA_POTRZEBUJE_PROFESJONALNEJ_STRONY: PostPageConfig = {
 	metadata: {
 		title: TITLE,
 		description: DESCRIPTION,
@@ -101,7 +101,7 @@ export const TRZECI: PostPageConfig = {
 	category: 'WWW',
 	title: TITLE,
 	description: DESCRIPTION,
-	date: '2025-10-17',
+	date: '2025-07-17',
 	mainImg:
 		'/img/blog/dlaczego-twoja-firma-potrzebuje-profesjonalnej-strony-internetowej/strona-internetowa-dla-firm.jpg',
 	mainImgAlt: 'Profesjonalna strona internetowa dla Twojej firmy',

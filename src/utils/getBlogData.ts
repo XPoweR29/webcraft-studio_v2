@@ -37,7 +37,16 @@ export const getPostsByCategory = (
 	excludeSlug: string,
 	limit?: number
 ): PostPageConfig[] => {
-	return [...BLOG_POSTS]
-		.filter((p) => p.category === category && p.metadata.slug !== excludeSlug)
-		.slice(0, limit ?? BLOG_POSTS.length);
+	const relatedCat = BLOG_POSTS.filter((p) => p.category===category && p.metadata.slug !==excludeSlug);
+	
+		if (relatedCat.length < 3) {
+		const otherCat = BLOG_POSTS.filter(
+			(p) => p.metadata.slug !== excludeSlug && p.category !== category
+		);
+
+		const combined = [...relatedCat, ...otherCat];
+		return combined.slice(0, limit ?? BLOG_POSTS.length);
+	}
+
+	return relatedCat.slice(0, limit ?? BLOG_POSTS.length);
 };

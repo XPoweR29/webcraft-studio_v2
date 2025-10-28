@@ -21,7 +21,7 @@ export const Blog_Section = ({ heading, text, className, variant, currentPost }:
 		POSTS = getLatestPosts();
 	} else {
 		POSTS = getPostsByCategory(currentPost?.category!, currentPost?.metadata.slug!);
-	}
+	};
 
 	const NO_SCHEMA_POSTS  = POSTS.map(({ SCHEMA, ...rest }) => rest);
 

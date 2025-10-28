@@ -4,14 +4,59 @@
 	.bodyWrapper {
 		display: flex;
 		flex-direction: column;
-		gap: 2em;
+		gap: 1em;
+
+		h3 {
+			margin-top: 2.2em;
+			margin-bottom: 0.6em;
+			font-size: 1.4em;
+			font-weight: 600;
+		}
+
+		h4 {
+			margin-top: 2.2em;
+			margin-bottom: 0.6em;
+			font-size: 1.2em;
+			font-weight: 600;
+		}
+
+		ul {
+			margin: 2em 0;
+
+			&:global(.dotted) {
+				list-style: disc;
+				padding-left: 2em;
+
+				li {
+					padding-left: 0;
+				}
+			}
+
+			&:global(.num) {
+				list-style: decimal;
+				padding-left: 2em;
+
+				li {
+					padding-left: 0.5em;
+				}
+			}
+		}
+
+		li {
+			margin: 1em 0;
+			padding-left: 1em;
+		}
 	}
 
 	.cta {
-		margin: 1em 0;
-		margin-top: 2em;
-	}
+		margin: 3em 0;
 
+		h3 {
+			margin-top: 0;
+			margin-bottom: 0;
+		}
+	}
+	
 	.blogSection {
 		@include section-gradient;
 		padding-top: 14em;
@@ -23,6 +68,8 @@
 
 		h2 {
 			@include sectionHeading(center, 30%);
+			margin-top: 2.2em;
+			margin-bottom: 0.7em;
 			width: fit-content;
 			margin-right: auto;
 			text-align: center;
@@ -32,18 +79,6 @@
 			text-align: center;
 			margin-right: auto;
 			font-weight: 500;
-		}
-	}
-
-	ul {
-		margin: 3em 0;
-	}
-
-	li {
-		margin: 1em 0;
-
-		&:global(.indent) {
-			padding-left: 1em;
 		}
 	}
 }

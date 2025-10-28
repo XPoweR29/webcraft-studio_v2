@@ -71,7 +71,7 @@ const BlogPostPage = async ({ params }: Props) => {
 					className={styles.blogSection}
 					{...POST.content.blogSection}
 					currentPost={POST}
-					variant='latest'
+					variant='related'
 				/>
 			</article>
 		</>
@@ -79,9 +79,3 @@ const BlogPostPage = async ({ params }: Props) => {
 };
 
 export default BlogPostPage;
-
-//TODO: przygotować conajmniej 3 wpisy dla każdej kategorii (na szybko)
-
-//IMPROVE: ogarnąć wysokość każdej karty (oraz excerpt)
-
-//FIXME: Po dodaniu schema zaglądnij w rich resultrs czy zniknęły ostrzeżenia w artykułach na - NA PODSTRONIE GŁÓWNEJ BLOGA.

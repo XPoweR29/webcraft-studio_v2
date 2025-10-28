@@ -5,6 +5,8 @@ import { createMetadata } from '@/utils/creataeMetadata';
 import { Blog_Content } from '@/sections/Blog_Content/Blog_Content';
 import { BlogList } from '@/components/BlogList/BlogList';
 import { BLOG_POSTS } from '@/config/blogPosts/_reigistry';
+import { image } from 'framer-motion/client';
+import { linkHref } from '@/utils/linkHref.helper';
 
 export const metadata = createMetadata({
 	title: 'Blog WebCraftSTUDIO | Tworzenie Stron Internetowych i Pozycjonowanie',
@@ -58,6 +60,13 @@ const schema = {
 			hasPart: BLOG_POSTS.map((post) => ({
 				'@type': 'BlogPosting',
 				'@id': `${SITE_CONFIG.baseUrl}${post.metadata.relPath}#post`,
+				headline: post.metadata.title,
+				image: `${SITE_CONFIG.baseUrl}${post.mainImg}`,
+				author: {
+					'@type': 'Person',
+					name: 'Paweł',
+					url: `${SITE_CONFIG.baseUrl}${linkHref('about')}`,
+				},
 			})),
 		},
 		{
@@ -80,7 +89,6 @@ const schema = {
 		},
 	],
 };
-
 
 const Blog = () => {
 	return (

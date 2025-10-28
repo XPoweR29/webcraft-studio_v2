@@ -1,12 +1,18 @@
 import { PostPageConfig } from '@/types/blog.type';
-import { DLACZEGO_TWOJA_FIRMA_POTRZEBUJE_PROFESJONALNEJ_STRONY } from './dlaczego-twoja-firma-potrzebuje-profesjonalnej-strony-internetowej.config';
-import { DRUGI_WPIS } from './drugi-wpis.config';
-import { TRZECI } from './trzeci.config';
+import { ILE_KOSZTUJE_STRONA_2025 } from './ile-kosztuje-strona-w-2025.config';
+import { DLACZEGO_TWOJA_FIRMA_POTRZEBUJE_PROFESJONALNEJ_STRONY } from './dlaczego-twoja-firma-potrzebuje-strony.config';
+import { PIERWSZA_STRONA_W_GOOGLE } from './pierwsza-strona-w-google.config';
+import { POZYCJONOWANIE_GMB } from './pozycjonowanie-wizytowki-google.config';
+import { SZYBKIE_DZIALANIA_SEO } from './szybkie-dzialania-seo.config';
+import { KUPOWANIE_OPINII_GOOGLE } from './kupowanie-opinii-google.config';
 
 export const BLOG_POSTS: PostPageConfig[] = [
 	DLACZEGO_TWOJA_FIRMA_POTRZEBUJE_PROFESJONALNEJ_STRONY,
-	DRUGI_WPIS,
-	TRZECI
+	ILE_KOSZTUJE_STRONA_2025,
+	PIERWSZA_STRONA_W_GOOGLE,
+	POZYCJONOWANIE_GMB,
+	SZYBKIE_DZIALANIA_SEO,
+	KUPOWANIE_OPINII_GOOGLE,
 ];
 
 //NOTE Dodawanie klejnego wpisu:

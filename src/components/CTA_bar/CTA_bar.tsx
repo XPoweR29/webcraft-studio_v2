@@ -15,6 +15,7 @@ interface Props {
 	redirectTo: string;
 	buttonLabel: string;
 	className?: string;
+	bgImgae?: string;
 }
 
 const LETTER_DURATION = 0.3;
@@ -45,14 +46,20 @@ const wholeLineVariants: Variants = {
 	visible: {
 		opacity: 1,
 		y: 0,
-        scale: 1,
+		scale: 1,
 		filter: 'blur(0px)',
 		transition: { duration: WHOLE_LINE_DURATION, ease: 'easeOut' },
-        animationDuration: 1,
+		animationDuration: 1,
 	},
 };
 
-export const CTA_bar = ({ textLines, redirectTo, buttonLabel, className }: Props) => {
+export const CTA_bar = ({
+	textLines,
+	redirectTo,
+	buttonLabel,
+	className,
+	bgImgae,
+}: Props) => {
 	const ref = useRef(null);
 	const isInView = useInView(ref, { once: true, amount: 0.6 });
 
@@ -65,11 +72,9 @@ export const CTA_bar = ({ textLines, redirectTo, buttonLabel, className }: Props
 
 				const total =
 					i === 0
-						? 
-						  (textLines[i].replace(/\s/g, '').length - 1) * LETTER_STAGGER +
+						? (textLines[i].replace(/\s/g, '').length - 1) * LETTER_STAGGER +
 						  LETTER_DURATION
-						:
-						  WHOLE_LINE_DURATION;
+						: WHOLE_LINE_DURATION;
 				await new Promise((r) => setTimeout(r, total));
 			}
 		};
@@ -78,11 +83,15 @@ export const CTA_bar = ({ textLines, redirectTo, buttonLabel, className }: Props
 	}, [isInView, controlsArray, textLines]);
 
 	return (
-		<section className={`${styles.cta}  ${className||""}`} aria-labelledby='cta_bar-heading' ref={ref}>
+		<section
+			className={`${styles.cta}  ${className || ''}`}
+			aria-labelledby='cta_bar-heading'
+			ref={ref}
+			style={bgImgae ? { background: `url(${bgImgae})` } : undefined}>
 			<h3 id='cta_bar-heading' className={styles.heading}>
 				{textLines.map((line, lineIndex) => {
 					if (lineIndex === 0) {
-						let offset = 0; 
+						let offset = 0;
 
 						return (
 							<motion.div

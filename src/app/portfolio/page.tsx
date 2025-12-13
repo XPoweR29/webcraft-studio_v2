@@ -5,6 +5,7 @@ import React from 'react';
 import { createMetadata } from '@/utils/creataeMetadata';
 import { SITE_CONFIG } from '@/config/site.config';
 import { PROJECTS } from '@/config/projectsContent/_reigistry';
+import styles from './index.module.scss';
 
 export const metadata = createMetadata({
 	title: 'Moje realizacje | Strony WWW stworzone w WebCraftSTUDIO',
@@ -73,6 +74,7 @@ const Portfolio = () => {
 
 			<Portfolio_Content />
 			<Blog_Section
+				className={styles.blogSection}
 				heading={
 					<>
 						Sprawdź co <span>nowego</span> na blogu
@@ -90,4 +92,4 @@ const Portfolio = () => {
 
 export default Portfolio;
 
-//FIXME: blogSection is shifting layout and cover cta - fix it!
+//IMPROVE: care about functions for mapping POSTS and PROJECTS hrefs on thier ID (linkHref)

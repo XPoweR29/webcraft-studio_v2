@@ -2,16 +2,17 @@ import { SITE_CONFIG } from '../site.config';
 import { ProjectContentConfig } from '@/types/projectPage.type';
 
 const SLUG = 'kwatery-u-zosi';
-const TITLE = 'Pokoje gościnne "Kwatery u Zosi"';
+const TITLE = 'Kwatery u Zosi – strona internetowa obiektu noclegowego';
 const DESCRIPTION =
-	'Jeśli szukasz komfortowego wypoczynku wśród pięknych krajobrazów oraz gór, koniecznie zajżyj do tego miejsca. Czeka Cie tutaj niezwykłe ciepłe przywitanie no i wiadomo zimna wódeczka.';
+	'Strona wizytówkowa dla obiektu noclegowego „Kwatery u Zosi”, zaprojektowana z myślą o czytelnej prezentacji oferty i obecności w sieci.';
 const EXTERNAL_LINK = 'http://kwateryuzosi.pl';
 const MOCKUP = {
-	img: '/img/portfolio/adona_mockup.webp',
-	alt: 'Strona internetowa restauracji Adona',
+	img: '/img/portfolio/kwatery_u_zosi/screen_mockup.webp',
+	alt: 'Projekt strony internetowej obiektu noclegowego Kwatery u Zosi',
 };
 
-export const KWATERY_U_ZOSI: ProjectContentConfig = {
+export const KWATERY_U_ZOSI = {
+	id: 'kwatery-u-zosi',
 	metadata: {
 		title: TITLE,
 		description: DESCRIPTION,
@@ -60,7 +61,7 @@ export const KWATERY_U_ZOSI: ProjectContentConfig = {
 			},
 			image: {
 				'@type': 'ImageObject',
-				url: `${SITE_CONFIG.baseUrl}${project?.mckpImage}`
+				url: `${SITE_CONFIG.baseUrl}${project?.mckpImage}`,
 			},
 		},
 
@@ -92,37 +93,61 @@ export const KWATERY_U_ZOSI: ProjectContentConfig = {
 
 	heroSection: {
 		heading: 'Kwateru u Zosi',
-		subline: 'Przytulne pokoje Gościnne',
+		subline: 'Prosta i czytelna strona noclegowa',
 		bgImage: '/img/photos/project_hero_image.webp',
-		techStack: 'React, TypeScript, NodeJS, Firebase, SCSS',
+		techStack: 'Gatsby, TypeScript, SCSS',
 		externalUrl: EXTERNAL_LINK,
 	},
 
 	contentSection: {
-		heading: 'Strona ofertowa dla domu gościnnego w Węgierskiej Górce',
-		customerInfo:
-			'Restauracja Adona to lokal gastronomiczny serwujący orientalne dania. Właścicielowi zależało na stworzeniu strony, która nie tylko zaprezentuje ofertę w przejrzysty sposób, ale również pozwoli na samodzielne zarządzanie menu – bez konieczności ingerencji w kod.',
+		heading: 'Strona internetowa dla obiektu noclegowego w Węgierskiej Górce',
+		projectInfo: (
+			<>
+				<span>
+					Kwatery u Zosi to obiekt oferujący pokoje gościnne i noclegi dla
+					turystów poszukujących spokojnego miejsca na wypoczynek. Przed
+					rozpoczęciem współpracy klient nie posiadał własnej strony
+					internetowej, co oznaczało brak widoczności w sieci oraz konieczność
+					polegania wyłącznie na zewnętrznych ogłoszeniach.
+				</span>
+				<span>
+					Celem projektu było stworzenie prostej i estetycznej strony
+					wizytówkowej, która pozwala w czytelny sposób zaprezentować ofertę
+					noclegową oraz podstawowe informacje o obiekcie.
+				</span>
+				<span>
+					Dzięki wdrożeniu strony obiekt zyskał własną, niezależną obecność w
+					sieci oraz prosty kanał kontaktu dla osób zainteresowanych rezerwacją.
+				</span>
+			</>
+		),
 		mockupImg: MOCKUP.img,
 		mockupAlt: MOCKUP.alt,
 		servicesList: [
 			{
-				name: 'Projekt i wdrożenie front-endu',
-				description: 'lekka i szybka strona oparta na React (Vite)',
+				name: 'Responsywny layout',
+				description:
+					'pełne dostosowanie strony do telefonów, tabletów oraz ekranów desktopowych.',
 			},
 			{
-				name: 'Panel administratora',
+				name: 'Strona główna z ofertą i cennikiem',
 				description:
-					'dedykowany CMS umożliwiający łatwe zarządzanie menu, kategoriami i cenami.',
+					'czytelna prezentacja oferty noclegowej wraz z sekcją cenową dostępną bezpośrednio na stronie głównej.',
 			},
 			{
-				name: 'System logowania',
+				name: 'Formularz kontaktowy',
 				description:
-					'bezpieczne logowanie administratora oparte na Firebase Authentication.',
+					'prosty formularz umożliwiający wysyłanie zapytań o dostępność i rezerwację bezpośrednio na dedykowaną skrzynkę e-mail.',
 			},
 			{
-				name: 'Baza danych',
+				name: 'Integracja z Google Maps',
 				description:
-					'przechowywanie informacji o menu w MySQL, zapewniające stabilność i elastyczność.',
+					'osadzona mapa ułatwiająca szybkie zlokalizowanie obiektu.',
+			},
+			{
+				name: 'Podstawowe SEO',
+				description:
+					'poprawna struktura nagłówków oraz treści umożliwiająca podstawową obecność strony w wyszukiwarce.',
 			},
 		],
 	},
@@ -158,4 +183,4 @@ export const KWATERY_U_ZOSI: ProjectContentConfig = {
 		heading: 'Chcesz podobną stronę dla swojej firmy?',
 		text: 'Zaprojektuję stronę internetową od podstaw, dopasowaną do Twojej branży i oczekiwań klientów. Każdy projekt tworzę tak, aby dobrze wyglądał, działał szybko i był widoczny w Google. Dzięki temu Twoja strona realnie wspiera sprzedaż i pozyskiwanie nowych kontaktów.',
 	},
-};
+} as const satisfies ProjectContentConfig;

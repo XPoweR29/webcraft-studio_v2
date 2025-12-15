@@ -2,7 +2,7 @@ import { Blog_Section } from '@/sections/Blog_Section/Blog_Section';
 import { Portfolio_Content } from '@/sections/Portfolio_Content/Portfolio_Content';
 import { SectionHero } from '@/sections/SectionHero/SectionHero';
 import React from 'react';
-import { createMetadata } from '@/utils/creataeMetadata';
+import { createMetadata } from '@/utils/createMetadata';
 import { SITE_CONFIG } from '@/config/site.config';
 import { PROJECTS } from '@/config/projectsContent/_reigistry';
 import styles from './index.module.scss';
@@ -92,4 +92,3 @@ const Portfolio = () => {
 
 export default Portfolio;
 
-//IMPROVE: care about functions for mapping POSTS and PROJECTS hrefs on thier ID (linkHref)

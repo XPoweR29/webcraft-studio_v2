@@ -9,7 +9,7 @@ import { Wrapper } from '@/components/Wrapper/Wrapper';
 import { CTA_bar } from '@/components/CTA_bar/CTA_bar';
 import { Blog_Section } from '@/sections/Blog_Section/Blog_Section';
 import { formatDatePL } from '@/utils/formatDatePL';
-import { createMetadata } from '@/utils/creataeMetadata';
+import { createMetadata } from '@/utils/createMetadata';
 
 interface Props {
 	params: { slug: string };
@@ -22,7 +22,7 @@ export async function generateStaticParams() {
 export async function generateMetadata({ params }: Props) {
 	const post = getBlogPostBySlug(params.slug);
 	if (!post) return {};
-	return createMetadata(post.metadata );
+	return createMetadata(post.metadata);
 }
 
 const BlogPostPage = async ({ params }: Props) => {
@@ -31,7 +31,7 @@ const BlogPostPage = async ({ params }: Props) => {
 
 	const { SCHEMA } = POST;
 
-	const schema = typeof SCHEMA === 'function' ? SCHEMA({post: POST}) : SCHEMA;
+	const schema = typeof SCHEMA === 'function' ? SCHEMA({ post: POST }) : SCHEMA;
 
 	return (
 		<>

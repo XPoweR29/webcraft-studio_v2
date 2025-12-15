@@ -5,7 +5,6 @@ import styles from './ProjectPage_Content.module.scss';
 import { Wrapper } from '@/components/Wrapper/Wrapper';
 import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
-import { ProjectPage_Gallery } from '../ProjectPage_Gallery/ProjectPage_Gallery';
 
 export type ServiceItem = {
 	name: string;
@@ -16,7 +15,7 @@ interface Props {
 	mockupImg: string;
 	mockupAlt: string;
 	heading: string;
-	customerInfo: string;
+	projectInfo: string | React.ReactNode;
 	servicesList: ServiceItem[];
 }
 
@@ -41,7 +40,7 @@ export const ProjectPage_Content = ({
 	mockupImg,
 	mockupAlt,
 	heading,
-	customerInfo,
+	projectInfo,
 	servicesList,
 }: Props) => {
 	return (
@@ -81,9 +80,9 @@ export const ProjectPage_Content = ({
 				<h2 className={styles.heading}>{heading}</h2>
 
 				<div className={styles.blockContainer}>
-					<section className={`${styles.block} ${styles['block--customer']}`}>
-						<h3>O kliencie:</h3>
-						<p>{customerInfo}</p>
+					<section className={`${styles.block} ${styles['block--projectInfo']}`}>
+						<h3>O projekcie:</h3>
+						<p>{projectInfo}</p>
 					</section>
 
 					<section className={`${styles.block} ${styles['block--service']}`}>

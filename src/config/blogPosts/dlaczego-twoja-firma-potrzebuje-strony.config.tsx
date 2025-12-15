@@ -9,7 +9,8 @@ const TITLE =
 const DESCRIPTION =
 	'Dowiedz się, dlaczego profesjonalna strona internetowa to dziś podstawa każdego biznesu. Poznaj korzyści z tworzenia stron dla firm i zobacz, jak WebCraftSTUDIO pomaga w budowie wizerunku online.';
 
-export const DLACZEGO_TWOJA_FIRMA_POTRZEBUJE_PROFESJONALNEJ_STRONY: PostPageConfig = {
+export const DLACZEGO_TWOJA_FIRMA_POTRZEBUJE_PROFESJONALNEJ_STRONY = {
+	id: SLUG,
 	metadata: {
 		title: TITLE,
 		description: DESCRIPTION,
@@ -17,7 +18,7 @@ export const DLACZEGO_TWOJA_FIRMA_POTRZEBUJE_PROFESJONALNEJ_STRONY: PostPageConf
 		slug: SLUG,
 	},
 
-	SCHEMA: ({post}) => [
+	SCHEMA: ({ post }) => [
 		{
 			'@context': 'https://schema.org',
 			'@type': 'WebPage',
@@ -334,4 +335,4 @@ export const DLACZEGO_TWOJA_FIRMA_POTRZEBUJE_PROFESJONALNEJ_STRONY: PostPageConf
 			variant: 'related',
 		},
 	},
-};
+} as const satisfies PostPageConfig;

@@ -7,7 +7,8 @@ const TITLE = 'Jak pozycjonować wizytówkę Google? Praktyczny poradnik dla fir
 const DESCRIPTION =
 	'Zobacz, jak krok po kroku poprawić widoczność wizytówki Google. Proste wskazówki, dzięki którym dotrzesz do klientów w swojej okolicy.';
 
-export const POZYCJONOWANIE_GMB: PostPageConfig = {
+export const POZYCJONOWANIE_GMB = {
+	id: SLUG,
 	metadata: {
 		title: TITLE,
 		description: DESCRIPTION,
@@ -748,4 +749,4 @@ export const POZYCJONOWANIE_GMB: PostPageConfig = {
 			variant: 'related',
 		},
 	},
-};
+} as const satisfies PostPageConfig;

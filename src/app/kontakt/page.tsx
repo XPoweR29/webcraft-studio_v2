@@ -2,7 +2,7 @@ import { ContactNap } from '@/components/ContactNap/ContactNap';
 import { SITE_CONFIG } from '@/config/site.config';
 import { Contact_Content } from '@/sections/Contact_Content/Contact_Content';
 import { SectionHero } from '@/sections/SectionHero/SectionHero';
-import { createMetadata } from '@/utils/creataeMetadata';
+import { createMetadata } from '@/utils/createMetadata';
 import React from 'react';
 import styles from './index.module.scss';
 
@@ -60,7 +60,7 @@ const Contact = () => {
 				className={styles.headingWrapper}
 			/>
 			<Contact_Content />
-			<ContactNap className={styles.form}/>
+			<ContactNap className={styles.form} />
 		</>
 	);
 };

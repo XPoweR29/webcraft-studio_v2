@@ -1,6 +1,8 @@
 import { PostPageConfig } from '@/types/blog.type';
 import { linkHref } from '@/utils/linkHref.helper';
 import { SITE_CONFIG } from '../site.config';
+import Link from 'next/link';
+import { href } from '@/utils/linkContent';
 
 const SLUG = 'szybkie-poprawki-seo';
 const TITLE =
@@ -8,7 +10,8 @@ const TITLE =
 const DESCRIPTION =
 	'Poznaj 15 skutecznych działań SEO, które poprawią widoczność Twojej strony w Google i szybko przyniosą pierwsze efekty.';
 
-export const SZYBKIE_DZIALANIA_SEO: PostPageConfig = {
+export const SZYBKIE_DZIALANIA_SEO = {
+	id: SLUG,
 	metadata: {
 		title: TITLE,
 		description: DESCRIPTION,
@@ -131,6 +134,16 @@ export const SZYBKIE_DZIALANIA_SEO: PostPageConfig = {
 							<strong>pozycjonowanie SEO</strong> — dzięki niemu Google lepiej
 							rozumie, czym zajmuje się Twoja strona i komu warto ją wyświetlać
 							w wynikach wyszukiwania.
+						</p>
+
+						<p style={{ border: '1px solid red', background: 'pink' }}>
+							To będzie nasz testowy paragtraf do sprawdzania nowej
+							funkcjonalności na stronie. Jeśli chcesz się dowiedzieć ile
+							kosztuje strona internetowa to sprawdź koniecznie wpis na temat{' '}
+							<Link href={href.blogPost('ile-kosztuje-strona-internetowa-2025')}>
+								<strong style={{textDecoration: 'underline'}}>cennika stron internetowych</strong>
+							</Link>
+							{/* FIXME: wyprubuj to samo jeśli chodzi o projekty. Popraw wszystko i zacommituj zmiany. Potem weź się za uzupełnienie podstron z projektami. */}
 						</p>
 					</>
 				),
@@ -707,4 +720,4 @@ export const SZYBKIE_DZIALANIA_SEO: PostPageConfig = {
 			variant: 'related',
 		},
 	},
-};
+} as const satisfies PostPageConfig;

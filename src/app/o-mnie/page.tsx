@@ -3,7 +3,7 @@ import { SITE_CONFIG } from '@/config/site.config';
 import { About_Content } from '@/sections/About_Content/About_Content';
 import { Home_Contact } from '@/sections/Home_Contact/Home_Contact';
 import { SectionHero } from '@/sections/SectionHero/SectionHero';
-import { createMetadata } from '@/utils/creataeMetadata';
+import { createMetadata } from '@/utils/createMetadata';
 import { linkHref } from '@/utils/linkHref.helper';
 import React from 'react';
 

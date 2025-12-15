@@ -6,7 +6,7 @@ import { SectionHero } from '@/sections/SectionHero/SectionHero';
 import React from 'react';
 import styles from './index.module.scss';
 import { SITE_CONFIG } from '@/config/site.config';
-import { createMetadata } from '@/utils/creataeMetadata';
+import { createMetadata } from '@/utils/createMetadata';
 import { linkHref } from '@/utils/linkHref.helper';
 
 export const metadata = createMetadata({

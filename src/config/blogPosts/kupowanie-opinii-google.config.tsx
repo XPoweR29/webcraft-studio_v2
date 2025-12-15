@@ -2,12 +2,13 @@ import { PostPageConfig } from '@/types/blog.type';
 import { linkHref } from '@/utils/linkHref.helper';
 import { SITE_CONFIG } from '../site.config';
 
-const SLUG = 'kupowanie-opinii-google';
+const SLUG = 'kupowanie-opinii-google' as const;
 const TITLE = 'Kupowanie opinii Google – dlaczego szkodzi Twojej firmie?';
 const DESCRIPTION =
 	'Kupowanie opinii Google to ryzykowny krok. Zobacz, jak może zaszkodzić Twojej firmie i jak zdobywać prawdziwe opinie zgodnie z zasadami.';
 
-export const KUPOWANIE_OPINII_GOOGLE: PostPageConfig = {
+export const KUPOWANIE_OPINII_GOOGLE = {
+	id: SLUG,
 	metadata: {
 		title: TITLE,
 		description: DESCRIPTION,
@@ -742,4 +743,4 @@ export const KUPOWANIE_OPINII_GOOGLE: PostPageConfig = {
 			variant: 'related',
 		},
 	},
-};
+} as const satisfies PostPageConfig;

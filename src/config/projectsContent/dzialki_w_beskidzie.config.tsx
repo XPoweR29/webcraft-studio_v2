@@ -7,11 +7,12 @@ const DESCRIPTION =
 	'Strona na której możesz znaleźć niezłe okazję na inwestycje w malowcznimym Beskidzie Żywieckim. Nie zwlekaj i zobacz jak wygląda raj na Ziemi.';
 const EXTERNAL_LINK = 'http://dzialkiwbeskidzie.pl';
 const MOCKUP = {
-	img: '/img/portfolio/adona_mockup.webp',
-	alt: 'Strona internetowa restauracji Adona',
+	img: '/img/portfolio/dzialki_w_beskidzie/screen_mockup.webp',
+	alt: 'Strona ofertowa niruchomości w Beskidach',
 };
 
-export const DZIALKI_W_BESKIDZIE: ProjectContentConfig = {
+export const DZIALKI_W_BESKIDZIE = {
+	id: 'dzialki-w-beskidzie',
 	metadata: {
 		title: TITLE,
 		description: DESCRIPTION,
@@ -60,7 +61,7 @@ export const DZIALKI_W_BESKIDZIE: ProjectContentConfig = {
 			},
 			image: {
 				'@type': 'ImageObject',
-				url: `${SITE_CONFIG.baseUrl}${project?.mckpImage}`
+				url: `${SITE_CONFIG.baseUrl}${project?.mckpImage}`,
 			},
 		},
 
@@ -158,4 +159,4 @@ export const DZIALKI_W_BESKIDZIE: ProjectContentConfig = {
 		heading: 'Chcesz podobną stronę dla swojej firmy?',
 		text: 'Zaprojektuję stronę internetową od podstaw, dopasowaną do Twojej branży i oczekiwań klientów. Każdy projekt tworzę tak, aby dobrze wyglądał, działał szybko i był widoczny w Google. Dzięki temu Twoja strona realnie wspiera sprzedaż i pozyskiwanie nowych kontaktów.',
 	},
-};
+} as const satisfies ProjectContentConfig;

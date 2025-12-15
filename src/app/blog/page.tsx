@@ -1,10 +1,10 @@
 import { SectionHero } from '@/sections/SectionHero/SectionHero';
 import React from 'react';
 import { SITE_CONFIG } from '@/config/site.config';
-import { createMetadata } from '@/utils/creataeMetadata';
+import { createMetadata } from '@/utils/createMetadata';
 import { Blog_Content } from '@/sections/Blog_Content/Blog_Content';
 import { BlogList } from '@/components/BlogList/BlogList';
-import { BLOG_POSTS } from '@/config/blogPosts/_reigistry';
+import { BLOG_POSTS } from '@/config/blogPosts/_registry';
 import { image } from 'framer-motion/client';
 import { linkHref } from '@/utils/linkHref.helper';
 

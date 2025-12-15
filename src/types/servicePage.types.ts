@@ -7,7 +7,7 @@ import { OtherOffer } from '@/sections/OtherOffer/OtherOffer';
 import { FAQ_Section } from '@/sections/FAQ_Section/FAQ_Section';
 import { Review_Section } from '@/sections/Review_Sectoin/Review_Section';
 import { ProfitsCTAPProps } from '@/components/ProfitsCTA/ProfitsCTA';
-import { MetadataBaseParams } from '@/utils/creataeMetadata';
+import { MetadataBaseParams } from '@/utils/createMetadata';
 import { ServicePage_Content } from '@/sections/ServicePage_Content/ServicePage_Content';
 import { SubscriptionCTA } from '@/components/SubscriptionCTA/SubscriptionCTA';
 import { SchemaType } from './schema.type';

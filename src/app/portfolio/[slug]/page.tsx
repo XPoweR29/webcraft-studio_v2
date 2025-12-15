@@ -3,7 +3,7 @@ import { ProjectPage_Content } from '@/sections/ProjectPage_Content/ProjectPage_
 import { ProjectPage_Gallery } from '@/sections/ProjectPage_Gallery/ProjectPage_Gallery';
 import { ProjectPage_Hero } from '@/sections/ProjectPage_Hero/ProjectPage_Hero';
 import { ProjectContentConfig } from '@/types/projectPage.type';
-import { createMetadata } from '@/utils/creataeMetadata';
+import { createMetadata } from '@/utils/createMetadata';
 import { notFound } from 'next/navigation';
 import React from 'react';
 import styles from './index.module.scss';
@@ -16,21 +16,33 @@ interface Props {
 }
 
 export async function generateStaticParams() {
-	return PROJECTS.map(p=>({slug: p.metadata.slug}));
-};
+	return PROJECTS.map((p) => ({ slug: p.metadata.slug }));
+}
 
 export async function generateMetadata({ params }: Props) {
-	const project: ProjectContentConfig | undefined = getProjectBySlug(params.slug);
+	const project: ProjectContentConfig | undefined = getProjectBySlug(
+		params.slug
+	);
 	if (!project) return {};
 	return createMetadata(project.metadata);
-};
+}
 
 const ProjectPage = ({ params }: Props) => {
-	const PROJECT: ProjectContentConfig | undefined = getProjectBySlug(params.slug);
+	const PROJECT: ProjectContentConfig | undefined = getProjectBySlug(
+		params.slug
+	);
 	if (!PROJECT) return notFound();
-	const { SCHEMA, heroSection, contentSection, gallery, recentProjects, contactSection } = PROJECT;
+	const {
+		SCHEMA,
+		heroSection,
+		contentSection,
+		gallery,
+		recentProjects,
+		contactSection,
+	} = PROJECT;
 
-	const schema = typeof SCHEMA === 'function' ? SCHEMA({project: PROJECT}) : SCHEMA;
+	const schema =
+		typeof SCHEMA === 'function' ? SCHEMA({ project: PROJECT }) : SCHEMA;
 
 	return (
 		<>
@@ -47,12 +59,9 @@ const ProjectPage = ({ params }: Props) => {
 
 			<Recent_Projects {...recentProjects} className={styles.recentProjects} />
 
-			<ProjectPage_Contact  {...contactSection}/>
+			<ProjectPage_Contact {...contactSection} />
 		</>
 	);
 };
 
 export default ProjectPage;
-
-
-

@@ -13,7 +13,7 @@ import { ServiceContentConfig } from '@/types/servicePage.types';
 import { notFound } from 'next/navigation';
 import { getServicePageContent } from '@/utils/getServicePageContent';
 import { LINKS_MAP } from '@/config/links.config';
-import { createMetadata } from '@/utils/creataeMetadata';
+import { createMetadata } from '@/utils/createMetadata';
 import { SubscriptionCTA } from '@/components/SubscriptionCTA/SubscriptionCTA';
 
 interface Props {
@@ -25,7 +25,7 @@ export async function generateStaticParams() {
 	return offerPages.map((page) => ({
 		slug: page.href.split('/').pop(),
 	}));
-};
+}
 export async function generateMetadata({ params }: Props) {
 	const content: ServiceContentConfig | null = getServicePageContent(
 		params.slug
@@ -41,7 +41,9 @@ export async function generateMetadata({ params }: Props) {
 }
 
 const ServicePage = async ({ params }: Props) => {
-	const content: ServiceContentConfig | null = getServicePageContent(params.slug);
+	const content: ServiceContentConfig | null = getServicePageContent(
+		params.slug
+	);
 	if (!content) return notFound();
 	const {
 		SCHEMA,
@@ -56,8 +58,14 @@ const ServicePage = async ({ params }: Props) => {
 		reviewSection,
 	} = content;
 
-
-		const schema = typeof SCHEMA === 'function' ? SCHEMA(content.METADATA, content.faqSection.items, content.pricingSection.packages) : SCHEMA;
+	const schema =
+		typeof SCHEMA === 'function'
+			? SCHEMA(
+					content.METADATA,
+					content.faqSection.items,
+					content.pricingSection.packages
+			  )
+			: SCHEMA;
 
 	return (
 		<>
@@ -67,14 +75,14 @@ const ServicePage = async ({ params }: Props) => {
 			/>
 
 			<SectionHero {...heroSection} />
-			
-			<ServicePage_Content {...contentSection}/>
+
+			<ServicePage_Content {...contentSection} />
 
 			<Process_Section {...processSection} />
 
 			<Pricing_Section {...pricingSection} />
 
-			{subscriptionCTA && <SubscriptionCTA {...subscriptionCTA}/>}
+			{subscriptionCTA && <SubscriptionCTA {...subscriptionCTA} />}
 
 			<Expectation />
 

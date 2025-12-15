@@ -8,7 +8,8 @@ const TITLE =
 const DESCRIPTION =
 	'Zobacz, co naprawdę decyduje o tym, czy Twoja strona pojawi się na pierwszej stronie Google. Poznaj praktyczne zasady SEO, które zwiększą widoczność Twojego biznesu w sieci.';
 
-export const PIERWSZA_STRONA_W_GOOGLE: PostPageConfig = {
+export const PIERWSZA_STRONA_W_GOOGLE = {
+	id: SLUG,
 	metadata: {
 		title: TITLE,
 		description: DESCRIPTION,
@@ -535,4 +536,4 @@ export const PIERWSZA_STRONA_W_GOOGLE: PostPageConfig = {
 			variant: 'related',
 		},
 	},
-};
+} as const satisfies PostPageConfig;

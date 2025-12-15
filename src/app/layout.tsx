@@ -2,7 +2,7 @@ import { Montserrat } from 'next/font/google';
 import '../sass/globals.scss';
 import { Header } from '@/components/Header/Header';
 import { Toaster } from 'react-hot-toast';
-import { createMetadata } from '@/utils/creataeMetadata';
+import { createMetadata } from '@/utils/createMetadata';
 import { Footer } from '@/components/Footer/Footer';
 import { CookieConsentBanner } from '@/components/CookieConsentBanner/CookieConsentBanner';
 import { GAScriptLoader } from '@/system/GAScriptLoader';

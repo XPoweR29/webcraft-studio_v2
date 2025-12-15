@@ -1,4 +1,4 @@
-import { BLOG_POSTS } from '@/config/blogPosts/_reigistry';
+import { BLOG_POSTS } from '@/config/blogPosts/_registry';
 import { BlogPostPreview, PostPageConfig } from '@/types/blog.type';
 
 export const getAllBlogPreviews = (): BlogPostPreview[] =>
@@ -37,9 +37,11 @@ export const getPostsByCategory = (
 	excludeSlug: string,
 	limit?: number
 ): PostPageConfig[] => {
-	const relatedCat = BLOG_POSTS.filter((p) => p.category===category && p.metadata.slug !==excludeSlug);
-	
-		if (relatedCat.length < 3) {
+	const relatedCat = BLOG_POSTS.filter(
+		(p) => p.category === category && p.metadata.slug !== excludeSlug
+	);
+
+	if (relatedCat.length < 3) {
 		const otherCat = BLOG_POSTS.filter(
 			(p) => p.metadata.slug !== excludeSlug && p.category !== category
 		);

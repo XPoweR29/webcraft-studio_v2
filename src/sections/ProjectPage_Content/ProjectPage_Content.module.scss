@@ -37,7 +37,7 @@
 		width: 150px;
 		transform: translate(5%, 50%);
 		opacity: 0.3;
-		z-index: -1
+		z-index: -1;
 	}
 
 	.heading {
@@ -64,6 +64,14 @@
 			color: $white;
 			border-radius: 5px;
 		}
+
+		&--projectInfo {
+			p {
+				display: flex;
+				flex-direction: column;
+				gap: 1em;
+			}
+		}
 	}
 
 	.serviceList {
@@ -83,7 +91,6 @@
 
 @media (width>=500px) {
 	.section {
-
 		.sketchImg {
 			width: 200px;
 			transform: translate(5%, 30%);
@@ -100,11 +107,11 @@
 		}
 
 		.block {
-			& .serviceList, & p {
+			& .serviceList,
+			& p {
 				padding-left: 1em;
 			}
 		}
-
 	}
 }
 

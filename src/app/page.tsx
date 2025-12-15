@@ -9,7 +9,7 @@ import { FAQ_Section } from '@/sections/FAQ_Section/FAQ_Section';
 import { Blog_Section } from '@/sections/Blog_Section/Blog_Section';
 import { Home_Contact } from '@/sections/Home_Contact/Home_Contact';
 import { SITE_CONFIG } from '@/config/site.config';
-import { createMetadata } from '@/utils/creataeMetadata';
+import { createMetadata } from '@/utils/createMetadata';
 
 export const metadata = createMetadata({
 	title: 'Tworzenie stron internetowych i SEO | WebCraftSTUDIO',
@@ -260,7 +260,7 @@ export default function Home() {
 					internetowych, SEO oraz promocji lokalnej firmy. Na blogu regularnie
 					dzielę się sprawdzonymi wskazówkami i rozwiązaniami, które naprawdę
 					pomagają rozwinąć Twój biznes online.'
-					variant='latest'
+				variant='latest'
 			/>
 			<Home_Contact />
 		</>

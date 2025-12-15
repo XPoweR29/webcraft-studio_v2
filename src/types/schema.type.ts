@@ -1,7 +1,7 @@
-import { AccordionItem } from "@/components/Accordion/Accordion";
-import { MetadataBaseParams } from "@/utils/creataeMetadata";
-import { PostPageConfig } from "./blog.type";
-import { ProjectContentConfig } from "./projectPage.type";
+import { AccordionItem } from '@/components/Accordion/Accordion';
+import { MetadataBaseParams } from '@/utils/createMetadata';
+import { PostPageConfig } from './blog.type';
+import { ProjectContentConfig } from './projectPage.type';
 
 type SchemaArgs = {
 	met?: MetadataBaseParams;

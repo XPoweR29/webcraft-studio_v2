@@ -1,13 +1,15 @@
-import { PostPageConfig } from '@/types/blog.type';
+
 import { linkHref } from '@/utils/linkHref.helper';
 import { SITE_CONFIG } from '../site.config';
+import { PostPageConfig } from '@/types/blog.type';
 
 const SLUG = 'ile-kosztuje-strona-internetowa-2025';
 const TITLE = 'Ile kosztuje strona internetowa w 2025 roku? | Cennik stron';
 const DESCRIPTION =
 	'Aktualne ceny stron internetowych w 2025 roku. Sprawdź, ile kosztuje strona firmowa, wizytówka lub one-page oraz jakie są realne koszty utrzymania.';
 
-export const ILE_KOSZTUJE_STRONA_2025: PostPageConfig = {
+export const ILE_KOSZTUJE_STRONA_2025 = {
+	id: SLUG,
 	metadata: {
 		title: TITLE,
 		description: DESCRIPTION,
@@ -740,4 +742,4 @@ export const ILE_KOSZTUJE_STRONA_2025: PostPageConfig = {
 			variant: 'related',
 		},
 	},
-};
+} as const satisfies PostPageConfig;

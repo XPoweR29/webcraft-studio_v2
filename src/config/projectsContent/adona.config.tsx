@@ -8,11 +8,12 @@ const DESCRIPTION =
 	'Przejrzysta i czytelna strona, która przedstawia ofertę lokalu ADONA. Całość zaprojektowana tak, by użytkownik szybko znalazł to, czego szuka.';
 const EXTERNAL_LINK = 'http://adona.net.pl';
 const MOCKUP = {
-	img: '/img/portfolio/adona_mockup.webp',
-	alt: 'Strona internetowa restauracji Adona',
+	img: '/img/portfolio/adona/screen_mockup.webp',
+	alt: 'Strona internetowa dla restauracji Adona',
 };
 
-export const ADONA: ProjectContentConfig = {
+export const ADONA = {
+	id: 'adona',
 	metadata: {
 		title: TITLE,
 		description: DESCRIPTION,
@@ -159,4 +160,4 @@ export const ADONA: ProjectContentConfig = {
 		heading: 'Chcesz podobną stronę dla swojej firmy?',
 		text: 'Zaprojektuję stronę internetową od podstaw, dopasowaną do Twojej branży i oczekiwań klientów. Każdy projekt tworzę tak, aby dobrze wyglądał, działał szybko i był widoczny w Google. Dzięki temu Twoja strona realnie wspiera sprzedaż i pozyskiwanie nowych kontaktów.',
 	},
-};
+} as const satisfies ProjectContentConfig;

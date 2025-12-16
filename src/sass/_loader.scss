@@ -1,31 +1,44 @@
-/* HTML: <div class="loader"></div> */
-.loaderContainer {
+@use '../sass/common' as *;
+
+.loaderBackground {
 	position: fixed;
 	top: 0;
 	left: 0;
 	width: 100vw;
+	min-width: 370px;
 	height: 100vh;
 	display: flex;
 	justify-content: center;
-	background-color: white;
 	align-items: center;
 	z-index: 100;
+	background: #ffffff;
+	background: radial-gradient(
+		circle,
+		rgba(255, 255, 255, 1) 43%,
+		rgba(222, 255, 255, 1) 89%
+	);
+}
+
+.loaderContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
 }
 
 .loader {
-	width: fit-content;
-	font-weight: bold;
-	font-family: sans-serif;
-	font-size: 30px;
-	padding-bottom: 8px;
-	background: linear-gradient(currentColor 0 0) 0 100%/0% 3px no-repeat;
-	animation: l2 2s linear infinite;
+	width: 120px;
+	width: 80%;
+	height: 20px;
+	border-radius: 20px;
+	background: repeating-linear-gradient(135deg, $accent 0 10px, $dark 0 20px) 0/0%
+			no-repeat,
+		repeating-linear-gradient(135deg, #ddd 0 10px, #eee 0 20px) 0/100%;
+	animation: l3 2s infinite;
 }
-.loader:before {
-	content: 'Loading...';
-}
-@keyframes l2 {
-	to {
-		background-size: 100% 3px;
+@keyframes l3 {
+	100% {
+		background-size: 100%;
 	}
 }

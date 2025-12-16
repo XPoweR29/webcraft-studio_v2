@@ -150,6 +150,7 @@ const schema = [
 	},
 ];
 export default function Home() {
+
 	return (
 		<>
 			<script

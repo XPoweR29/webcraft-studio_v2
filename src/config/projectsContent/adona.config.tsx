@@ -191,6 +191,4 @@ export const ADONA = {
 } as const satisfies ProjectContentConfig;
 
 
-//TODO: Zrobić screenshoty i uzupełnić galerię w projektach portfolio
-
 //IMPROVE: Dodać ikony ptaszków koło futureList (podobnie jak w cenniku)

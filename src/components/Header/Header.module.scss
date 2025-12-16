@@ -44,6 +44,10 @@
 			-moz-user-focus: none;
 			margin-left: auto;
 		}
+
+		.desktopNav {
+			display: none;
+		}
 	}
 }
 
@@ -51,5 +55,16 @@
 	.header {
 		padding: 1.2em 0;
 		height: auto;
+
+		.navbar_container {
+
+			.burgerBtn {
+				display: none;
+			}
+
+			.desktopNav {
+				display: block;
+			}
+		}
 	}
 }

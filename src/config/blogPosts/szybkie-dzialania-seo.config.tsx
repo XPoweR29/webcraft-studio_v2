@@ -143,7 +143,6 @@ export const SZYBKIE_DZIALANIA_SEO = {
 							<Link href={href.blogPost('ile-kosztuje-strona-internetowa-2025')}>
 								<strong style={{textDecoration: 'underline'}}>cennika stron internetowych</strong>
 							</Link>
-							{/* FIXME: wyprubuj to samo jeśli chodzi o projekty. Popraw wszystko i zacommituj zmiany. Potem weź się za uzupełnienie podstron z projektami. */}
 						</p>
 					</>
 				),

@@ -33,3 +33,5 @@ const NotFound = () => {
 };
 
 export default NotFound;
+
+//FIXME: remember about not found page and set proper favicon!

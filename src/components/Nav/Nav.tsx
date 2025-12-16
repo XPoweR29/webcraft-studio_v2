@@ -6,12 +6,12 @@ import { useHomeScrollTop } from '@/hooks/useHomeScrollTop';
 import { useMegaMenu } from '../../hooks/useMegaMenu';
 import { MegaMenu } from '../MegaMenu/MegaMenu';
 
-export const Nav = () => {
+export const Nav = ({ className }: {className?: string}) => {
 	const handleScrollTop = useHomeScrollTop();
 	const { openMenu, closeMenu } = useMegaMenu();
 
 	return (
-		<nav>
+		<nav className={className ?? ""}>
 			<ul className={styles.linkbar}>
 				{LINKS_MAP
 					.filter((link) => !link.hidden)

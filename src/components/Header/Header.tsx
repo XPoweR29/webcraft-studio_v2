@@ -16,7 +16,6 @@ import { Wrapper } from '../Wrapper/Wrapper';
 import { useHomeScrollTop } from '@/hooks/useHomeScrollTop';
 
 export const Header = () => {
-	const { breakpoint } = useBreakpoints();
 	const { mobileMenuShown, setMobileMenuShown } = useAppContext();
 	const { showNav } = useHeaderBehavior({ scrollHide: true });
 
@@ -38,15 +37,12 @@ export const Header = () => {
 							<Image src={'/img/logo_dark.svg'} width={250} height={52} alt='' priority />
 						</Link>
 
-						{breakpoint.lg ? (
-							<Nav />
-						) : (
+							<Nav className={styles.desktopNav}/>
 							<BurgerBtn
 								className={styles.burgerBtn}
 								mobileMenuShown={mobileMenuShown}
 								toggleMenu={setMobileMenuShown}
 							/>
-						)}
 
 						{mobileMenuShown && <MobileMenu />}
 					</div>

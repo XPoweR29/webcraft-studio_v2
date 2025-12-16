@@ -3,13 +3,13 @@ import { SITE_CONFIG } from '../site.config';
 import { ProjectContentConfig } from '@/types/projectPage.type';
 
 const SLUG = 'restauracja-orientalna-adona';
-const TITLE = 'Restauracja orientalna ADONA';
+const TITLE = 'ADONA – strona internetowa restauracji orientalnej';
 const DESCRIPTION =
-	'Przejrzysta i czytelna strona, która przedstawia ofertę lokalu ADONA. Całość zaprojektowana tak, by użytkownik szybko znalazł to, czego szuka.';
+	'Projekt nowej strony internetowej restauracji ADONA z panelem do samodzielnej edycji menu oraz komunikatów dla klientów.';
 const EXTERNAL_LINK = 'http://adona.net.pl';
 const MOCKUP = {
 	img: '/img/portfolio/adona/screen_mockup.webp',
-	alt: 'Strona internetowa dla restauracji Adona',
+	alt: 'Projekt strony internetowej restauracji ADONA',
 };
 
 export const ADONA = {
@@ -93,51 +93,79 @@ export const ADONA = {
 	],
 
 	heroSection: {
-		heading: 'Adona',
+		heading: 'ADONA',
 		subline: 'Restauracja orientalna',
 		bgImage: '/img/photos/project_hero_image.webp',
-		techStack: 'React, TypeScript, NodeJS, Firebase, SCSS',
+		techStack: 'React (Vite), TypeScript, NodeJS, Firebase, SCSS',
 		externalUrl: EXTERNAL_LINK,
 	},
 
 	contentSection: {
-		heading: 'Strona internetowa dla restauracji z systemem zarządzania menu',
-		customerInfo:
-			'Restauracja Adona to lokal gastronomiczny serwujący orientalne dania. Właścicielowi zależało na stworzeniu strony, która nie tylko zaprezentuje ofertę w przejrzysty sposób, ale również pozwoli na samodzielne zarządzanie menu – bez konieczności ingerencji w kod.',
+		heading: 'Strona internetowa restauracji z systemem zarządzania menu',
+		projectInfo: (
+			<>
+				<span>
+					Restauracja ADONA posiadała wcześniej stronę internetową, jednak wraz
+					z rozwojem oferty pojawiła się potrzeba jej odświeżenia oraz lepszego
+					dostosowania do urządzeń mobilnych i aktualnych standardów użytkowych.
+				</span>
+
+				<span>
+					Celem projektu było stworzenie nowej, czytelnej strony internetowej,
+					która w przejrzysty sposób zaprezentuje ofertę lokalu oraz menu, a
+					jednocześnie umożliwi właścicielowi samodzielne zarządzanie treścią.
+					Projekt obejmował również wdrożenie panelu administracyjnego z
+					możliwością edycji menu oraz publikowania komunikatów w formie
+					pop-upu.
+				</span>
+
+				<span>
+					Wdrożone rozwiązanie uprościło korzystanie ze strony zarówno po
+					stronie użytkowników, jak i administratora. Panel zarządzania pozwala
+					na szybką aktualizację oferty oraz komunikację z klientami bez
+					konieczności ingerencji w kod strony.
+				</span>
+			</>
+		),
 		mockupImg: MOCKUP.img,
 		mockupAlt: MOCKUP.alt,
 		servicesList: [
 			{
-				name: 'Projekt i wdrożenie front-endu',
-				description: 'lekka i szybka strona oparta na React (Vite)',
+				name: 'Projekt i wdrożenie strony internetowej',
+				description:
+					'lekka i szybka strona front-endowa oparta na React (Vite) i TypeScript.',
 			},
 			{
-				name: 'Panel administratora',
+				name: 'Panel administracyjny do zarządzania menu',
 				description:
-					'dedykowany CMS umożliwiający łatwe zarządzanie menu, kategoriami i cenami.',
+					'panel umożliwiający edycję menu, kategorii oraz cen bez ingerencji w kod.',
 			},
 			{
-				name: 'System logowania',
+				name: 'Komunikaty pop-up',
 				description:
-					'bezpieczne logowanie administratora oparte na Firebase Authentication.',
+					'funkcjonalność umożliwiająca publikowanie komunikatów i ogłoszeń na stronie głównej.',
 			},
 			{
-				name: 'Baza danych',
+				name: 'Autoryzacja administratora',
 				description:
-					'przechowywanie informacji o menu w MySQL, zapewniające stabilność i elastyczność.',
+					'bezpieczny dostęp do panelu oparty na Firebase Authentication.',
+			},
+			{
+				name: 'Struktura danych menu',
+				description:
+					'przechowywanie i obsługa danych menu w relacyjnej bazie MySQL.',
 			},
 		],
 	},
 
 	gallery: {
-		commonAlt: 'Strona internetowa restauracji Adona - Layout',
+		commonAlt: 'Strona internetowa restauracji ADONA — układ i widoki',
 		photos: [
-			'/img/portfolio/adona/gallery/adona_1.webp',
-			'/img/portfolio/adona/gallery/adona_2.webp',
-			'/img/portfolio/adona/gallery/adona_3.webp',
-			'/img/portfolio/adona/gallery/adona_1.webp',
-			'/img/portfolio/adona/gallery/adona_2.webp',
-			'/img/portfolio/adona/gallery/adona_3.webp',
+			'/img/portfolio/adona/gallery/photo_1.webp',
+			'/img/portfolio/adona/gallery/photo_2.webp',
+			'/img/portfolio/adona/gallery/photo_3.webp',
+			'/img/portfolio/adona/gallery/photo_4.webp',
+			'/img/portfolio/adona/gallery/photo_5.webp',
 		],
 	},
 
@@ -161,3 +189,8 @@ export const ADONA = {
 		text: 'Zaprojektuję stronę internetową od podstaw, dopasowaną do Twojej branży i oczekiwań klientów. Każdy projekt tworzę tak, aby dobrze wyglądał, działał szybko i był widoczny w Google. Dzięki temu Twoja strona realnie wspiera sprzedaż i pozyskiwanie nowych kontaktów.',
 	},
 } as const satisfies ProjectContentConfig;
+
+
+//TODO: Zrobić screenshoty i uzupełnić galerię w projektach portfolio
+
+//IMPROVE: Dodać ikony ptaszków koło futureList (podobnie jak w cenniku)

@@ -1,19 +1,18 @@
-import { href } from '@/utils/linkContent';
 import { SITE_CONFIG } from '../site.config';
 import { ProjectContentConfig } from '@/types/projectPage.type';
 
-const SLUG = 'dzialki-w-beskidzie';
-const TITLE = 'Działki w Beskidzie Żywieckim – strona ofertowa nieruchomości';
+const SLUG = 'pro-wnetrze-zywiec';
+const TITLE = 'PRO Wnętrze Żywiec – strona firmy remontowej';
 const DESCRIPTION =
-	'Strona ofertowa prezentująca działki na sprzedaż — z opisami, galeriami, mapami Google oraz czytelną nawigacją między ogłoszeniami.';
-const EXTERNAL_LINK = 'http://dzialkiwbeskidzie.pl';
+	'Strona internetowa firmy remontowo-wykończeniowej z rozbudowaną ofertą usług, landingami lokalizacyjnymi oraz wsparciem SEO i Google Moja Firma.';
+const EXTERNAL_LINK = 'http://pro-wnetrze.pl';
 const MOCKUP = {
-	img: '/img/portfolio/dzialki_w_beskidzie/screen_mockup.webp',
-	alt: 'Strona ofertowa niruchomości w Beskidach',
+	img: '/img/portfolio/pro_wnetrze/screen_mockup.webp',
+	alt: 'Strona internetowa firmy remontowo-wykończeniowej PRO Wnętrze Żywiec',
 };
 
-export const DZIALKI_W_BESKIDZIE = {
-	id: 'dzialki-w-beskidzie',
+export const PRO_WNETRZE_ZYWIEC = {
+	id: 'pro-wnetrze-zywiec',
 	metadata: {
 		title: TITLE,
 		description: DESCRIPTION,
@@ -93,36 +92,39 @@ export const DZIALKI_W_BESKIDZIE = {
 	],
 
 	heroSection: {
-		heading: 'Działki w Beskidzie Żywieckim',
-		subline: 'Strona ofertowa działek na sprzedaż',
+		heading: 'PRO Wnętrze Żywiec',
+		subline: 'Remonty i Wykończenia wnętrz',
 		bgImage: '/img/photos/project_hero_image.webp',
-		techStack: 'NextJS, TypeScript, SASS, Vercel',
+		techStack: 'Next.js, TypeScript, SASS, Tailwind, SEO',
 		externalUrl: EXTERNAL_LINK,
 	},
 
 	contentSection: {
-		heading: 'Strona ofertowa nieruchomości z podstronami ogłoszeń',
+		heading: 'Strona internetowa firmy remontowo-wykończeniowej',
 		projectInfo: (
 			<>
 				<span>
-					„Działki w Beskidzie Żywieckim” to strona ofertowa przygotowana do
-					prezentacji kilku działek na sprzedaż w formie zbliżonej do ogłoszeń
-					znanych z portali nieruchomości. Projekt powstał od zera na potrzeby
-					klienta i miał zapewnić spójną, własną obecność w sieci.
+					PRO Wnętrze Żywiec to firma świadcząca usługi remontowe i
+					wykończeniowe, dla której strona internetowa została zaprojektowana i
+					wdrożona od podstaw. Projekt powstał na prośbę klienta i miał na celu
+					zbudowanie profesjonalnej obecności w sieci oraz czytelnej prezentacji
+					zakresu usług.
 				</span>
 
 				<span>
-					Głównym celem było czytelne przedstawienie oferty — z podziałem na
-					osobne podstrony dla każdej działki, pełnym opisem, zdjęciami oraz
-					informacjami lokalizacyjnymi. Strona główna w większym stopniu
-					eksponuje kluczową ofertę inwestycyjną, a pozostałe działki są
-					dostępne z poziomu sekcji z linkowaniem do podstron.
+					Struktura serwisu obejmuje stronę główną, sekcje informacyjne,
+					rozbudowaną ofertę usług podzieloną na grupy tematyczne oraz
+					dedykowane podstrony usługowe. Każda z głównych kategorii posiada
+					własne podstrony, co pozwala na przejrzyste zaprezentowanie oferty i
+					ułatwia nawigację użytkownikom.
 				</span>
 
 				<span>
-					W ramach projektu wdrożono elementy wspierające kontakt i pozyskiwanie
-					zapytań, w tym formularz kontaktowy oraz widoczne przyciski CTA,
-					ułatwiające szybki kontakt z właścicielem oferty.
+					W ramach projektu przygotowano również lokalne podstrony ofertowe
+					oparte o analizę fraz kluczowych, wspierające widoczność strony w
+					wynikach wyszukiwania. Całość została zaprojektowana z naciskiem na
+					czytelność, UX oraz wsparcie działań sprzedażowych i wizerunkowych
+					firmy.
 				</span>
 			</>
 		),
@@ -130,47 +132,43 @@ export const DZIALKI_W_BESKIDZIE = {
 		mockupAlt: MOCKUP.alt,
 		servicesList: [
 			{
-				name: 'Projekt i wdrożenie strony ofertowej',
+				name: 'Projekt i wdrożenie strony internetowej',
 				description:
-					'indywidualny layout zaprojektowany i wdrożony w Next.js (TypeScript, SASS).',
+					'indywidualny projekt graficzny oraz implementacja strony w Next.js z naciskiem na UX i czytelność oferty.',
 			},
 			{
-				name: 'Podstrony ogłoszeń dla działek',
+				name: 'Struktura usług i podstrony ofertowe',
 				description:
-					'oddzielne podstrony z opisem, parametrami, galerią zdjęć oraz materiałami prezentacyjnymi.',
+					'rozbudowana architektura informacji obejmująca grupy usług oraz dedykowane podstrony.',
 			},
 			{
-				name: 'Prezentacja ofert na stronie głównej',
+				name: 'Landingi lokalizacyjne',
 				description:
-					'sekcje z wyróżnioną ofertą główną oraz linkowaniem do pozostałych działek (karty/slider).',
+					'przygotowanie lokalnych podstron ofertowych wspierających widoczność w wynikach wyszukiwania.',
 			},
 			{
-				name: 'Mapy i oznaczenia lokalizacji',
+				name: 'Optymalizacja SEO i struktura danych',
 				description:
-					'integracja z Google Maps oraz prezentacja lokalizacji działek na mapie.',
+					'wdrożenie podstawowej i rozszerzonej optymalizacji SEO, w tym struktury nagłówków oraz danych schema.',
 			},
 			{
-				name: 'Materiały wizualne i wideo',
+				name: 'Integracja z Google Moja Firma',
 				description:
-					'galerie zdjęć, materiały wideo oraz wizualne wyróżnienie działek.',
-			},
-			{
-				name: 'Kontakt i CTA',
-				description:
-					'formularz kontaktowy oraz "call to action" widoczne w kluczowych miejscach strony.',
+					'spięcie strony z wizytówką Google w celu wsparcia lokalnej widoczności i pozyskiwania zapytań.',
 			},
 		],
 	},
 
 	gallery: {
-		commonAlt: 'Strona internetowa restauracji Adona - Layout',
+		commonAlt: 'Strona internetowa firmy remontowej PRO Wnętrze - Layout',
 		photos: [
-			'/img/portfolio/dzialki_w_beskidzie/gallery/photo_1.webp',
-			'/img/portfolio/dzialki_w_beskidzie/gallery/photo_2.webp',
-			'/img/portfolio/dzialki_w_beskidzie/gallery/photo_3.webp',
-			'/img/portfolio/dzialki_w_beskidzie/gallery/photo_4.webp',
-			'/img/portfolio/dzialki_w_beskidzie/gallery/photo_5.webp',
-			'/img/portfolio/dzialki_w_beskidzie/gallery/photo_6.webp',
+			'/img/portfolio/pro_wnetrze/gallery/photo_1.webp',
+			'/img/portfolio/pro_wnetrze/gallery/photo_2.webp',
+			'/img/portfolio/pro_wnetrze/gallery/photo_3.webp',
+			'/img/portfolio/pro_wnetrze/gallery/photo_4.webp',
+			'/img/portfolio/pro_wnetrze/gallery/photo_5.webp',
+			'/img/portfolio/pro_wnetrze/gallery/photo_6.webp',
+			'/img/portfolio/pro_wnetrze/gallery/photo_7.webp',
 		],
 	},
 

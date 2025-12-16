@@ -15,7 +15,7 @@ interface Props {
 	className?: string;
 	techStack: string;
 	externalUrl: string;
-};
+}
 
 export const ProjectPage_Hero = ({
 	heading,
@@ -47,21 +47,16 @@ export const ProjectPage_Hero = ({
 				</h1>
 
 				<div className={styles.info}>
-					<ProjectInfoItem icon={linkIcon} info={externalUrl} />
-					<ProjectInfoItem
-						icon={codeIcon}
-						info={techStack}
-					/>
+					<a
+						href={externalUrl}
+						target='_blank'
+						rel='noopener noreferrer nofollow'
+						aria-label='Otwórz stronę projektu w nowej karcie'
+						className={styles.externalLink}>
+						<ProjectInfoItem icon={linkIcon} info={externalUrl} />
+					</a>
+					<ProjectInfoItem icon={codeIcon} info={techStack} />
 				</div>
-
-				{/* <Image
-					className={styles.mockupImg}
-					src={'/img/portfolio/adona/screen_mockup.webp'}
-					alt='Projekt strony internetowej restauracji Adona'
-					width={650}
-					height={480}
-					draggable={false}
-				/> */}
 			</Wrapper>
 		</header>
 	);

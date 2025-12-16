@@ -155,12 +155,11 @@ export const KWATERY_U_ZOSI = {
 	gallery: {
 		commonAlt: 'Strona internetowa restauracji Adona - Layout',
 		photos: [
-			'/img/portfolio/adona/gallery/adona_1.webp',
-			'/img/portfolio/adona/gallery/adona_2.webp',
-			'/img/portfolio/adona/gallery/adona_3.webp',
-			'/img/portfolio/adona/gallery/adona_1.webp',
-			'/img/portfolio/adona/gallery/adona_2.webp',
-			'/img/portfolio/adona/gallery/adona_3.webp',
+			'/img/portfolio/kwatery_u_zosi/gallery/photo_1.webp',
+			'/img/portfolio/kwatery_u_zosi/gallery/photo_2.webp',
+			'/img/portfolio/kwatery_u_zosi/gallery/photo_3.webp',
+			'/img/portfolio/kwatery_u_zosi/gallery/photo_4.webp',
+			'/img/portfolio/kwatery_u_zosi/gallery/photo_5.webp',
 		],
 	},
 

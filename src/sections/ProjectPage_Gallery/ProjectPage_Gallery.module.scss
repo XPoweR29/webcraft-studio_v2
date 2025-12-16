@@ -4,4 +4,9 @@
 	:global(.swiper-wrapper) {
 		transition-timing-function: linear !important;
 	};
+
+	.photo {
+		border-width: 2px 1px;
+		border-color: $dark;
+	}
 }

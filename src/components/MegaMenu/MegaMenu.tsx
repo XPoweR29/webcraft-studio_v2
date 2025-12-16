@@ -31,28 +31,27 @@ export const MegaMenu = () => {
 			className={styles.megaMenu}
 			onMouseEnter={openMenu}
 			onMouseLeave={closeMenu}
-			initial='close'
+			initial='closed'
 			variants={menuVariants}
 			animate={isSubmenuOpen ? 'open' : 'closed'}>
-			{LINKS_MAP
-				.find((link) => link.id === 'offer')
-				?.children?.map((sublink) => (
-					<Link
-						href={`${sublink.href}`}
-						className={styles.linkItem}
-						key={sublink.href}>
-						<Image
-							src={sublink.icon}
-							className={styles.icon}
-							alt={sublink.altIcon}
-							draggable={false}
-						/>
-						<div className={styles.description}>
-							<span className={styles.title}>{sublink.label}</span>
-							<span className={styles.text}>{sublink.description}</span>
-						</div>
-					</Link>
-				))}
+			{LINKS_MAP.find((link) => link.id === 'offer')?.children?.map(
+				(sublink) => (
+					<li key={sublink.href}>
+						<Link href={`${sublink.href}`} className={styles.linkItem}>
+							<Image
+								src={sublink.icon}
+								className={styles.icon}
+								alt={sublink.altIcon}
+								draggable={false}
+							/>
+							<div className={styles.description}>
+								<span className={styles.title}>{sublink.label}</span>
+								<span className={styles.text}>{sublink.description}</span>
+							</div>
+						</Link>
+					</li>
+				)
+			)}
 		</motion.ul>
 	);
 };

@@ -1,6 +1,6 @@
-@use '../sass/common' as *;
+@use '../../sass/common' as *;
 
-.loaderContainer {
+.loaderBackground {
 	position: fixed;
 	top: 0;
 	left: 0;
@@ -12,16 +12,25 @@
 	align-items: center;
 	z-index: 1000;
 	background: #ffffff;
-	background: linear-gradient(
-		0deg,
-		rgba(255, 255, 255, 1) 0%,
-		rgba(255, 255, 255, 1) 70%,
-		rgba(222, 253, 255, 1) 100%
+	background: radial-gradient(
+		circle,
+		rgba(255, 255, 255, 1) 21%,
+		rgba(237, 252, 255, 1) 65%,
+		rgba(161, 229, 240, 1) 79%,
+		rgba(10, 212, 202, 1) 100%
 	);
 }
 
+.loaderContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	gap: 2em;
+}
+
 .loader {
-	width: 120px;
+	width: 80%;
 	height: 20px;
 	border-radius: 20px;
 	background: repeating-linear-gradient(135deg, $accent 0 10px, $dark 0 20px) 0/0%

@@ -52,7 +52,7 @@ export const BlogList = () => {
 					{visiblePosts.map((p, i) => (
 						<div key={i} className={styles.postCard}>
 							<BlogCard
-								href={p.metadata.relPath}
+								href={p.metadata.relPath!}
 								mainImg={p.mainImg}
 								mainImgAlt={p.mainImgAlt}
 								title={p.title}

@@ -43,6 +43,7 @@ const letterVariants: Variants = {
 };
 
 export const SectionHero = ({ heading, bgImage, subline, className }: Props) => {
+
 	return (
 		<header className={styles.hero} aria-labelledby='page-hero-title'>
 			<div className={styles.background}>

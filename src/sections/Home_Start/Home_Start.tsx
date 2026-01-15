@@ -14,6 +14,7 @@ import Link from 'next/link';
 import { linkHref } from '@/utils/linkHref.helper';
 import { OfferCard } from '@/components/OfferCard/OfferCard';
 import { OFFER_CARD_LINKING } from '@/config/offerLinking.config';
+import { useBrandLoader } from '@/hooks/useBrandLoader';
 
 export const listVariants: Variants = {
 	hidden: {},
@@ -46,6 +47,8 @@ export const itemVariants: Variants = {
 };
 
 export const Home_Start = () => {
+	const { isLoaded } = useBrandLoader();
+
 	return (
 		<section className={styles.section}>
 			<Wrapper className={styles.wrapper}>
@@ -77,7 +80,7 @@ export const Home_Start = () => {
 								className={styles.features}
 								variants={listVariants}
 								initial='hidden'
-								whileInView={'visible'}
+								whileInView={isLoaded ? 'visible' : 'hidden'}
 								viewport={{ once: true, amount: 0.3 }}>
 								<motion.li
 									className={styles.featureItem}
@@ -150,11 +153,12 @@ export const Home_Start = () => {
 
 						<motion.div
 							className={styles.mainImgWrapper}
-							initial={{opacity: 0, x:100}}
-							whileInView={{opacity:1, x:0}}
-							transition={{duration: 1, ease: 'easeOut', delay: 0.5}}
-							viewport={{once: true, amount: 0.3}}
-						>
+							initial={{ opacity: 0, x: 100 }}
+							whileInView={
+								isLoaded ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }
+							}
+							transition={{ duration: 1, ease: 'easeOut', delay: 0.5 }}
+							viewport={{ once: true, amount: 0.3 }}>
 							<Image
 								className={styles.mainImg}
 								src={'/img/websites.webp'}

@@ -35,7 +35,7 @@ export default async function RootLayout({ children, }: Readonly<{ children: Rea
 	return (
 		<html lang='pl'>
 			<body className={mainFont.className}>
-				<ContextsProvider>
+				<ContextsProvider showOnLoad={showBrandLoader}>
 					<BrandLoaderManager showOnLoad={showBrandLoader}/> 
 					<Header />
 					<main>{children}</main>

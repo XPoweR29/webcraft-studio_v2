@@ -5,6 +5,7 @@ import styles from './ProjectPage_Content.module.scss';
 import { Wrapper } from '@/components/Wrapper/Wrapper';
 import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
+import { useBrandLoader } from '@/hooks/useBrandLoader';
 
 export type ServiceItem = {
 	name: string;
@@ -43,12 +44,14 @@ export const ProjectPage_Content = ({
 	projectInfo,
 	servicesList,
 }: Props) => {
+	const { isLoaded } = useBrandLoader();
+
 	return (
 		<article className={styles.section}>
 			<motion.div 
 				className={styles.mockupWrapper}
 				initial='hidden'
-				whileInView='visible'
+				whileInView={isLoaded?'visible':'hidden'}
 				variants={variants}
 				viewport={{once: true, amount: 0.3}}
 			>

@@ -5,6 +5,7 @@ import styles from './SectionHero.module.scss';
 import Image from 'next/image';
 import { Wrapper } from '@/components/Wrapper/Wrapper';
 import { Variants, motion } from 'framer-motion';
+import { useBrandLoader } from '@/hooks/useBrandLoader';
 
 interface Props {
 	heading: string;
@@ -43,6 +44,7 @@ const letterVariants: Variants = {
 };
 
 export const SectionHero = ({ heading, bgImage, subline, className }: Props) => {
+	const { isLoaded } = useBrandLoader();
 
 	return (
 		<header className={styles.hero} aria-labelledby='page-hero-title'>
@@ -67,7 +69,7 @@ export const SectionHero = ({ heading, bgImage, subline, className }: Props) => 
 							className={styles.subline}
 							variants={sublineVariants}
 							initial='hidden'
-							whileInView='visible'
+							whileInView={isLoaded?'visible':'hidden'}
 							viewport={{ once: true, amount: 0.6 }}>
 							{subline.split(' ').map((word, wordIdx, arr) => (
 								<React.Fragment key={wordIdx}>

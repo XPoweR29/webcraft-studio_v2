@@ -36,7 +36,7 @@
 	background: repeating-linear-gradient(135deg, $accent 0 10px, $dark 0 20px) 0/0%
 			no-repeat,
 		repeating-linear-gradient(135deg, #ddd 0 10px, #eee 0 20px) 0/100%;
-	animation: l3 2s infinite;
+	animation: l3 var(--loader-duration, 1700ms) ease-in-out forwards;
 }
 @keyframes l3 {
 	100% {

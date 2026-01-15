@@ -7,6 +7,9 @@ import { Footer } from '@/components/Footer/Footer';
 import { CookieConsentBanner } from '@/components/CookieConsentBanner/CookieConsentBanner';
 import { GAScriptLoader } from '@/system/GAScriptLoader';
 import { ContextsProvider } from '@/contexts/contextsProviders';
+import { cookies } from 'next/headers';
+import { BrandLoaderManager } from '@/components/BrandLoader/BrandLoaderManager';
+import { BRAND_LOADER_DURATION } from '@/config/constants';
 
 const mainFont = Montserrat({
 	subsets: ['latin'],
@@ -19,24 +22,29 @@ export const metadata = createMetadata({
 		'Projektowanie stron WWW i pozycjonowanie w Google. Nowoczesne strony internetowe dla firm oraz lokalne SEO, które zwiększa Twoją widoczność w sieci.',
 });
 
-export default function RootLayout({
-	children,
-}: Readonly<{
-	children: React.ReactNode;
-}>) {
+export default async function RootLayout({ children, }: Readonly<{ children: React.ReactNode; }>) {
+
+	const cookieStore = await cookies();
+	const showBrandLoader = !cookieStore.has('wcs_brand_loader_seen');
+
+	const COOKIE_BANNER_EXTRA_DELAY = 1000;
+	const cookieBannerDelay = showBrandLoader ? BRAND_LOADER_DURATION + COOKIE_BANNER_EXTRA_DELAY : 500;
+
+
 
 	return (
 		<html lang='pl'>
 			<body className={mainFont.className}>
 				<ContextsProvider>
+					<BrandLoaderManager showOnLoad={showBrandLoader}/> 
 					<Header />
 					<main>{children}</main>
 					<Footer />
 					<Toaster />
-					<CookieConsentBanner />
+					<CookieConsentBanner initialDelayMs={cookieBannerDelay}/>
 					<GAScriptLoader />
 				</ContextsProvider>
 			</body>
 		</html>
 	);
-}
+};

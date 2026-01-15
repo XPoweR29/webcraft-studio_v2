@@ -135,15 +135,6 @@ export const SZYBKIE_DZIALANIA_SEO = {
 							rozumie, czym zajmuje się Twoja strona i komu warto ją wyświetlać
 							w wynikach wyszukiwania.
 						</p>
-
-						<p style={{ border: '1px solid red', background: 'pink' }}>
-							To będzie nasz testowy paragtraf do sprawdzania nowej
-							funkcjonalności na stronie. Jeśli chcesz się dowiedzieć ile
-							kosztuje strona internetowa to sprawdź koniecznie wpis na temat{' '}
-							<Link href={href.blogPost('ile-kosztuje-strona-internetowa-2025')}>
-								<strong style={{textDecoration: 'underline'}}>cennika stron internetowych</strong>
-							</Link>
-						</p>
 					</>
 				),
 			},

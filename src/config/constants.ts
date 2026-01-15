@@ -1,0 +1,2 @@
+export const BRAND_LOADER_DURATION = 1700;
+export const COOKIE_BANNER_EXTRA_DELAY = 1000;

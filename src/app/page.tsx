@@ -150,9 +150,7 @@ const schema = [
 	},
 ];
 export default async function Home() {
-
-	//FIXME
-	// await new Promise((r) => setTimeout(r, 100000));
+	
 	return (
 		<>
 			<script

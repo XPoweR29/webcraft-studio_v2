@@ -63,7 +63,7 @@ export const OFFER_CARD_LINKING: offerCardType[] = [
 		bgImgClass: 'bgImg--seo',
 	},
 	{
-		title: 'Witytówka Google',
+		title: 'Wizytówka Google',
 		icon: gmb_icon,
 		pageUrl: linkHref('gmb'),
 		bgImg: '/img/location_sketch.svg',

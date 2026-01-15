@@ -6,6 +6,7 @@ import { CookieAccordion } from '../CookieAccordion/CookieAccordion';
 import { TabsGroup } from '../TabsGroup/TabsGroup';
 import Image from 'next/image';
 import { useCookieContext } from '@/hooks/useCookieContext';
+import { usePageVisibility } from '@/hooks/usePageVisibility';
 
 const consents: Consent[] = [
 	{
@@ -46,19 +47,28 @@ const consents: Consent[] = [
 	},
 ];
 
-export const CookieConsentBanner = () => {
+interface Props {
+	initialDelayMs?: number;
+};
+
+export const CookieConsentBanner = ({ initialDelayMs=500 }: Props) => {
 	const { consentStatus, acceptAll, saveConsent, editedConsent, currentCookieTab, setCurrentCookieTab, consent, isHydrated, showBanner, setShowBanner } = useCookieContext();
+	const isVisible = usePageVisibility();
 
 	useEffect(() => {
 		if(isHydrated && consentStatus === 'unset') {
-			const timeout = setTimeout(() => {
-				setShowBanner(true);
-			}, 500);
 
-			return () => clearTimeout(timeout);
+			if(isVisible) {
+				const timeout = setTimeout(() => {
+					setShowBanner(true);
+				}, initialDelayMs);
+
+				return () => clearTimeout(timeout);
+			}
+
 		} else setShowBanner(false);
 
-	}, [consentStatus, isHydrated]);
+	}, [consentStatus, isHydrated, initialDelayMs, isVisible, setShowBanner]);
 
 	const handleSave = () => {
 		if (!editedConsent) return;

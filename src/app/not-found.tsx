@@ -1,19 +1,31 @@
 import { Wrapper } from '@/components/Wrapper/Wrapper';
-import Head from 'next/head';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
 
+const schema = {
+	'@context': 'https://schema.org',
+	'@type': 'WebPage',
+	name: '404 - Strona nie znaleziona',
+	description: 'Przepraszamy, ale nie mogliśmy znaleźć strony, której szukasz.',
+	inLanguage: 'pl-PL',
+};
+
 const NotFound = () => {
 	return (
 		<>
-			<Head>
-				<meta name='robots' content='noindex' />
-			</Head>
+			<script
+				type='application/ld+json'
+				dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
+			/>
+
 			<div className='notFoundPage'>
 				<Wrapper className='wrapper'>
+					<h1 className='heading'>
+						Wygląda na to, że ta strona nie istnieje...
+					</h1>
 					<Image
-						src={'/img/not-found-image.png'}
+						src={'/img/not-found-image.svg'}
 						width={400}
 						height={200}
 						className='image'
@@ -21,11 +33,11 @@ const NotFound = () => {
 						aria-hidden={true}
 						draggable={false}
 					/>
-					<h1 className='heading'>Strona nie znaleziona</h1>
 					<p className='text'>
-						Przepraszamy, ale nie mogliśmy znaleźć strony, której szukasz.
+						Link, który Cię tu sprowadził, prawdopodobnie wygasł lub zawiera
+						literówkę. Spróbujmy jeszcze raz od początku.
 					</p>
-					<Link href='/'>Wróć do strony głównej</Link>
+					<Link href='/'>⬅ Wróć do strony głównej</Link>
 				</Wrapper>
 			</div>
 		</>
@@ -33,5 +45,3 @@ const NotFound = () => {
 };
 
 export default NotFound;
-
-//FIXME: remember about not found page and set proper favicon!

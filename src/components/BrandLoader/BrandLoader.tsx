@@ -44,5 +44,3 @@ export const BrandLoader = ({ duration = 1700 }: Props) => {
 	);
 };
 
-//FIXME: Problem with prerendering of HomePage.
-

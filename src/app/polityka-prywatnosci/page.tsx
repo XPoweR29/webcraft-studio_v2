@@ -46,8 +46,9 @@ const PrivacyPolicy = () => {
 						<h2 style={{ textAlign: 'center' }}>§1 Definicje</h2>
 						<ul>
 							<li>
-								<strong>Serwis</strong> - serwis internetowy "WebCraftSTUDIO"
-								działający pod adresem https://webcraft-studio.pl
+								<strong>Serwis</strong> - serwis internetowy
+								&quot;WebCraftSTUDIO&quot; działający pod adresem
+								https://webcraft-studio.pl
 							</li>
 							<li>
 								<strong>Serwis zewnętrzny</strong> - serwisy internetowe
@@ -57,9 +58,9 @@ const PrivacyPolicy = () => {
 							<li>
 								<strong>Administrator Serwisu / Danych</strong> -
 								Administratorem Serwisu oraz Administratorem Danych (dalej
-								Administrator) jest osoba fizyczna "Paweł Żydek" zamieszkała w
-								Zasole Bielańskie, świadcząca usługi drogą elektroniczną za
-								pośrednictwem Serwisu
+								Administrator) jest osoba fizyczna &quot;Paweł Żydek&quot;
+								zamieszkała w Zasole Bielańskie, świadcząca usługi drogą
+								elektroniczną za pośrednictwem Serwisu
 							</li>
 							<li>
 								<strong>Użytkownik</strong> - osoba fizyczna, dla której
@@ -86,7 +87,7 @@ const PrivacyPolicy = () => {
 							<li>
 								<strong>Dane osobowe</strong> - oznaczają informacje o
 								zidentyfikowanej lub możliwej do zidentyfikowania osobie
-								fizycznej („osobie, której dane dotyczą”); możliwa do
+								fizycznej (&quot;osobie, której dane dotyczą&quot;); możliwa do
 								zidentyfikowania osoba fizyczna to osoba, którą można
 								bezpośrednio lub pośrednio zidentyfikować, w szczególności na
 								podstawie identyfikatora taki jak imię i nazwisko, numer
@@ -149,9 +150,9 @@ const PrivacyPolicy = () => {
 							<li>
 								<strong>Anonimizacja</strong> - Anonimizacja danych to
 								nieodwracalny proces operacji na danych, który niszczy /
-								nadpisuje "dane osobowe" uniemożliwiając identyfikację, lub
-								powiązanie danego rekordu z konkretnym użytkownikiem lub osobą
-								fizyczną.
+								nadpisuje &quot;dane osobowe&quot; uniemożliwiając
+								identyfikację, lub powiązanie danego rekordu z konkretnym
+								użytkownikiem lub osobą fizyczną.
 							</li>
 						</ul>
 
@@ -191,7 +192,7 @@ const PrivacyPolicy = () => {
 								<strong>Cookies trwałe</strong> - pliki zamieszczane i
 								odczytywane z Urządzenia Użytkownika przez Serwis do momentu ich
 								ręcznego usunięcia. Pliki nie są usuwane automatycznie po
-								zakończeniu sesji Urządzenia chyba że konfiguracja Urządzenia
+								zakoczeniu sesji Urządzenia chyba że konfiguracja Urządzenia
 								Użytkownika jest ustawiona na tryb usuwanie plików Cookie po
 								zakończeniu sesji Urządzenia.
 							</li>
@@ -290,7 +291,7 @@ const PrivacyPolicy = () => {
 							Administrator w Serwisie wykorzystuje skrypty javascript i
 							komponenty webowe partnerów, którzy mogą umieszczać własne pliki
 							cookies na Urządzeniu Użytkownika. Poniżej znajduje się lista
-							partnerów lub ich usług zaimplementowanych w Serwisie, mogących
+							partnerów lub ich usług zaimplementowanych v Serwisie, mogących
 							umieszczać pliki cookies:
 						</p>
 						<ul>

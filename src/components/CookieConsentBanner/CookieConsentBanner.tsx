@@ -52,7 +52,7 @@ interface Props {
 };
 
 export const CookieConsentBanner = ({ initialDelayMs=500 }: Props) => {
-	const { consentStatus, acceptAll, saveConsent, editedConsent, currentCookieTab, setCurrentCookieTab, consent, isHydrated, showBanner, setShowBanner } = useCookieContext();
+	const { consentStatus, acceptAll, saveConsent, editedConsent, currentCookieTab, setCurrentCookieTab, isHydrated, showBanner, setShowBanner } = useCookieContext();
 	const isVisible = usePageVisibility();
 
 	useEffect(() => {

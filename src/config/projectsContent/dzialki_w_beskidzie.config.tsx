@@ -1,4 +1,3 @@
-import { href } from '@/utils/linkContent';
 import { SITE_CONFIG } from '../site.config';
 import { ProjectContentConfig } from '@/types/projectPage.type';
 

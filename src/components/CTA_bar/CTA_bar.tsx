@@ -3,12 +3,9 @@
 import {
 	motion,
 	Variants,
-	useAnimationControls,
-	useInView,
 } from 'framer-motion';
 import styles from './CTA_bar.module.scss';
 import Link from 'next/link';
-import { useEffect, useRef } from 'react';
 
 interface Props {
 	textLines: string[];
@@ -43,14 +40,13 @@ const lineContainerVariants: Variants = {
 };
 const wholeLineVariants: Variants = {
 	hidden: { opacity: 0, y: 16, scale: 1.2, filter: 'blur(4px)' },
-	visible: {
+	visible: (delay: number) => ({
 		opacity: 1,
 		y: 0,
 		scale: 1,
 		filter: 'blur(0px)',
-		transition: { duration: WHOLE_LINE_DURATION, ease: 'easeOut' },
-		animationDuration: 1,
-	},
+		transition: { delay, duration: WHOLE_LINE_DURATION, ease: 'easeOut' },
+	}),
 };
 
 export const CTA_bar = ({
@@ -60,33 +56,25 @@ export const CTA_bar = ({
 	className,
 	bgImgae,
 }: Props) => {
-	const ref = useRef(null);
-	const isInView = useInView(ref, { once: true, amount: 0.6 });
-
-	const controlsArray = textLines.map(() => useAnimationControls());
-
-	useEffect(() => {
-		const run = async () => {
-			for (let i = 0; i < textLines.length; i++) {
-				await controlsArray[i].start('visible');
-
-				const total =
-					i === 0
-						? (textLines[i].replace(/\s/g, '').length - 1) * LETTER_STAGGER +
-						  LETTER_DURATION
-						: WHOLE_LINE_DURATION;
-				await new Promise((r) => setTimeout(r, total));
-			}
-		};
-
-		if (isInView) run();
-	}, [isInView, controlsArray, textLines]);
+	let accumulationDelay = 0;
+	const startTimes = textLines.map((line, i) => {
+		const startTime = accumulationDelay;
+		if (i === 0) {
+			const len = line.replace(/\s/g, '').length;
+			accumulationDelay += (len - 1) * LETTER_STAGGER + LETTER_DURATION;
+		} else {
+			accumulationDelay += WHOLE_LINE_DURATION;
+		}
+		return startTime;
+	});
 
 	return (
-		<section
+		<motion.section
 			className={`${styles.cta}  ${className || ''}`}
 			aria-labelledby='cta_bar-heading'
-			ref={ref}
+			initial='hidden'
+			whileInView='visible'
+			viewport={{ once: true, amount: 0.6 }}
 			style={bgImgae ? { background: `url(${bgImgae})` } : undefined}>
 			<h3 id='cta_bar-heading' className={styles.heading}>
 				{textLines.map((line, lineIndex) => {
@@ -97,8 +85,6 @@ export const CTA_bar = ({
 							<motion.div
 								key={lineIndex}
 								variants={lineContainerVariants}
-								initial='hidden'
-								animate={controlsArray[lineIndex]}
 								style={{ display: 'block' }}>
 								{line.split(' ').map((word, wIndex) => {
 									const letters = word.split('');
@@ -129,8 +115,7 @@ export const CTA_bar = ({
 						<motion.div
 							key={lineIndex}
 							variants={wholeLineVariants}
-							initial='hidden'
-							animate={controlsArray[lineIndex]}
+							custom={startTimes[lineIndex]}
 							style={{ display: 'block', transformOrigin: 'center' }}>
 							{line}
 						</motion.div>
@@ -141,6 +126,6 @@ export const CTA_bar = ({
 			<Link href={redirectTo} className={styles.button}>
 				{buttonLabel}
 			</Link>
-		</section>
+		</motion.section>
 	);
 };

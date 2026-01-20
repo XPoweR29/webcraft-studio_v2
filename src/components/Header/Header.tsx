@@ -8,7 +8,6 @@ import styles from './Header.module.scss';
 import { useHeaderBehavior } from '@/hooks/useHeaderBehavior';
 import { useAppContext } from '@/hooks/useAppContext';
 import { BurgerBtn } from '../BurgerBtn/BurgerBtn';
-import { useBreakpoints } from '../../hooks/useBreakpoint';
 import { Nav } from '../Nav/Nav';
 import { MobileMenu } from '../MobileMenu/MobileMenu';
 import { Wrapper } from '../Wrapper/Wrapper';

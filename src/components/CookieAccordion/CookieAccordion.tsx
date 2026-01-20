@@ -3,7 +3,6 @@ import styles from './CookieAccordion.module.scss';
 import { Icon } from '@iconify/react/dist/iconify.js';
 import { Switch } from '../Switch/Switch';
 import { useCookieContext } from '@/hooks/useCookieContext';
-import { defaultConsent } from '@/contexts/cookie.context';
 
 interface Props {
 	items: Consent[];

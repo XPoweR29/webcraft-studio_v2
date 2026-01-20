@@ -7,7 +7,6 @@ import { BlogCard } from '../BlogCard/BlogCard';
 import { Wrapper } from '../Wrapper/Wrapper';
 import { CustomSelect } from '../CustomSelect/CustomSelect';
 import { Pagination } from '../Pagiantion/Pagination';
-import { formatDatePL } from '@/utils/formatDatePL';
 
 const POSTS_PER_PAGE = 6;
 export const BlogList = () => {

@@ -23,23 +23,26 @@ export const Footer = () => {
 	const handleScrollTop = useHomeScrollTop();
 	const pathname = usePathname();
 	const slug = pathname.split('/').filter(Boolean).pop();
-	
+
 	const isOfferPage = pathname.startsWith('/oferta');
-	const offerContent =  slug ? getServicePageContent(slug) : undefined;
+	const offerContent = slug ? getServicePageContent(slug) : undefined;
 	const cta = offerContent?.footerCTA;
 
 	return (
-		<footer className={`${styles.footer} ${isOfferPage?styles['footer--offer']:''}`}>
+		<footer
+			className={`${styles.footer} ${
+				isOfferPage ? styles['footer--offer'] : ''
+			}`}>
 			<Wrapper className={styles.wrapper}>
-				{cta? (
+				{cta ? (
 					<ProfitsCTA
 						className={styles.offerCTA}
 						heading={cta.heading}
-						text={cta.text}
-						children={cta.children}
-					/>
+						text={cta.text}>
+						{cta.children}
+					</ProfitsCTA>
 				) : (
-					<OfferCTA className={styles.offerCTA}/>
+					<OfferCTA className={styles.offerCTA} />
 				)}
 
 				<div className={`${styles.col1} ${styles.col}`}>

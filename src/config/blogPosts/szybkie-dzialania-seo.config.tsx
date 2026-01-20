@@ -1,8 +1,6 @@
 import { PostPageConfig } from '@/types/blog.type';
 import { linkHref } from '@/utils/linkHref.helper';
 import { SITE_CONFIG } from '../site.config';
-import Link from 'next/link';
-import { href } from '@/utils/linkContent';
 
 const SLUG = 'szybkie-poprawki-seo';
 const TITLE =

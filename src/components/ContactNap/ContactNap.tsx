@@ -29,12 +29,12 @@ export const itemVariants: Variants = {
 	hidden: {
 		x: -200,
 		opacity: 0,
-		filter: 'blur(20px)' as any,
+		filter: 'blur(20px)',
 	},
 	visible: {
 		x: 0,
 		opacity: 1,
-		filter: 'blur(0)' as any,
+		filter: 'blur(0px)',
 		transition: {
 			duration: 2,
 			ease: [0.25, 0.1, 0.25, 1],
@@ -49,12 +49,12 @@ export const ContactNap = ({ className }: Props) => {
 		<section className={`${styles.section} ${className}`}>
 			<Wrapper className={styles.wrapper}>
 				<address>
-					< motion.ul className={styles.napContainer}
-					initial={'hidden'}
-					whileInView={'visible'}
-					variants={listVariants}
-					viewport={{once: true, amount: 0.2}}
-					>
+					<motion.ul
+						className={styles.napContainer}
+						initial={'hidden'}
+						whileInView={'visible'}
+						variants={listVariants}
+						viewport={{ once: true, amount: 0.2 }}>
 						<motion.li className={styles.napItem} variants={itemVariants}>
 							<a
 								href={`tel:${SITE_CONFIG.contact.phoneHref}`}

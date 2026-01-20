@@ -17,12 +17,15 @@ export const TabsGroup = ({ tabs, initialTab }: Props) => {
 	const { currentCookieTab, setCurrentCookieTab } = useCookieContext();
 
 	useEffect(() => {
+		const isCurrentValid = tabs.some((tab) => tab.id === currentCookieTab);
+		if (isCurrentValid) return;
+
 		if (initialTab) {
 			setCurrentCookieTab(initialTab);
-		} else {
+		} else if (tabs.length > 0) {
 			setCurrentCookieTab(tabs[0].id);
 		}
-	}, []);
+	}, [initialTab, tabs, setCurrentCookieTab, currentCookieTab]);
 
 	return (
 		<div className={styles.tabsContainer}>

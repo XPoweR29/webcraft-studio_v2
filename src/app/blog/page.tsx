@@ -5,7 +5,6 @@ import { createMetadata } from '@/utils/createMetadata';
 import { Blog_Content } from '@/sections/Blog_Content/Blog_Content';
 import { BlogList } from '@/components/BlogList/BlogList';
 import { BLOG_POSTS } from '@/config/blogPosts/_registry';
-import { image } from 'framer-motion/client';
 import { linkHref } from '@/utils/linkHref.helper';
 
 export const metadata = createMetadata({

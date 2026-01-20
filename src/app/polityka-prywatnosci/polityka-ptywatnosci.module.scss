@@ -3,32 +3,43 @@
 .privacy {
 	position: relative;
 	padding-top: 12em;
-	padding-bottom: 10em;
+	padding-bottom: 35em;
 	overflow: clip;
-	z-index: 1;
 	background-color: white;
 
 	h1 {
 		margin-bottom: 2em;
-		font-size: 2em;
+		font-size: 3em;
 		letter-spacing: 1px;
 		text-align: center;
 		text-transform: uppercase;
+		font-weight: bold;
 	}
 
 	h2 {
+		@include sectionHeading(center, 40%);
 		color: $black;
-		margin: 1.5em 0;
-		margin-bottom: 0.5em;
+		margin: 2em auto;
+		margin-bottom: 1em;
 	}
 
 	ul {
 		list-style: none;
+		display: flex;
+		flex-direction: column;
+		gap: 1em;
+		padding: 1em;
 	}
 
 	a {
 		color: $black;
 		font-weight: 500;
 		text-decoration: underline;
+	}
+}
+
+@media (width >= 768px) {
+	.privacy {
+		padding-bottom: 25em;
 	}
 }

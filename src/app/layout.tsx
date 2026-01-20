@@ -48,5 +48,3 @@ export default async function RootLayout({ children, }: Readonly<{ children: Rea
 		</html>
 	);
 };
-
-//FIXME: Set proper favicon

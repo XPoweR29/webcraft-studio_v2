@@ -164,6 +164,3 @@ export const CookieConsentBanner = ({ initialDelayMs=500 }: Props) => {
 		</div>
 	);
 };
-
-
-//FIXME: Ensure correct display on small screens. 

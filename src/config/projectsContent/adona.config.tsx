@@ -189,6 +189,3 @@ export const ADONA = {
 		text: 'Zaprojektuję stronę internetową od podstaw, dopasowaną do Twojej branży i oczekiwań klientów. Każdy projekt tworzę tak, aby dobrze wyglądał, działał szybko i był widoczny w Google. Dzięki temu Twoja strona realnie wspiera sprzedaż i pozyskiwanie nowych kontaktów.',
 	},
 } as const satisfies ProjectContentConfig;
-
-
-//IMPROVE: Dodać ikony ptaszków koło futureList (podobnie jak w cenniku)

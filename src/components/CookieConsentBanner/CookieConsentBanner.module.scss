@@ -17,8 +17,9 @@
 	.container {
 		width: 95%;
 		max-width: 700px;
-		max-height: 80%;
-		// min-height: 600px;
+		max-height: 96%;
+		overflow-y: auto;
+		scrollbar-width: thin;
 	}
 
 	.imgContainer {

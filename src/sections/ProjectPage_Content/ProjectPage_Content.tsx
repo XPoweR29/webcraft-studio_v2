@@ -6,6 +6,7 @@ import { Wrapper } from '@/components/Wrapper/Wrapper';
 import Image from 'next/image';
 import { motion, Variants } from 'framer-motion';
 import { useBrandLoader } from '@/hooks/useBrandLoader';
+import checkIcon from '../../assets/icons/citcle_check_icon.svg';
 
 export type ServiceItem = {
 	name: string;
@@ -94,6 +95,7 @@ export const ProjectPage_Content = ({
 						<ul className={styles.serviceList}>
 							{servicesList.map(({ name, description }, i) => (
 								<li className={styles.serviceItem} key={i}>
+									<Image src={checkIcon} alt='' className={styles.checkIcon}/>
 									<p>
 										<strong>{name}</strong> – {description}
 									</p>

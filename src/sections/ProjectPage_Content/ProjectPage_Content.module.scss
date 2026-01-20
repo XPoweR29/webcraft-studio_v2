@@ -79,6 +79,13 @@
 		flex-direction: column;
 		gap: 2em;
 	}
+
+	.serviceItem {
+		display: flex;
+		justify-content: center;
+		align-items: start;
+		gap: 1em;
+	}
 }
 
 @media (width>=450px) {
@@ -107,8 +114,7 @@
 		}
 
 		.block {
-			& .serviceList,
-			& p {
+			& .serviceList {
 				padding-left: 1em;
 			}
 		}

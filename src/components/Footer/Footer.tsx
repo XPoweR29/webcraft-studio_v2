@@ -59,6 +59,7 @@ export const Footer = () => {
 								height={40}
 								alt=''
 								priority={true}
+								style={{height: 'auto'}}
 							/>
 						</Link>
 						<p className={styles.text}>

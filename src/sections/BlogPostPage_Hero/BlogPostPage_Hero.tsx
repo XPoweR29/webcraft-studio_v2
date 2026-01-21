@@ -4,7 +4,6 @@ import React from 'react';
 import styles from './BlogPostPage_Hero.module.scss';
 import Image from 'next/image';
 import { Wrapper } from '@/components/Wrapper/Wrapper';
-import { Variants } from 'framer-motion';
 import calendarIcon from '../../assets/icons/calendar_icon--white.svg';
 
 interface Props {
@@ -13,35 +12,6 @@ interface Props {
 	category?: string;
 	bgImage: string;
 	className?: string;
-}
-
-const LETTER_DURATION = 0.3;
-
-const sublineVariants: Variants = {
-	hidden: {},
-	visible: {
-		transition: {
-			delayChildren: 1,
-			staggerChildren: 0.05,
-		},
-	},
-};
-
-const letterVariants: Variants = {
-	hidden: {
-		opacity: 0,
-		y: 15,
-		filter: 'blur(8px)',
-	},
-	visible: {
-		opacity: 1,
-		y: 0,
-		filter: 'blur(0px)',
-		transition: {
-			duration: LETTER_DURATION,
-			ease: 'easeOut',
-		},
-	},
 };
 
 export const BlogPostPage_Hero = ({

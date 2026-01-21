@@ -13,7 +13,7 @@ export type SchemaBaseParams = {
 
 export const createSchema = (
 	base: SchemaBaseParams,
-	overrides?: Record<string, any>
+	overrides?: Record<string, unknown>
 ) => {
 	const { title, description, relPath, image } = base;
 

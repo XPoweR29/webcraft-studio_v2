@@ -1,6 +1,5 @@
 import { linkHref } from '@/utils/linkHref.helper';
 import { ServiceContentConfig } from '@/types/servicePage.types';
-
 import basicIcon from '../../assets/icons/lighting_icon.svg';
 import standardIcon from '../../assets/icons/rocket_icon.svg';
 import proIcon from '../../assets/icons/crown_icon.svg';
@@ -15,38 +14,38 @@ export const WWW_CONTENT: ServiceContentConfig = {
 			'Zaprojektuję i wykonam Twoją stronę WWW od podstaw. Estetyczny projekt, szybki kod i widoczność w Google dzięki SEO.',
 	},
 
-	SCHEMA: (meta, faq, products) => [
+	SCHEMA: (meta, faq, products ) => [
 		{
 			'@context': 'https://schema.org',
 			'@type': 'WebPage',
-			'@id': `${SITE_CONFIG.baseUrl}/${meta.relPath}/#webpage`,
-			url: `${SITE_CONFIG.baseUrl}/${meta.relPath}`,
-			name: meta.title,
-			description: meta.description,
+			'@id': `${SITE_CONFIG.baseUrl}/${meta?.relPath}/#webpage`,
+			url: `${SITE_CONFIG.baseUrl}/${meta?.relPath}`,
+			name: meta?.title,
+			description: meta?.description,
 			isPartOf: {
 				'@id': `${SITE_CONFIG.baseUrl}/#website`,
 			},
 			mainEntity: {
-				'@id': `${SITE_CONFIG.baseUrl}/${meta.relPath}/#service`,
+				'@id': `${SITE_CONFIG.baseUrl}/${meta?.relPath}/#service`,
 			},
 		},
 		//SERVICE
 		{
 			'@context': 'https://schema.org',
 			'@type': 'Service',
-			'@id': `${SITE_CONFIG.baseUrl}/${meta.relPath}/#service`,
+			'@id': `${SITE_CONFIG.baseUrl}/${meta?.relPath}/#service`,
 			serviceType: 'Tworzenie stron internetowych',
-			name: meta.title,
-			description: meta.description,
+			name: meta?.title,
+			description: meta?.description,
 			provider: {
 				'@id': `${SITE_CONFIG.baseUrl}/#organization`,
 			},
 			mainEntityOfPage: {
-				'@id': `${SITE_CONFIG.baseUrl}/${meta.relPath}/#webpage`,
+				'@id': `${SITE_CONFIG.baseUrl}/${meta?.relPath}/#webpage`,
 			},
 			offers: (products ?? []).map((pkg) => ({
 				'@id': `${SITE_CONFIG.baseUrl}/${
-					meta.relPath
+					meta?.relPath
 				}/#${pkg.name.toLowerCase()}-offer`,
 			})),
 		},
@@ -55,7 +54,7 @@ export const WWW_CONTENT: ServiceContentConfig = {
 			'@context': 'https://schema.org',
 			'@type': 'Product',
 			'@id': `${SITE_CONFIG.baseUrl}/${
-				meta.relPath
+				meta?.relPath
 			}/#${pkg.name.toLowerCase()}`,
 			name: `Pakiet ${pkg.name} – strona internetowa`,
 			description: pkg.description,
@@ -65,7 +64,7 @@ export const WWW_CONTENT: ServiceContentConfig = {
 				priceCurrency: 'PLN',
 				price: pkg.price.toString(),
 				availability: 'https://schema.org/InStock',
-				url: `${SITE_CONFIG.baseUrl}/${meta.relPath}`,
+				url: `${SITE_CONFIG.baseUrl}/${meta?.relPath}`,
 			},
 		})),
 
@@ -90,7 +89,7 @@ export const WWW_CONTENT: ServiceContentConfig = {
 					'@type': 'ListItem',
 					position: 3,
 					name: 'Tworzenie stron WWW',
-					item: `${SITE_CONFIG.baseUrl}/${meta.relPath}`,
+					item: `${SITE_CONFIG.baseUrl}/${meta?.relPath}`,
 				},
 			],
 		},

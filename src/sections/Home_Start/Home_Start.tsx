@@ -31,14 +31,14 @@ export const itemVariants: Variants = {
 		scaleX: 2.5,
 		scaleY: 0.2,
 		opacity: 0,
-		filter: 'blur(20px)' as any,
+		filter: 'blur(20px)',
 	},
 	visible: {
 		x: 0,
 		scaleX: 1,
 		scaleY: 1,
 		opacity: 1,
-		filter: 'blur(0)' as any,
+		filter: 'blur(0px)',
 		transition: {
 			duration: 2,
 			ease: [0.25, 0.1, 0.25, 1],
@@ -192,7 +192,7 @@ export const Home_Start = () => {
 							</p>
 
 							<ul className={styles.offerContainer}>
-								{OFFER_CARD_LINKING.map((card, i) => (
+								{OFFER_CARD_LINKING.map((card) => (
 									<OfferCard
 										key={card.pageUrl}
 										title={card.title}

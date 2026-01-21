@@ -17,7 +17,7 @@ import { createMetadata } from '@/utils/createMetadata';
 import { SubscriptionCTA } from '@/components/SubscriptionCTA/SubscriptionCTA';
 
 interface Props {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }
 export async function generateStaticParams() {
 	const offerPages =
@@ -27,23 +27,19 @@ export async function generateStaticParams() {
 	}));
 }
 export async function generateMetadata({ params }: Props) {
-	const content: ServiceContentConfig | null = getServicePageContent(
-		params.slug
-	);
+	const { slug } = await params;
+	const content: ServiceContentConfig | null = getServicePageContent(slug);
 	if (!content) return {};
-
-	content.METADATA.relPath = `oferta/${params.slug}`;
 
 	return createMetadata({
 		...content.METADATA,
-		relPath: `/oferta/${params.slug}`,
+		relPath: `/oferta/${slug}`,
 	});
 }
 
 const ServicePage = async ({ params }: Props) => {
-	const content: ServiceContentConfig | null = getServicePageContent(
-		params.slug
-	);
+	const { slug } = await params;
+	const content: ServiceContentConfig | null = getServicePageContent(slug);
 	if (!content) return notFound();
 	const {
 		SCHEMA,
@@ -58,10 +54,15 @@ const ServicePage = async ({ params }: Props) => {
 		reviewSection,
 	} = content;
 
+	const metadata = {
+		...content.METADATA,
+		relPath: `oferta/${slug}`,
+	};
+
 	const schema =
 		typeof SCHEMA === 'function'
 			? SCHEMA(
-					content.METADATA,
+					metadata,
 					content.faqSection.items,
 					content.pricingSection.packages
 			  )

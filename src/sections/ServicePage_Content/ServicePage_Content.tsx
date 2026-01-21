@@ -2,7 +2,6 @@ import React from 'react';
 import styles from './ServicePage_Content.module.scss';
 import { Wrapper } from '@/components/Wrapper/Wrapper';
 import { ServiceParagraph } from '@/components/ServiceParagraph/ServiceParagraph';
-import { notFound } from 'next/navigation';
 
 type ServiceParagraphType = {
 	heading: React.ReactNode;

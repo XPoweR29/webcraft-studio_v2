@@ -12,7 +12,7 @@ import { getProjectBySlug } from '@/utils/getProjectData';
 import { PROJECTS } from '@/config/projectsContent/_reigistry';
 
 interface Props {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
@@ -20,17 +20,15 @@ export async function generateStaticParams() {
 }
 
 export async function generateMetadata({ params }: Props) {
-	const project: ProjectContentConfig | undefined = getProjectBySlug(
-		params.slug
-	);
+	const { slug } = await params;
+	const project: ProjectContentConfig | undefined = getProjectBySlug(slug);
 	if (!project) return {};
 	return createMetadata(project.metadata);
 }
 
-const ProjectPage = ({ params }: Props) => {
-	const PROJECT: ProjectContentConfig | undefined = getProjectBySlug(
-		params.slug
-	);
+const ProjectPage = async ({ params }: Props) => {
+	const { slug } = await params;
+	const PROJECT: ProjectContentConfig | undefined = getProjectBySlug(slug);
 	if (!PROJECT) return notFound();
 	const {
 		SCHEMA,

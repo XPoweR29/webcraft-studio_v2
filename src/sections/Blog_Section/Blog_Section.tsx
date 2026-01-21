@@ -17,16 +17,22 @@ interface Props {
 export const Blog_Section = ({ heading, text, className, variant, currentPost }: Props) => {
 	let POSTS: PostPageConfig[];
 
-	if(variant === 'latest') {
+	if (variant === 'latest') {
 		POSTS = getLatestPosts();
+	} else if (currentPost) {
+		POSTS = getPostsByCategory(
+			currentPost.category,
+			currentPost.metadata.slug!
+		);
 	} else {
-		POSTS = getPostsByCategory(currentPost?.category!, currentPost?.metadata.slug!);
-	};
+		POSTS = [];
+	}
 
-	const NO_SCHEMA_POSTS  = POSTS.map(({ SCHEMA, ...rest }) => rest);
+	// eslint-disable-next-line @typescript-eslint/no-unused-vars
+	const NO_SCHEMA_POSTS = POSTS.map(({ SCHEMA, ...rest }) => rest);
 
 	return (
-		<section className={`${styles.section} ${className??""}`}>
+		<section className={`${styles.section} ${className ?? ''}`}>
 			<Wrapper className={styles.wrapper}>
 				<Image
 					src={'/img/pen_sketch.svg'}

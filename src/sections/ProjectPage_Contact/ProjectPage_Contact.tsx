@@ -6,7 +6,6 @@ import { Wrapper } from '@/components/Wrapper/Wrapper';
 import { ContactNap } from '@/components/ContactNap/ContactNap';
 import Image from 'next/image';
 import { useBreakpoints } from '@/hooks/useBreakpoint';
-import { linkHref } from '@/utils/linkHref.helper';
 
 interface Props {
 	heading: string;

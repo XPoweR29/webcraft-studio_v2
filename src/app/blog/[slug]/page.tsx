@@ -12,21 +12,23 @@ import { formatDatePL } from '@/utils/formatDatePL';
 import { createMetadata } from '@/utils/createMetadata';
 
 interface Props {
-	params: { slug: string };
+	params: Promise<{ slug: string }>;
 }
 export async function generateStaticParams() {
-	const posts = await getAllBlogPreviews();
+	const posts = getAllBlogPreviews();
 	return posts.map((post) => ({ slug: post.metadata.slug }));
 }
 
 export async function generateMetadata({ params }: Props) {
-	const post = getBlogPostBySlug(params.slug);
+	const { slug } = await params;
+	const post = getBlogPostBySlug(slug);
 	if (!post) return {};
 	return createMetadata(post.metadata);
 }
 
 const BlogPostPage = async ({ params }: Props) => {
-	const POST = await getBlogPostBySlug(params.slug);
+	const { slug } = await params;
+	const POST = getBlogPostBySlug(slug);
 	if (!POST) return notFound();
 
 	const { SCHEMA } = POST;

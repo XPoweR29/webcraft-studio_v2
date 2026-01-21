@@ -1,5 +1,12 @@
 'use client';
-import { createContext, useState, useEffect } from 'react';
+import {
+	createContext,
+	useState,
+	useEffect,
+	useRef,
+	useCallback,
+	useMemo,
+} from 'react';
 import { usePathname } from 'next/navigation';
 
 interface MegaMenuContextType {
@@ -17,26 +24,31 @@ export const MegaMenuProvider: React.FC<{ children: React.ReactNode }> = ({
 }) => {
 	const [isSubmenuOpen, setIsOpenSubmenu] = useState(false);
 	const pathname = usePathname();
-	let hideTimeout: NodeJS.Timeout | null = null;
+	const hideTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-	const openMenu = () => {
-		if (hideTimeout) clearTimeout(hideTimeout);
+	const openMenu = useCallback(() => {
+		if (hideTimeoutRef.current) clearTimeout(hideTimeoutRef.current);
 		setIsOpenSubmenu(true);
-	};
+	}, []);
 
-	const closeMenu = () => {
-		hideTimeout = setTimeout(() => {
+	const closeMenu = useCallback(() => {
+		hideTimeoutRef.current = setTimeout(() => {
 			setIsOpenSubmenu(false);
 		}, 300);
-	};
+	}, []);
 
 	useEffect(() => {
 		setIsOpenSubmenu(false);
-		if (hideTimeout) clearTimeout(hideTimeout);
+		if (hideTimeoutRef.current) clearTimeout(hideTimeoutRef.current);
 	}, [pathname]);
 
+	const contextValue = useMemo(
+		() => ({ isSubmenuOpen, openMenu, closeMenu }),
+		[isSubmenuOpen, openMenu, closeMenu]
+	);
+
 	return (
-		<MegaMenuContext.Provider value={{ isSubmenuOpen, openMenu, closeMenu }}>
+		<MegaMenuContext.Provider value={contextValue}>
 			{children}
 		</MegaMenuContext.Provider>
 	);

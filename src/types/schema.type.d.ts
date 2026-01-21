@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import { AccordionItem } from '@/components/Accordion/Accordion';
 import { MetadataBaseParams } from '@/utils/createMetadata';
 import { PostPageConfig } from './blog.type';
 import { ProjectContentConfig } from './projectPage.type';
 
 type SchemaArgs = {
-	met?: MetadataBaseParams;
+	meta?: MetadataBaseParams;
 	faq?: AccordionItem[];
 	products?: PricingCard[];
 	post?: PostPageConfig;
@@ -12,6 +13,6 @@ type SchemaArgs = {
 };
 
 export type SchemaType =
-	| ((args: SchemaArgs) => Record<string, any> | Record<string, any>[])
+	| ((meta: any, faq?: any[], products?: any[]) => any | Record<string, any>[])
 	| Record<string, any>
 	| Record<string, any>[];

@@ -1,5 +1,5 @@
 import { BrandLoaderContext } from '@/contexts/brandLoader.context';
-import React, { useContext } from 'react'
+import { useContext } from 'react'
 
 export const useBrandLoader = ():BrandLoaderContextType => {
 	const context = useContext(BrandLoaderContext);

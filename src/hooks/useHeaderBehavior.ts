@@ -1,6 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
 import { usePathname } from 'next/navigation';
-import { useAppContext } from './useAppContext';
 
 interface HeaderBehaviorOptions {
 	scrollHide?: boolean;

@@ -1,7 +1,7 @@
 'use client';
 
+import { AppContextType } from '@/types/appContext.type';
 import React, { ReactNode, createContext, useEffect, useState } from 'react';
-import { AppContextType } from '../types/appContext.type';
 
 export const AppContext = createContext<AppContextType | null>(null);
 

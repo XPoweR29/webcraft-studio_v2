@@ -43,7 +43,7 @@ export const OFFER_LINKING: OfferLink[] = [
 	},
 ];
 
-export const OFFER_CARD_LINKING: offerCardType[] = [
+export const OFFER_CARD_LINKING: OfferCardType[] = [
 	{
 		title: 'Tworzenie stron WWW',
 		icon: www_icon,

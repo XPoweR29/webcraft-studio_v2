@@ -1,4 +1,4 @@
-interface AppContextType {
+export interface AppContextType {
 	breakpoint: Breakpoints;
 
 	mobileMenuShown: boolean;

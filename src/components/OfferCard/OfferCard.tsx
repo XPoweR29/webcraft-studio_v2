@@ -2,10 +2,10 @@ import Image from 'next/image';
 import React from 'react';
 import styles from './OfferCard.module.scss';
 import Link from 'next/link';
-import { offerCardType } from '@/assets/data/offerCards';
+import { OfferCardType } from '@/config/offerLinking.config';
 
 
-export const OfferCard = ({ icon, title, description, pageUrl, bgImg, bgImgClass }: offerCardType) => {
+export const OfferCard = ({ icon, title, description, pageUrl, bgImg, bgImgClass }: OfferCardType) => {
 	return (
 		<li className={styles.offerCard}>
 			<Link href={pageUrl}>

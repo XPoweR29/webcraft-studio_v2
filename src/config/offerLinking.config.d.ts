@@ -4,7 +4,7 @@ import seo_icon from '../assets/icons/seo_icon.svg';
 import { linkHref } from '@/utils/linkHref.helper';
 import { StaticImageData } from 'next/image';
 
-export type offerCardType = {
+export type OfferCardType = {
 	icon: string | StaticImageData;
 	title: string;
 	description: string;

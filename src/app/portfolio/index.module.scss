@@ -1,6 +1,6 @@
 @use '../../sass/common' as *;
 
-.blogSection {
+.blogSection.blogSection {
     padding-bottom: 450px;
     @include section-gradient(150deg);
 

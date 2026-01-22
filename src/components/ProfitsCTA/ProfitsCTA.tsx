@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import styles from './ProfitsCTA.module.scss';
 import Link from 'next/link';
 import { linkHref } from '@/utils/linkHref.helper';
@@ -26,7 +25,7 @@ export const ProfitsCTA = ({ className, heading, text, children }: ProfitsCTAPPr
 		<section className={`${styles.cta} ${className}`}>
 			<Image
 				className={styles.sketchImg}
-				src={'/img/handshake_Sketch.svg'}
+				src={'/img/handshake_sketch.svg'}
 				alt=''
 				aria-hidden={true}
 				draggable={false}

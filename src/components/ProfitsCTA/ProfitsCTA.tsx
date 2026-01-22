@@ -12,14 +12,14 @@ export type ProfitItem = {
 	description: string;
 };
 
-export interface ProfitsCTAPProps {
+export interface ProfitsCTAProps {
 	className?: string;
 	heading: string;
 	text: string;
 	children: ProfitItem[];
 }
 
-export const ProfitsCTA = ({ className, heading, text, children }: ProfitsCTAPProps) => {
+export const ProfitsCTA = ({ className, heading, text, children }: ProfitsCTAProps) => {
 	const { breakpoint } = useBreakpoints();
 	return (
 		<section className={`${styles.cta} ${className}`}>

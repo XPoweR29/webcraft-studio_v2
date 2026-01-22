@@ -16,7 +16,7 @@ export const OfferCTA = ({ className }: { className?: string }) => {
 		<section className={`${styles.cta} ${className}`}>
 			<Image
 				className={styles.sketchImg}
-				src={'/img/progress_Sketch.svg'}
+				src={'/img/progress_sketch.svg'}
 				alt=''
 				aria-hidden={true}
 				draggable={false}

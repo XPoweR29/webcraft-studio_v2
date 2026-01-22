@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import styles from './OfferCTA.module.scss';
 import Link from 'next/link';
 import { linkHref } from '@/utils/linkHref.helper';

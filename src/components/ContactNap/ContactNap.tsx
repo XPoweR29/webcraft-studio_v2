@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import styles from './ContactNap.module.scss';
 import { Wrapper } from '../Wrapper/Wrapper';
 import { ContactForm } from '../ContactForm/ContactForm';

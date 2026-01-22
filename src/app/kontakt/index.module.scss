@@ -6,13 +6,13 @@
 	}
 }
 
-.form {
+.form.form {
 	@include section-gradient;
 	padding-bottom: 420px;
 }
 
 @media (width >= 400px) {
-	.form {
+	.form.form {
 		padding-bottom: 500px;
 	}
 }
@@ -26,7 +26,7 @@
 }
 
 @media (width >= 768px) {
-	.form {
+	.form.form {
 		padding-bottom: 350px;
 	}
 }

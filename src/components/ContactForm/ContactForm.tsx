@@ -1,42 +1,35 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState } from 'react';
 import styles from './ContactForm.module.scss';
 import { ContactFormData, useContactForm } from '@/hooks/useContactForm';
 import Link from 'next/link';
 import toast from 'react-hot-toast';
 import { linkHref } from '@/utils/linkHref.helper';
+import { sendEmail } from '@/app/actions/send-email';
 
 export const ContactForm = ({ className }: { className?: string }) => {
-	const [isSubmiting, setIsSubmiting] = useState<boolean>(false);
+	const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
 
 	const onSubmit = async (data: ContactFormData) => {
+		setIsSubmitting(true);
+
 		try {
-			setIsSubmiting(true);
-			const formData = new FormData();
-			formData.append('name', data.name);
-			formData.append('email', data.email);
-			if (data.phone) formData.append('phone', `+48${data.phone}`);
-			formData.append('message', data.message);
-			formData.append('sender', 'kontakt@webcraft-studio.pl');
-			formData.append('recipient', 'kontakt@webcraft-studio.pl');
+			const response = await sendEmail(data);
 
-			const response = await fetch(
-				'https://backendapp-gamma.vercel.app/api/send-mail',
-				{
-					method: 'POST',
-					body: formData,
-				}
-			);
-
-			if (response.ok) {
+			if (response.success) {
 				toast.success('Twoja wiadomość została wysłana', {
 					duration: 5000,
 					position: 'bottom-right',
 					className: 'toaster',
 				});
-
 				reset();
+
+			} else if (response.error) {
+				toast.error(response.error, {
+					duration: 5000,
+					position: 'top-right',
+				});
 			}
 		} catch (err) {
 			toast.error(
@@ -48,7 +41,7 @@ export const ContactForm = ({ className }: { className?: string }) => {
 			);
 			console.error(err);
 		} finally {
-			setIsSubmiting(false);
+			setIsSubmitting(false);
 		}
 	};
 
@@ -132,8 +125,7 @@ export const ContactForm = ({ className }: { className?: string }) => {
 						validate: (v) => {
 							if (!v) return true;
 							return (
-								/^\d{9}$/.test(v) ||
-								'Numer telefonu musi mieć dokłądnie 9 cyfr'
+								/^\d{9}$/.test(v) || 'Numer telefonu musi mieć dokłądnie 9 cyfr'
 							);
 						},
 					})}
@@ -203,7 +195,7 @@ export const ContactForm = ({ className }: { className?: string }) => {
 			<button
 				type='submit'
 				className={styles.submitButton}
-				disabled={isSubmiting}>
+				disabled={isSubmitting}>
 				Wyślij
 			</button>
 		</form>

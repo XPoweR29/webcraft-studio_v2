@@ -3,7 +3,6 @@
 import ContactTemplate from '@/components/emails/contact-template';
 import { ContactFormData } from '@/hooks/useContactForm';
 import { Resend } from 'resend';
-import { SITE_CONFIG } from '@/config/site.config';
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 

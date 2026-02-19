@@ -12,17 +12,17 @@ export const SITE_CONFIG: SiteConfig = {
 	},
 
 	address: {
-		streetAddress: "Mostowa 2",
+		streetAddress: 'Mostowa 2',
 		city: 'Zasole Bielańskie',
 		postalCode: '43-330',
 		countryCode: 'PL',
-		map: 'https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d197.46496927478907!2d19.1824043!3d49.9425054!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471697a565f2bc19%3A0x32546577886858d8!2sMostowa%202%2C%2043-330%20Zasole%20Biela%C5%84skie!5e1!3m2!1spl!2spl!4v1755758540778!5m2!1spl!2spl',
+		map: 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3159.4403135018592!2d19.17975227689422!3d49.94249312380722!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x471697f724e46d29%3A0x4f8dddfb4c808929!2sWebCraft%20STUDIO%20-%20Tworzenie%20stron%20internetowych%20i%20pozycjonowanie%20SEO%20%7C%20O%C5%9Bwi%C4%99cim!5e1!3m2!1spl!2spl!4v1771527900050!5m2!1spl!2spl',
 	},
 
 	externalLinks: {
-		facebook: 'https://www.facebook.com/webcraft-studio',
+		facebook: 'https://www.facebook.com/webcraftstudio.dev/',
 		insta: 'https://www.instagram.com/@webcraft-studio',
-		googleMaps: 'https://maps.app.goo.gl/VJE1pLzG5yKktoLfA',
+		googleMaps: 'https://maps.app.goo.gl/ahWjZvJrn7SMzkt69',
 		googleMyBusiness: 'https://g.co/kgs/RXFUxgw',
 		localoSite: 'https://pro-wnetrze-remonty-bielsko-zywiec.localo.site/',
 	},

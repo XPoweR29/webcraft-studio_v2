@@ -55,19 +55,24 @@ export const Home_Start = () => {
 				<div className={styles.heroContainer}>
 					<div className={styles.upperBox}>
 						<AuroraBackground className={styles.auroraBg}>
-							<h1 className={styles.heroHeading}>
-								<span className={styles.line1}>Stworzymy</span>
-								<WordFlipper
-									className={styles.line2}
-									words={[
-										'stronę internetową',
-										'optymalizację SEO',
-										'wizytówkę Google',
-										'rozwiązania online',
-									]}
-								/>
-								<span className={styles.line3}>dla Twojego biznesu</span>
+							<h1 className='sr-only'>
+								Stworzymy stronę internetową, zrobimy optymalizację SEO i
+								wizytówkę Google dla Twojego biznesu.
 							</h1>
+
+							<div className={styles.heroHeading} aria-hidden='true'>
+									<span className={styles.line1}>Stworzymy</span>
+									<WordFlipper
+										className={styles.line2}
+										words={[
+											'stronę internetową',
+											'optymalizację SEO',
+											'wizytówkę Google',
+											'rozwiązania online',
+										]}
+									/>
+									<span className={styles.line3}>dla Twojego biznesu</span>
+							</div>
 
 							<p className={styles.text}>
 								Jeśli zależy Ci na stronie, która nie tylko wygląda, ale też

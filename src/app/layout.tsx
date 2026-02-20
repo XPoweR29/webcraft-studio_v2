@@ -17,7 +17,7 @@ const mainFont = Montserrat({
 });
 
 export const metadata = createMetadata({
-	title: 'Tworzenie stron internetowych i SEO | WebCraftSTUDIO',
+	title: 'WebCraft STUDIO - Tworzenie stron internetowych i pozycjonowanie SEO',
 	description:
 		'Projektowanie stron WWW i pozycjonowanie w Google. Nowoczesne strony internetowe dla firm oraz lokalne SEO, które zwiększa Twoją widoczność w sieci.',
 });

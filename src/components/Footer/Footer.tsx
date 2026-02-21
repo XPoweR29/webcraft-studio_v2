@@ -49,21 +49,19 @@ export const Footer = () => {
 						<Link
 							href={'/'}
 							className={styles.logo}
-							rel='preload'
 							onClick={handleScrollTop}
-							aria-label='Strona głowna'>
+							aria-label={SITE_CONFIG.siteName}>
 							<Image
 								src={'/img/logo_bright.svg'}
 								width={150}
 								height={40}
-								alt=''
+								alt='WebCraft STUDIO logo'
 								priority={true}
 								style={{height: 'auto'}}
 							/>
 						</Link>
 						<p className={styles.text}>
-							Nowoczesne strony internetowe, SEO i Google Moja Firma – pomagam
-							firmom rozwijać się online.
+							Tworzenie stron internetowych i pozycjonowanie SEO
 						</p>
 					</div>
 

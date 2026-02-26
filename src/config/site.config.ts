@@ -12,7 +12,7 @@ export const SITE_CONFIG: SiteConfig = {
 	},
 
 	address: {
-		streetAddress: "Mostowa 2",
+		streetAddress: 'Mostowa 2',
 		city: 'Zasole Bielańskie',
 		postalCode: '43-330',
 		countryCode: 'PL',
@@ -20,10 +20,10 @@ export const SITE_CONFIG: SiteConfig = {
 	},
 
 	externalLinks: {
-		facebook: 'https://www.facebook.com/webcraft-studio',
-		insta: 'https://www.instagram.com/@webcraft-studio',
-		googleMaps: 'https://maps.app.goo.gl/VJE1pLzG5yKktoLfA',
-		googleMyBusiness: 'https://g.co/kgs/RXFUxgw',
-		localoSite: 'https://pro-wnetrze-remonty-bielsko-zywiec.localo.site/',
+		facebook: 'https://www.facebook.com/webcraftstudio.dev/',
+		insta: 'https://www.instagram.com/webcraft_studio_pl/',
+		googleMaps: 'https://maps.app.goo.gl/ahWjZvJrn7SMzkt69',
+		googleMyBusiness: 'https://share.google/2Ke24wrYHM24xscEA',
+		localoSite: '',
 	},
 };

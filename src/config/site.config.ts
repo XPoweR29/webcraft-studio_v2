@@ -28,6 +28,6 @@ export const SITE_CONFIG: SiteConfig = {
 		googleMyBusiness: 'https://share.google/2Ke24wrYHM24xscEA',
 		googleReviewDirectLink: '',
 		googleCidLink: 'https://www.google.com/maps?cid=5732481972102531369',
-		localoSite: '',
+		localoSite: 'https://webcraft-studio-oswiecim.localo.site/',
 	},
 };

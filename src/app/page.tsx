@@ -24,7 +24,8 @@ const schema = [
 		'@id': `${SITE_CONFIG.baseUrl}/#website`,
 		url: `${SITE_CONFIG.baseUrl}`,
 		name: metadata.title,
-		alternateName: 'Tworzenie i pozycjonowanie sron internetowych',
+		alternateName:
+			'Tworzenie i pozycjonowanie stron internetowych | WebCraft STUDIO',
 		description: metadata.description,
 		publisher: {
 			'@id': `${SITE_CONFIG.baseUrl}/#organization`,
@@ -32,10 +33,10 @@ const schema = [
 	},
 	{
 		'@context': 'https://schema.org',
-		'@type': 'Organization',
+		'@type': 'ProfessionalService',
 		'@id': `${SITE_CONFIG.baseUrl}/#organization`,
 		url: `${SITE_CONFIG.baseUrl}`,
-		name: 'WebCraftSTUDIO',
+		name: metadata.title,
 		logo: {
 			'@type': 'ImageObject',
 			url: `${SITE_CONFIG.baseUrl}/logo.jpg`,
@@ -48,14 +49,9 @@ const schema = [
 			width: 1200,
 			height: 630,
 		},
-		contactPoint: {
-			'@type': 'ContactPoint',
-			telephone: `${SITE_CONFIG.contact.phoneHref}`,
-			email: SITE_CONFIG.contact.email,
-			contactType: 'customer service',
-			areaServed: 'PL',
-			availableLanguage: ['Polish'],
-		},
+
+		telephone: `${SITE_CONFIG.contact.phoneHref}`,
+		email: SITE_CONFIG.contact.email,
 		address: {
 			'@type': 'PostalAddress',
 			addressLocality: SITE_CONFIG.address.city,
@@ -63,11 +59,41 @@ const schema = [
 			postalCode: SITE_CONFIG.address.postalCode,
 			addressCountry: SITE_CONFIG.address.countryCode,
 		},
-		location: {
-			'@type': 'Place',
-			hasMap: SITE_CONFIG.address.map,
+		hasMap: SITE_CONFIG.externalLinks.googleCidLink,
+		geo: {
+			'@type': 'GeoCoordinates',
+			latitude: SITE_CONFIG.address.latitude,
+			longitude: SITE_CONFIG.address.longitude,
 		},
 		areaServed: [
+			{
+				'@type': 'City',
+				name: 'Andrychów',
+			},
+			{
+				'@type': 'City',
+				name: 'Czechowice-Dziedzice',
+			},
+			{
+				'@type': 'City',
+				name: 'Oświęcim',
+			},
+			{
+				'@type': 'City',
+				name: 'Brzeszcze',
+			},
+			{
+				'@type': 'City',
+				name: 'Kęty',
+			},
+			{
+				'@type': 'City',
+				name: 'Bielsko-Biała',
+			},
+			{
+				'@type': 'City',
+				name: 'Żywiec',
+			},
 			{
 				'@type': 'AdministrativeArea',
 				name: 'woj. Śląskie',
@@ -76,8 +102,17 @@ const schema = [
 				'@type': 'AdministrativeArea',
 				name: 'woj. Małopolskie',
 			},
+			{
+				'@type': 'Country',
+				name: 'Polska',
+			},
 		],
-		sameAs: Object.values(SITE_CONFIG.externalLinks).filter(Boolean),
+		sameAs: [
+			SITE_CONFIG.externalLinks.facebook,
+			SITE_CONFIG.externalLinks.insta,
+			SITE_CONFIG.externalLinks.googleCidLink,
+			SITE_CONFIG.externalLinks.localoSite,
+		].filter(Boolean),
 	},
 	{
 		'@context': 'https://schema.org',
@@ -150,7 +185,6 @@ const schema = [
 	},
 ];
 export default async function Home() {
-	
 	return (
 		<>
 			<script

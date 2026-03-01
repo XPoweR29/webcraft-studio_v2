@@ -83,6 +83,27 @@
 			align-self: center;
 			text-align: center;
 		}
+		.companyAddress {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+
+			.address {
+				display: flex;
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+				font-style: normal;
+			}
+
+			.onlineBadge {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				gap: 0.5em;
+			}
+		}
 	}
 
 	.lowerBar {
@@ -105,7 +126,7 @@
 
 			a {
 				text-decoration: underline;
-				
+
 				&:hover {
 					color: white;
 				}
@@ -159,6 +180,7 @@
 
 			.copyright {
 				flex-direction: row;
+				gap: 0.3em;
 
 				a {
 					margin-left: 0.5em;

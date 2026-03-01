@@ -10,6 +10,8 @@ export interface Address {
 	postalCode: string;
 	countryCode: string;
 	map: string;
+	latitude?: number;
+	longitude?: number;
 }
 
 export interface ExternalLinks {
@@ -17,6 +19,8 @@ export interface ExternalLinks {
 	insta: string;
 	googleMaps: string;
 	googleMyBusiness: string;
+	googleCidLink: string;
+	googleReviewDirectLink: string;
 	localoSite: string;
 }
 

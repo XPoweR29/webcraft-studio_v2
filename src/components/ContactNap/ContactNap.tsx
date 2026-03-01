@@ -5,6 +5,7 @@ import { Wrapper } from '../Wrapper/Wrapper';
 import { ContactForm } from '../ContactForm/ContactForm';
 import Image from 'next/image';
 import fb_icn from '../../assets/icons/facebook_icon.svg';
+import google_icn from '../../assets/icons/google_icon.svg';
 import phone_icn from '../../assets/icons/phone_icon.svg';
 import env_icn from '../../assets/icons/envelope_icon.svg';
 import { useBreakpoints } from '@/hooks/useBreakpoint';
@@ -107,7 +108,7 @@ export const ContactNap = ({ className }: Props) => {
 								/>
 
 								<div className={styles.container}>
-									<span>/facebook</span>
+									<span>Facebook</span>
 									<p>Śledź nas na socialach, aby być na bieżąco</p>
 								</div>
 							</a>

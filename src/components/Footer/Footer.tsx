@@ -15,6 +15,7 @@ import { ProfitsCTA } from '../ProfitsCTA/ProfitsCTA';
 import { usePathname } from 'next/navigation';
 import { SITE_CONFIG } from '@/config/site.config';
 import { getServicePageContent } from '@/utils/getServicePageContent';
+import { Icon } from '@iconify/react/dist/iconify.js';
 
 export const Footer = () => {
 	const { setShowBanner } = useCookieContext();
@@ -55,9 +56,9 @@ export const Footer = () => {
 								src={'/img/logo_bright.svg'}
 								width={150}
 								height={40}
-								alt='WebCraft STUDIO logo'
+								alt={SITE_CONFIG.siteName}
 								priority={true}
-								style={{height: 'auto'}}
+								style={{ height: 'auto' }}
 							/>
 						</Link>
 						<p className={styles.text}>
@@ -134,12 +135,21 @@ export const Footer = () => {
 								Instagram
 							</a>
 						</li>
+						<li>
+							<a
+								href={SITE_CONFIG.externalLinks.googleMyBusiness}
+								target='_blank'
+								rel='noopener noreferrer me'
+								aria-label='WebCraft Studio w mapach Google'>
+								Wizytówka Google
+							</a>
+						</li>
 					</ul>
 				</nav>
 			</Wrapper>
 			<div className={styles.lowerBar}>
 				<p className={styles.copyright}>
-					<span> © {currentYear} WebCraftSTUDIO</span>
+					<span> © {currentYear} WebCraft STUDIO</span>
 					<span>Wszelkie prawa zastrzeżone.</span>
 					<Link href={linkHref('policy')} className={styles.link}>
 						Polityka prywatności
